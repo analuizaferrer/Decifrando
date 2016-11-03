@@ -13,11 +13,11 @@ class LevelScene: SKScene {
 
     let correctWord = "batata"
     var boxArray: [Box]!
-    var lettersArray: [SKLabelNode]!
+    var lettersArray: [Letter]!
     
     var background: SKSpriteNode!
     
-    var selectedNode = SKSpriteNode()
+    var selectedNode = Letter()
     
     override func didMove(to view: SKView) {
         
@@ -51,7 +51,7 @@ class LevelScene: SKScene {
         for letter in correctWord.characters {
             
             lettersArray.append(Letter(letter: letter))
-            
+    
         }
         
         for _ in 0 ..< 10-correctWord.characters.count {
@@ -69,15 +69,15 @@ class LevelScene: SKScene {
             
             letter.position = CGPoint(x: size.width * offsetFraction, y: size.height/4)
             background.addChild(letter)
-            
+            letter.zPosition = 20
             j = j + 1
             
         }
         
     }
     
-    func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let touch = touches.anyObject() as! UITouch
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
         let positionInScene = touch.location(in: self)
         
         selectNodeForTouch(touchLocation: positionInScene)
@@ -90,14 +90,13 @@ class LevelScene: SKScene {
     func selectNodeForTouch(touchLocation: CGPoint) {
         // 1
         let touchedNode = self.atPoint(touchLocation)
-        
-        if touchedNode is SKSpriteNode {
+        if touchedNode is Letter {
             // 2
             if !selectedNode.isEqual(touchedNode) {
                 selectedNode.removeAllActions()
                 selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
                 
-                selectedNode = touchedNode as! SKSpriteNode
+                selectedNode = touchedNode as! Letter
                 
                 // 3
                 if touchedNode.name! == Letter.kLetterNodeName {
@@ -123,21 +122,32 @@ class LevelScene: SKScene {
     func panForTranslation(translation: CGPoint) {
         let position = selectedNode.position
         
-        if selectedNode.name! == Letter.kLetterNodeName {
+        if selectedNode.name != nil && selectedNode.name! == Letter.kLetterNodeName {
+            print("entrei")
             selectedNode.position = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
         } else {
+            print("entrei2w2")
+            if (selectedNode.name != nil)
+            {
+                print(selectedNode.name)
+            }
             let aNewPosition = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
             background.position = self.boundLayerPos(aNewPosition: aNewPosition)
         }
     }
     
-    func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        let touch = touches.anyObject() as! UITouch
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if touches.first != nil {
+        let touch = touches.first!
         let positionInScene = touch.location(in: self)
         let previousPosition = touch.previousLocation(in: self)
         let translation = CGPoint(x: positionInScene.x - previousPosition.x, y: positionInScene.y - previousPosition.y)
         
-        panForTranslation(translation: translation)
+            if atPoint(positionInScene).name != nil && atPoint(positionInScene).name == Letter.kLetterNodeName {
+            
+                panForTranslation(translation: translation)}
+        }
     }
     
 }
