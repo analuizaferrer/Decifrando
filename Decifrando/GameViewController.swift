@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import SpriteKit
 
-class ViewController: UIViewController {
-
+class GameViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if let view = self.view as! SKView? {
+            // Load the SKScene from 'GameScene.sks'
+            
+            let scene = LevelScene(size: view.bounds.size)
+            
+            scene.scaleMode = .aspectFill
+            view.presentScene(scene)
+            view.ignoresSiblingOrder = true
+            
+            view.showsFPS = true
+            view.showsNodeCount = true
+        }
+    
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
-

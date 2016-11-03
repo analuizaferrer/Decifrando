@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183745101DCBADF200BD49C1 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837450F1DCBADF200BD49C1 /* MenuScene.swift */; };
+		183745121DCBB09B00BD49C1 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745111DCBB09B00BD49C1 /* LevelScene.swift */; };
+		183745141DCBB39C00BD49C1 /* CategoryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745131DCBB39C00BD49C1 /* CategoryScene.swift */; };
+		183745161DCBB40500BD49C1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745151DCBB40500BD49C1 /* Box.swift */; };
 		18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B011DCBA7E1008930DA /* AppDelegate.swift */; };
-		18B08B041DCBA7E1008930DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B031DCBA7E1008930DA /* ViewController.swift */; };
+		18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B031DCBA7E1008930DA /* GameViewController.swift */; };
 		18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B051DCBA7E1008930DA /* Main.storyboard */; };
 		18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B081DCBA7E1008930DA /* Decifrando.xcdatamodeld */; };
 		18B08B0C1DCBA7E1008930DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B0B1DCBA7E1008930DA /* Assets.xcassets */; };
@@ -35,9 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1837450F1DCBADF200BD49C1 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		183745111DCBB09B00BD49C1 /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
+		183745131DCBB39C00BD49C1 /* CategoryScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryScene.swift; sourceTree = "<group>"; };
+		183745151DCBB40500BD49C1 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		18B08AFE1DCBA7E1008930DA /* Decifrando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decifrando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B08B011DCBA7E1008930DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18B08B031DCBA7E1008930DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18B08B031DCBA7E1008930DA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		18B08B061DCBA7E1008930DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18B08B091DCBA7E1008930DA /* Decifrando.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Decifrando.xcdatamodel; sourceTree = "<group>"; };
 		18B08B0B1DCBA7E1008930DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				18B08B011DCBA7E1008930DA /* AppDelegate.swift */,
-				18B08B031DCBA7E1008930DA /* ViewController.swift */,
+				18B08B031DCBA7E1008930DA /* GameViewController.swift */,
+				1837450F1DCBADF200BD49C1 /* MenuScene.swift */,
+				183745131DCBB39C00BD49C1 /* CategoryScene.swift */,
+				183745111DCBB09B00BD49C1 /* LevelScene.swift */,
+				183745151DCBB40500BD49C1 /* Box.swift */,
 				18B08B051DCBA7E1008930DA /* Main.storyboard */,
 				18B08B0B1DCBA7E1008930DA /* Assets.xcassets */,
 				18B08B0D1DCBA7E1008930DA /* LaunchScreen.storyboard */,
@@ -262,9 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183745141DCBB39C00BD49C1 /* CategoryScene.swift in Sources */,
+				183745161DCBB40500BD49C1 /* Box.swift in Sources */,
 				18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */,
-				18B08B041DCBA7E1008930DA /* ViewController.swift in Sources */,
+				18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */,
+				183745101DCBADF200BD49C1 /* MenuScene.swift in Sources */,
 				18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */,
+				183745121DCBB09B00BD49C1 /* LevelScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +527,7 @@
 				18B08B2B1DCBA7E1008930DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B08B2C1DCBA7E1008930DA /* Build configuration list for PBXNativeTarget "DecifrandoTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +536,7 @@
 				18B08B2E1DCBA7E1008930DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B08B2F1DCBA7E1008930DA /* Build configuration list for PBXNativeTarget "DecifrandoUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +545,7 @@
 				18B08B311DCBA7E1008930DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
