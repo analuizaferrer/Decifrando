@@ -11,12 +11,15 @@ import SpriteKit
 
 class Letter: SKLabelNode {
     
+    static let kLetterNodeName = "movable"
+    
     init (letter: Character) {
         
         super.init(fontNamed: "Arial Rounded MT Bold")
         self.text = "\(letter)"
         self.fontSize = 100
         self.fontColor = SKColor.black
+        self.name = Letter.kLetterNodeName
         
     }
     
@@ -27,6 +30,7 @@ class Letter: SKLabelNode {
         self.text = randomString(length: 1)
         self.fontSize = 100
         self.fontColor = SKColor.black
+        self.name = Letter.kLetterNodeName
         
     }
     

@@ -10,14 +10,21 @@ import Foundation
 import SpriteKit
 
 class LevelScene: SKScene {
-    
-    let correctWord = "pato"
+
+    let correctWord = "batata"
     var boxArray: [Box]!
     var lettersArray: [SKLabelNode]!
     
+    var background: SKSpriteNode!
+    
+    var selectedNode = SKSpriteNode()
+    
     override func didMove(to view: SKView) {
         
-        self.backgroundColor = UIColor.blue
+        background = SKSpriteNode(color: UIColor.blue, size: CGSize(width: self.size.width, height: self.size.height))
+        self.background.name = "background"
+        self.background.anchorPoint = CGPoint.zero
+        self.addChild(background)
         
         boxArray = []
         
@@ -27,13 +34,16 @@ class LevelScene: SKScene {
             
         }
         
-        var x: CGFloat = 30
+        var i = 0
         for box in boxArray {
             
-            box.position = CGPoint(x: x, y: size.height/2)
+            let offsetFraction = (CGFloat(i) + 1.0)/(CGFloat(boxArray.count) + 1.0)
+            
+            box.position = CGPoint(x: size.width * offsetFraction, y: size.height/2)
             addChild(box)
             
-            x = x + box.size.width + 10
+            i = i + 1
+            
         }
         
         lettersArray = []
@@ -50,16 +60,99 @@ class LevelScene: SKScene {
         
         }
         
-        var x2: CGFloat = 30
+        lettersArray.shuffle()
+        
+        var j = 0
         for letter in lettersArray {
             
-            letter.position = CGPoint(x: x2, y: size.height/4)
-            addChild(letter)
+            let offsetFraction = (CGFloat(j) + 1.0)/(CGFloat(lettersArray.count) + 1.0)
             
-            x2 = x2 + 50
+            letter.position = CGPoint(x: size.width * offsetFraction, y: size.height/4)
+            background.addChild(letter)
+            
+            j = j + 1
             
         }
         
     }
     
+    func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        let touch = touches.anyObject() as! UITouch
+        let positionInScene = touch.location(in: self)
+        
+        selectNodeForTouch(touchLocation: positionInScene)
+    }
+    
+    func degToRad(degree: Double) -> CGFloat {
+        return CGFloat(Double(degree) / 180.0 * M_PI)
+    }
+    
+    func selectNodeForTouch(touchLocation: CGPoint) {
+        // 1
+        let touchedNode = self.atPoint(touchLocation)
+        
+        if touchedNode is SKSpriteNode {
+            // 2
+            if !selectedNode.isEqual(touchedNode) {
+                selectedNode.removeAllActions()
+                selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
+                
+                selectedNode = touchedNode as! SKSpriteNode
+                
+                // 3
+                if touchedNode.name! == Letter.kLetterNodeName {
+                    let sequence = SKAction.sequence([SKAction.rotate(byAngle: degToRad(degree: -4.0), duration: 0.1),
+                                                      SKAction.rotate(byAngle: 0.0, duration: 0.1),
+                                                      SKAction.rotate(byAngle: degToRad(degree: 4.0), duration: 0.1)])
+                    selectedNode.run(SKAction.repeatForever(sequence))
+                }
+            }
+        }
+    }
+    
+    func boundLayerPos(aNewPosition: CGPoint) -> CGPoint {
+        let winSize = self.size
+        var retval = aNewPosition
+        retval.x = CGFloat(min(retval.x, 0))
+        retval.x = CGFloat(max(retval.x, -(background.size.width) + winSize.width))
+        retval.y = self.position.y
+        
+        return retval
+    }
+    
+    func panForTranslation(translation: CGPoint) {
+        let position = selectedNode.position
+        
+        if selectedNode.name! == Letter.kLetterNodeName {
+            selectedNode.position = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
+        } else {
+            let aNewPosition = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
+            background.position = self.boundLayerPos(aNewPosition: aNewPosition)
+        }
+    }
+    
+    func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        let touch = touches.anyObject() as! UITouch
+        let positionInScene = touch.location(in: self)
+        let previousPosition = touch.previousLocation(in: self)
+        let translation = CGPoint(x: positionInScene.x - previousPosition.x, y: positionInScene.y - previousPosition.y)
+        
+        panForTranslation(translation: translation)
+    }
+    
+}
+
+extension MutableCollection where Indices.Iterator.Element == Index {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (unshuffledCount, firstUnshuffled) in zip(stride(from: c, to: 1, by: -1), indices) {
+            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            guard d != 0 else { continue }
+            let i = index(firstUnshuffled, offsetBy: d)
+            swap(&self[firstUnshuffled], &self[i])
+        }
+    }
 }

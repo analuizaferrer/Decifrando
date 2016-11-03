@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+private let boxWidth = 100
+
 class Box: SKSpriteNode {
     
     init (letter: Character) {
@@ -19,7 +21,7 @@ class Box: SKSpriteNode {
         
         if letter == "b" || letter == "d" || letter == "f" || letter == "h" || letter == "k" || letter == "l" || letter == "t" {
             
-            size = CGSize(width: 30, height: 60)
+            size = CGSize(width: boxWidth, height: boxWidth*2)
             
             anchorPoint = CGPoint(x: 0.5, y: 0.25)
             
@@ -27,7 +29,7 @@ class Box: SKSpriteNode {
         
         else if letter == "g" || letter == "j" || letter == "p" || letter == "q" || letter == "y" {
             
-            size = CGSize(width: 30, height: 60)
+            size = CGSize(width: boxWidth, height: boxWidth*2)
             
             anchorPoint = CGPoint(x: 0.5, y: 0.75)
             
@@ -35,7 +37,7 @@ class Box: SKSpriteNode {
         
         else {
             
-            size = CGSize(width: 30, height: 30)
+            size = CGSize(width: boxWidth, height: boxWidth)
             
             anchorPoint = CGPoint(x: 0.5, y: 0.5)
             
