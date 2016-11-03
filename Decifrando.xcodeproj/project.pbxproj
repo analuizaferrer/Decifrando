@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B011DCBA7E1008930DA /* AppDelegate.swift */; };
+		18B08B041DCBA7E1008930DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B031DCBA7E1008930DA /* ViewController.swift */; };
+		18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B051DCBA7E1008930DA /* Main.storyboard */; };
+		18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B081DCBA7E1008930DA /* Decifrando.xcdatamodeld */; };
+		18B08B0C1DCBA7E1008930DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B0B1DCBA7E1008930DA /* Assets.xcassets */; };
+		18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B0D1DCBA7E1008930DA /* LaunchScreen.storyboard */; };
+		18B08B1A1DCBA7E1008930DA /* DecifrandoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B191DCBA7E1008930DA /* DecifrandoTests.swift */; };
+		18B08B251DCBA7E1008930DA /* DecifrandoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B241DCBA7E1008930DA /* DecifrandoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18B08B161DCBA7E1008930DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B08AF61DCBA7E1008930DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18B08AFD1DCBA7E1008930DA;
+			remoteInfo = Decifrando;
+		};
+		18B08B211DCBA7E1008930DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B08AF61DCBA7E1008930DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18B08AFD1DCBA7E1008930DA;
+			remoteInfo = Decifrando;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18B08AFE1DCBA7E1008930DA /* Decifrando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decifrando.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B08B011DCBA7E1008930DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18B08B031DCBA7E1008930DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18B08B061DCBA7E1008930DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18B08B091DCBA7E1008930DA /* Decifrando.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Decifrando.xcdatamodel; sourceTree = "<group>"; };
+		18B08B0B1DCBA7E1008930DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18B08B0E1DCBA7E1008930DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18B08B101DCBA7E1008930DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B08B151DCBA7E1008930DA /* DecifrandoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecifrandoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B08B191DCBA7E1008930DA /* DecifrandoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecifrandoTests.swift; sourceTree = "<group>"; };
+		18B08B1B1DCBA7E1008930DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B08B201DCBA7E1008930DA /* DecifrandoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecifrandoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B08B241DCBA7E1008930DA /* DecifrandoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecifrandoUITests.swift; sourceTree = "<group>"; };
+		18B08B261DCBA7E1008930DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18B08AFB1DCBA7E1008930DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B08B121DCBA7E1008930DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B08B1D1DCBA7E1008930DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18B08AF51DCBA7E1008930DA = {
+			isa = PBXGroup;
+			children = (
+				18B08B001DCBA7E1008930DA /* Decifrando */,
+				18B08B181DCBA7E1008930DA /* DecifrandoTests */,
+				18B08B231DCBA7E1008930DA /* DecifrandoUITests */,
+				18B08AFF1DCBA7E1008930DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18B08AFF1DCBA7E1008930DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18B08AFE1DCBA7E1008930DA /* Decifrando.app */,
+				18B08B151DCBA7E1008930DA /* DecifrandoTests.xctest */,
+				18B08B201DCBA7E1008930DA /* DecifrandoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18B08B001DCBA7E1008930DA /* Decifrando */ = {
+			isa = PBXGroup;
+			children = (
+				18B08B011DCBA7E1008930DA /* AppDelegate.swift */,
+				18B08B031DCBA7E1008930DA /* ViewController.swift */,
+				18B08B051DCBA7E1008930DA /* Main.storyboard */,
+				18B08B0B1DCBA7E1008930DA /* Assets.xcassets */,
+				18B08B0D1DCBA7E1008930DA /* LaunchScreen.storyboard */,
+				18B08B101DCBA7E1008930DA /* Info.plist */,
+				18B08B081DCBA7E1008930DA /* Decifrando.xcdatamodeld */,
+			);
+			path = Decifrando;
+			sourceTree = "<group>";
+		};
+		18B08B181DCBA7E1008930DA /* DecifrandoTests */ = {
+			isa = PBXGroup;
+			children = (
+				18B08B191DCBA7E1008930DA /* DecifrandoTests.swift */,
+				18B08B1B1DCBA7E1008930DA /* Info.plist */,
+			);
+			path = DecifrandoTests;
+			sourceTree = "<group>";
+		};
+		18B08B231DCBA7E1008930DA /* DecifrandoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18B08B241DCBA7E1008930DA /* DecifrandoUITests.swift */,
+				18B08B261DCBA7E1008930DA /* Info.plist */,
+			);
+			path = DecifrandoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18B08AFD1DCBA7E1008930DA /* Decifrando */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B08B291DCBA7E1008930DA /* Build configuration list for PBXNativeTarget "Decifrando" */;
+			buildPhases = (
+				18B08AFA1DCBA7E1008930DA /* Sources */,
+				18B08AFB1DCBA7E1008930DA /* Frameworks */,
+				18B08AFC1DCBA7E1008930DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Decifrando;
+			productName = Decifrando;
+			productReference = 18B08AFE1DCBA7E1008930DA /* Decifrando.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18B08B141DCBA7E1008930DA /* DecifrandoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B08B2C1DCBA7E1008930DA /* Build configuration list for PBXNativeTarget "DecifrandoTests" */;
+			buildPhases = (
+				18B08B111DCBA7E1008930DA /* Sources */,
+				18B08B121DCBA7E1008930DA /* Frameworks */,
+				18B08B131DCBA7E1008930DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18B08B171DCBA7E1008930DA /* PBXTargetDependency */,
+			);
+			name = DecifrandoTests;
+			productName = DecifrandoTests;
+			productReference = 18B08B151DCBA7E1008930DA /* DecifrandoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18B08B1F1DCBA7E1008930DA /* DecifrandoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B08B2F1DCBA7E1008930DA /* Build configuration list for PBXNativeTarget "DecifrandoUITests" */;
+			buildPhases = (
+				18B08B1C1DCBA7E1008930DA /* Sources */,
+				18B08B1D1DCBA7E1008930DA /* Frameworks */,
+				18B08B1E1DCBA7E1008930DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18B08B221DCBA7E1008930DA /* PBXTargetDependency */,
+			);
+			name = DecifrandoUITests;
+			productName = DecifrandoUITests;
+			productReference = 18B08B201DCBA7E1008930DA /* DecifrandoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18B08AF61DCBA7E1008930DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					18B08AFD1DCBA7E1008930DA = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 833JWEH774;
+						ProvisioningStyle = Automatic;
+					};
+					18B08B141DCBA7E1008930DA = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 18B08AFD1DCBA7E1008930DA;
+					};
+					18B08B1F1DCBA7E1008930DA = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 18B08AFD1DCBA7E1008930DA;
+					};
+				};
+			};
+			buildConfigurationList = 18B08AF91DCBA7E1008930DA /* Build configuration list for PBXProject "Decifrando" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18B08AF51DCBA7E1008930DA;
+			productRefGroup = 18B08AFF1DCBA7E1008930DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18B08AFD1DCBA7E1008930DA /* Decifrando */,
+				18B08B141DCBA7E1008930DA /* DecifrandoTests */,
+				18B08B1F1DCBA7E1008930DA /* DecifrandoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18B08AFC1DCBA7E1008930DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */,
+				18B08B0C1DCBA7E1008930DA /* Assets.xcassets in Resources */,
+				18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B08B131DCBA7E1008930DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B08B1E1DCBA7E1008930DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18B08AFA1DCBA7E1008930DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */,
+				18B08B041DCBA7E1008930DA /* ViewController.swift in Sources */,
+				18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B08B111DCBA7E1008930DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B08B1A1DCBA7E1008930DA /* DecifrandoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B08B1C1DCBA7E1008930DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B08B251DCBA7E1008930DA /* DecifrandoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18B08B171DCBA7E1008930DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18B08AFD1DCBA7E1008930DA /* Decifrando */;
+			targetProxy = 18B08B161DCBA7E1008930DA /* PBXContainerItemProxy */;
+		};
+		18B08B221DCBA7E1008930DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18B08AFD1DCBA7E1008930DA /* Decifrando */;
+			targetProxy = 18B08B211DCBA7E1008930DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18B08B051DCBA7E1008930DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B08B061DCBA7E1008930DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18B08B0D1DCBA7E1008930DA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B08B0E1DCBA7E1008930DA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18B08B271DCBA7E1008930DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		18B08B281DCBA7E1008930DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18B08B2A1DCBA7E1008930DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 833JWEH774;
+				INFOPLIST_FILE = Decifrando/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		18B08B2B1DCBA7E1008930DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 833JWEH774;
+				INFOPLIST_FILE = Decifrando/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		18B08B2D1DCBA7E1008930DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DecifrandoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Decifrando.app/Decifrando";
+			};
+			name = Debug;
+		};
+		18B08B2E1DCBA7E1008930DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DecifrandoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Decifrando.app/Decifrando";
+			};
+			name = Release;
+		};
+		18B08B301DCBA7E1008930DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DecifrandoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Decifrando;
+			};
+			name = Debug;
+		};
+		18B08B311DCBA7E1008930DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DecifrandoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Decifrando;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18B08AF91DCBA7E1008930DA /* Build configuration list for PBXProject "Decifrando" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B08B271DCBA7E1008930DA /* Debug */,
+				18B08B281DCBA7E1008930DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18B08B291DCBA7E1008930DA /* Build configuration list for PBXNativeTarget "Decifrando" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B08B2A1DCBA7E1008930DA /* Debug */,
+				18B08B2B1DCBA7E1008930DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18B08B2C1DCBA7E1008930DA /* Build configuration list for PBXNativeTarget "DecifrandoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B08B2D1DCBA7E1008930DA /* Debug */,
+				18B08B2E1DCBA7E1008930DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18B08B2F1DCBA7E1008930DA /* Build configuration list for PBXNativeTarget "DecifrandoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B08B301DCBA7E1008930DA /* Debug */,
+				18B08B311DCBA7E1008930DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18B08B081DCBA7E1008930DA /* Decifrando.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18B08B091DCBA7E1008930DA /* Decifrando.xcdatamodel */,
+			);
+			currentVersion = 18B08B091DCBA7E1008930DA /* Decifrando.xcdatamodel */;
+			path = Decifrando.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 18B08AF61DCBA7E1008930DA /* Project object */;
+}
