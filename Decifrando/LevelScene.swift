@@ -153,7 +153,7 @@ class LevelScene: SKScene {
                 if selectedNode?.text?.characters.first == box.boxLetter {
                     
                     selectedNode?.position.x = box.position.x
-                    selectedNode?.position.y = box.position.y + (0.5-box.anchorPoint.y)*box.size.height
+                    selectedNode?.position.y = box.position.y - (selectedNode?.fontSize)!/4
                     
                     correctBox = true
                     
