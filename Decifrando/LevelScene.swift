@@ -122,26 +122,38 @@ class LevelScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+     
+        letterIsInsideBox()
         
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        letterIsInsideBox()
+        
     }
     
-}
-
-extension MutableCollection where Indices.Iterator.Element == Index {
-    /// Shuffles the contents of this collection.
-    mutating func shuffle() {
-        let c = count
-        guard c > 1 else { return }
+    func letterIsInsideBox() {
         
-        for (unshuffledCount, firstUnshuffled) in zip(stride(from: c, to: 1, by: -1), indices) {
-            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
-            guard d != 0 else { continue }
-            let i = index(firstUnshuffled, offsetBy: d)
-            swap(&self[firstUnshuffled], &self[i])
+        for box in boxArray {
+            
+            let xMin = box.position.x - box.size.width/2
+            let xMax = box.position.x + box.size.width/2
+            let yMin = box.position.y - box.anchorPoint.y*box.size.height
+            let yMax = box.position.y + (1-box.anchorPoint.y)*box.size.height
+            
+            if (selectedNode?.position.x)! > xMin && (selectedNode?.position.x)! < xMax && (selectedNode?.position.y)! > yMin && (selectedNode?.position.y)! < yMax {
+                
+                if selectedNode?.text?.characters.first == box.boxLetter {
+                    
+                    print("correct letter")
+                    
+                }
+                
+            }
+            
         }
+        
     }
+    
 }

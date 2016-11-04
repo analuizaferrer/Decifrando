@@ -13,16 +13,19 @@ private let boxWidth = 100
 
 class Box: SKSpriteNode {
     
+    let boxLetter: Character!
+    
     init (letter: Character) {
         
         var size: CGSize
         
         var anchorPoint: CGPoint
         
+        self.boxLetter = letter
+        
         if letter == "b" || letter == "d" || letter == "f" || letter == "h" || letter == "k" || letter == "l" || letter == "t" {
             
             size = CGSize(width: boxWidth, height: boxWidth*2)
-            
             anchorPoint = CGPoint(x: 0.5, y: 0.25)
             
         }
@@ -30,7 +33,6 @@ class Box: SKSpriteNode {
         else if letter == "g" || letter == "j" || letter == "p" || letter == "q" || letter == "y" {
             
             size = CGSize(width: boxWidth, height: boxWidth*2)
-            
             anchorPoint = CGPoint(x: 0.5, y: 0.75)
             
         }
