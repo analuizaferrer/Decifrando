@@ -10,8 +10,8 @@ import Foundation
 import SpriteKit
 
 class LevelScene: SKScene {
-
-    let correctWord = "batata"
+    
+    let correctWord = "gato"
     var boxArray: [Box]!
     var lettersArray: [Letter]!
     
@@ -69,7 +69,6 @@ class LevelScene: SKScene {
             
             letter.position = CGPoint(x: size.width * offsetFraction, y: size.height/4)
             background.addChild(letter)
-            letter.zPosition = 20
             j = j + 1
             
         }
@@ -83,57 +82,27 @@ class LevelScene: SKScene {
         selectNodeForTouch(touchLocation: positionInScene)
     }
     
-    func degToRad(degree: Double) -> CGFloat {
-        return CGFloat(Double(degree) / 180.0 * M_PI)
-    }
-    
     func selectNodeForTouch(touchLocation: CGPoint) {
-        // 1
+        
         let touchedNode = self.atPoint(touchLocation)
         if touchedNode is Letter {
-            // 2
+            
             if !selectedNode.isEqual(touchedNode) {
                 selectedNode.removeAllActions()
                 selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
                 
                 selectedNode = touchedNode as! Letter
-                
-                // 3
-                if touchedNode.name! == Letter.kLetterNodeName {
-                    let sequence = SKAction.sequence([SKAction.rotate(byAngle: degToRad(degree: -4.0), duration: 0.1),
-                                                      SKAction.rotate(byAngle: 0.0, duration: 0.1),
-                                                      SKAction.rotate(byAngle: degToRad(degree: 4.0), duration: 0.1)])
-                    selectedNode.run(SKAction.repeatForever(sequence))
-                }
             }
         }
-    }
-    
-    func boundLayerPos(aNewPosition: CGPoint) -> CGPoint {
-        let winSize = self.size
-        var retval = aNewPosition
-        retval.x = CGFloat(min(retval.x, 0))
-        retval.x = CGFloat(max(retval.x, -(background.size.width) + winSize.width))
-        retval.y = self.position.y
-        
-        return retval
     }
     
     func panForTranslation(translation: CGPoint) {
         let position = selectedNode.position
         
         if selectedNode.name != nil && selectedNode.name! == Letter.kLetterNodeName {
-            print("entrei")
             selectedNode.position = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
-        } else {
-            print("entrei2w2")
-            if (selectedNode.name != nil)
-            {
-                print(selectedNode.name)
-            }
-            let aNewPosition = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
-            background.position = self.boundLayerPos(aNewPosition: aNewPosition)
         }
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -143,12 +112,23 @@ class LevelScene: SKScene {
         let positionInScene = touch.location(in: self)
         let previousPosition = touch.previousLocation(in: self)
         let translation = CGPoint(x: positionInScene.x - previousPosition.x, y: positionInScene.y - previousPosition.y)
-        
-            if atPoint(positionInScene).name != nil && atPoint(positionInScene).name == Letter.kLetterNodeName {
             
-                panForTranslation(translation: translation)}
+                panForTranslation(translation: translation)
+
         }
     }
+    
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        
+//        panForTranslation(translation: CGPoint.zero)
+//        
+//    }
+//    
+//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        
+//        panForTranslation(translation: CGPoint.zero)
+//        
+//    }
     
 }
 
