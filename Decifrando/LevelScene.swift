@@ -19,6 +19,8 @@ class LevelScene: SKScene {
     
     var selectedNode: Letter?
     
+    var letterPreviousPosition: CGPoint!
+    
     override func didMove(to view: SKView) {
         
         background = SKSpriteNode(color: UIColor.blue, size: CGSize(width: self.size.width, height: self.size.height))
@@ -88,6 +90,7 @@ class LevelScene: SKScene {
         selectedNode = Letter()
         
         let touchedNode = self.atPoint(touchLocation)
+        letterPreviousPosition = touchedNode.position
         if touchedNode is Letter {
             
             if !(selectedNode?.isEqual(touchedNode))! && selectedNode != nil{
@@ -119,6 +122,7 @@ class LevelScene: SKScene {
                 panForTranslation(translation: translation)
 
         }
+    
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -135,6 +139,8 @@ class LevelScene: SKScene {
     
     func letterIsInsideBox() {
         
+        var correctBox = false
+        
         for box in boxArray {
             
             let xMin = box.position.x - box.size.width/2
@@ -146,13 +152,29 @@ class LevelScene: SKScene {
                 
                 if selectedNode?.text?.characters.first == box.boxLetter {
                     
-                    print("correct letter")
+                    selectedNode?.position.x = box.position.x
+                    selectedNode?.position.y = box.position.y + (0.5-box.anchorPoint.y)*box.size.height
+                    
+                    correctBox = true
+                    
+                }
+                
+                else {
+                    
+                    selectedNode?.position = letterPreviousPosition
                     
                 }
                 
             }
             
         }
+        
+        if correctBox == false {
+            
+            selectedNode?.position = letterPreviousPosition
+            
+        }
+        
         
     }
     

@@ -20,6 +20,7 @@ class Letter: SKLabelNode {
         self.fontSize = 100
         self.fontColor = SKColor.black
         self.name = Letter.kLetterNodeName
+        self.verticalAlignmentMode = .center
         
     }
     
@@ -31,7 +32,8 @@ class Letter: SKLabelNode {
         self.fontSize = 100
         self.fontColor = SKColor.black
         self.name = Letter.kLetterNodeName
-        
+        self.verticalAlignmentMode = .center
+
     }
     
     required init?(coder aDecoder: NSCoder) {
