@@ -128,12 +128,18 @@ class LevelScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
      
         letterIsInsideBox()
+        if didWin() {
+            print("você ganhou!")
+        }
         
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         letterIsInsideBox()
+        if didWin() {
+            print("você ganhou!")
+        }
         
     }
     
@@ -156,6 +162,7 @@ class LevelScene: SKScene {
                     selectedNode?.position.y = box.position.y - (selectedNode?.fontSize)!/4
                     
                     correctBox = true
+                    box.isFull = true
                     
                 }
                 
@@ -176,6 +183,17 @@ class LevelScene: SKScene {
         }
         
         
+    }
+    
+    func didWin()->Bool {
+        
+        for box in boxArray {
+            if !box.isFull {
+                return false
+            }
+        }
+        
+        return true
     }
     
 }

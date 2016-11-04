@@ -15,11 +15,15 @@ class Box: SKSpriteNode {
     
     let boxLetter: Character!
     
+    var isFull: Bool!
+    
     init (letter: Character) {
         
         var size: CGSize
         
         var anchorPoint: CGPoint
+        
+        self.isFull = false
         
         self.boxLetter = letter
         
