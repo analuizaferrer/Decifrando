@@ -17,7 +17,7 @@ class LevelScene: SKScene {
     
     var background: SKSpriteNode!
     
-    var selectedNode = Letter()
+    var selectedNode: Letter?
     
     override func didMove(to view: SKView) {
         
@@ -68,6 +68,7 @@ class LevelScene: SKScene {
             let offsetFraction = (CGFloat(j) + 1.0)/(CGFloat(lettersArray.count) + 1.0)
             
             letter.position = CGPoint(x: size.width * offsetFraction, y: size.height/4)
+            letter.zPosition = 20
             background.addChild(letter)
             j = j + 1
             
@@ -84,23 +85,25 @@ class LevelScene: SKScene {
     
     func selectNodeForTouch(touchLocation: CGPoint) {
         
+        selectedNode = Letter()
+        
         let touchedNode = self.atPoint(touchLocation)
         if touchedNode is Letter {
             
-            if !selectedNode.isEqual(touchedNode) {
-                selectedNode.removeAllActions()
-                selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
+            if !(selectedNode?.isEqual(touchedNode))! && selectedNode != nil{
+                selectedNode?.removeAllActions()
+                selectedNode?.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
                 
-                selectedNode = touchedNode as! Letter
+                selectedNode = touchedNode as? Letter
             }
         }
     }
     
     func panForTranslation(translation: CGPoint) {
-        let position = selectedNode.position
+        let position = selectedNode?.position
         
-        if selectedNode.name != nil && selectedNode.name! == Letter.kLetterNodeName {
-            selectedNode.position = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
+        if selectedNode?.name != nil && selectedNode?.name! == Letter.kLetterNodeName {
+            selectedNode?.position = CGPoint(x: (position?.x)! + translation.x, y: (position?.y)! + translation.y)
         }
         
     }
@@ -118,17 +121,13 @@ class LevelScene: SKScene {
         }
     }
     
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        
-//        panForTranslation(translation: CGPoint.zero)
-//        
-//    }
-//    
-//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        
-//        panForTranslation(translation: CGPoint.zero)
-//        
-//    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
     
 }
 
