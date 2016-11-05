@@ -23,7 +23,7 @@ class LevelScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        background = SKSpriteNode(color: UIColor.blue, size: CGSize(width: self.size.width, height: self.size.height))
+        background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
         self.background.name = "background"
         self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
@@ -128,6 +128,7 @@ class LevelScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
      
         letterIsInsideBox()
+        
         if didWin() {
             print("você ganhou!")
         }
@@ -137,6 +138,7 @@ class LevelScene: SKScene {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         letterIsInsideBox()
+        
         if didWin() {
             print("você ganhou!")
         }
@@ -164,25 +166,19 @@ class LevelScene: SKScene {
                     correctBox = true
                     box.isFull = true
                     
-                }
-                
-                else {
+                } else {
                     
                     selectedNode?.position = letterPreviousPosition
                     
                 }
-                
             }
-            
         }
         
-        if correctBox == false {
+        if !correctBox {
             
             selectedNode?.position = letterPreviousPosition
             
         }
-        
-        
     }
     
     func didWin()->Bool {
@@ -195,5 +191,4 @@ class LevelScene: SKScene {
         
         return true
     }
-    
 }

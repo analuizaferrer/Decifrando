@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		183745101DCBADF200BD49C1 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837450F1DCBADF200BD49C1 /* MenuScene.swift */; };
 		183745121DCBB09B00BD49C1 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745111DCBB09B00BD49C1 /* LevelScene.swift */; };
 		183745141DCBB39C00BD49C1 /* CategoryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745131DCBB39C00BD49C1 /* CategoryScene.swift */; };
 		183745161DCBB40500BD49C1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745151DCBB40500BD49C1 /* Box.swift */; };
@@ -21,6 +20,7 @@
 		18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B0D1DCBA7E1008930DA /* LaunchScreen.storyboard */; };
 		18B08B1A1DCBA7E1008930DA /* DecifrandoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B191DCBA7E1008930DA /* DecifrandoTests.swift */; };
 		18B08B251DCBA7E1008930DA /* DecifrandoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B241DCBA7E1008930DA /* DecifrandoUITests.swift */; };
+		F67B3EDE1DCE057F0058D2B5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B3EDD1DCE057E0058D2B5 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1837450F1DCBADF200BD49C1 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		183745111DCBB09B00BD49C1 /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		183745131DCBB39C00BD49C1 /* CategoryScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryScene.swift; sourceTree = "<group>"; };
 		183745151DCBB40500BD49C1 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		18B08B201DCBA7E1008930DA /* DecifrandoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecifrandoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B08B241DCBA7E1008930DA /* DecifrandoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecifrandoUITests.swift; sourceTree = "<group>"; };
 		18B08B261DCBA7E1008930DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F67B3EDD1DCE057E0058D2B5 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 			children = (
 				18B08B011DCBA7E1008930DA /* AppDelegate.swift */,
 				18B08B031DCBA7E1008930DA /* GameViewController.swift */,
-				1837450F1DCBADF200BD49C1 /* MenuScene.swift */,
+				F67B3EDD1DCE057E0058D2B5 /* MenuView.swift */,
 				183745131DCBB39C00BD49C1 /* CategoryScene.swift */,
 				183745111DCBB09B00BD49C1 /* LevelScene.swift */,
 				183745151DCBB40500BD49C1 /* Box.swift */,
@@ -285,7 +285,7 @@
 				183745161DCBB40500BD49C1 /* Box.swift in Sources */,
 				18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */,
 				18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */,
-				183745101DCBADF200BD49C1 /* MenuScene.swift in Sources */,
+				F67B3EDE1DCE057F0058D2B5 /* MenuView.swift in Sources */,
 				18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */,
 				183745121DCBB09B00BD49C1 /* LevelScene.swift in Sources */,
 				183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */,
