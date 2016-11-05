@@ -12,6 +12,7 @@
 		183745161DCBB40500BD49C1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745151DCBB40500BD49C1 /* Box.swift */; };
 		183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745171DCBC5EA00BD49C1 /* Letter.swift */; };
 		1837451A1DCCCE6500BD49C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745191DCCCE6500BD49C1 /* Extensions.swift */; };
+		1889465E1DCE6580009D65A3 /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889465D1DCE6580009D65A3 /* MenuCollectionViewController.swift */; };
 		18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B011DCBA7E1008930DA /* AppDelegate.swift */; };
 		18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B031DCBA7E1008930DA /* GameViewController.swift */; };
 		18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B051DCBA7E1008930DA /* Main.storyboard */; };
@@ -20,7 +21,6 @@
 		18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B0D1DCBA7E1008930DA /* LaunchScreen.storyboard */; };
 		18B08B1A1DCBA7E1008930DA /* DecifrandoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B191DCBA7E1008930DA /* DecifrandoTests.swift */; };
 		18B08B251DCBA7E1008930DA /* DecifrandoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B241DCBA7E1008930DA /* DecifrandoUITests.swift */; };
-		F67B3EDE1DCE057F0058D2B5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B3EDD1DCE057E0058D2B5 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,7 @@
 		183745151DCBB40500BD49C1 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		183745171DCBC5EA00BD49C1 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		183745191DCCCE6500BD49C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1889465D1DCE6580009D65A3 /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCollectionViewController.swift; path = ../MenuCollectionViewController.swift; sourceTree = "<group>"; };
 		18B08AFE1DCBA7E1008930DA /* Decifrando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decifrando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B08B011DCBA7E1008930DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B08B031DCBA7E1008930DA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		18B08B201DCBA7E1008930DA /* DecifrandoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecifrandoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B08B241DCBA7E1008930DA /* DecifrandoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecifrandoUITests.swift; sourceTree = "<group>"; };
 		18B08B261DCBA7E1008930DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F67B3EDD1DCE057E0058D2B5 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +111,9 @@
 		18B08B001DCBA7E1008930DA /* Decifrando */ = {
 			isa = PBXGroup;
 			children = (
+				1889465D1DCE6580009D65A3 /* MenuCollectionViewController.swift */,
 				18B08B011DCBA7E1008930DA /* AppDelegate.swift */,
 				18B08B031DCBA7E1008930DA /* GameViewController.swift */,
-				F67B3EDD1DCE057E0058D2B5 /* MenuView.swift */,
 				183745131DCBB39C00BD49C1 /* CategoryScene.swift */,
 				183745111DCBB09B00BD49C1 /* LevelScene.swift */,
 				183745151DCBB40500BD49C1 /* Box.swift */,
@@ -280,12 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1889465E1DCE6580009D65A3 /* MenuCollectionViewController.swift in Sources */,
 				1837451A1DCCCE6500BD49C1 /* Extensions.swift in Sources */,
 				183745141DCBB39C00BD49C1 /* CategoryScene.swift in Sources */,
 				183745161DCBB40500BD49C1 /* Box.swift in Sources */,
 				18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */,
 				18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */,
-				F67B3EDE1DCE057F0058D2B5 /* MenuView.swift in Sources */,
 				18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */,
 				183745121DCBB09B00BD49C1 /* LevelScene.swift in Sources */,
 				183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */,
