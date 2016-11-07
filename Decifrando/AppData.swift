@@ -16,8 +16,4 @@ class AppData {
     
     private init(){}
     
-    class func createSingleton() -> AppData {
-        return sharedInstance
-    }
-    
 }
