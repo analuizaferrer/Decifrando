@@ -21,16 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let hasLaunched = defaults.bool(forKey: hasLaunchedKey)
         
         if !hasLaunched {
-            
-            //Executed only on first run
-            
+        
             defaults.set(true, forKey: hasLaunchedKey)
             
-            for i in AppData.sharedInstance.levelsList {
-                
-                //save levels in CoreData
-                
-            }
+            DAO().populateDatabase()
             
         }
         

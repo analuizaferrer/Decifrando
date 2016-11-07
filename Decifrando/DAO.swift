@@ -17,7 +17,7 @@ class DAO {
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName: "Level", in: managedContext)
+        let entity = NSEntityDescription.entity(forEntityName: "WordLevel", in: managedContext)
         
         let level = NSManagedObject(entity: entity!, insertInto: managedContext)
         
@@ -46,7 +46,7 @@ class DAO {
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Level")
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WordLevel")
         
         do {
            
@@ -63,5 +63,16 @@ class DAO {
         
     }
     
-    
+    func populateDatabase () {
+        
+        let levelsList: [Level] = [Level(word: "gato", image: "image", category: "animal", completed: false)]
+        
+        for level in levelsList {
+            
+            DAO().save(word: level.word, image: level.image, category: level.category, completed: level.completed)
+            
+        }
+        
+    }
+
 }
