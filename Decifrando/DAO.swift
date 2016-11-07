@@ -12,7 +12,7 @@ import UIKit
 
 class DAO {
     
-    func save (word: String) {
+    func save (word: String, image: String, category: String, completed: Bool) {
         
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -22,6 +22,9 @@ class DAO {
         let level = NSManagedObject(entity: entity!, insertInto: managedContext)
         
         level.setValue(word, forKey: "word")
+        level.setValue(image, forKey: "image")
+        level.setValue(category, forKey: "category")
+        level.setValue(completed, forKey: "completed")
         
         do {
             

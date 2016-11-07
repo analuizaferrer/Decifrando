@@ -13,6 +13,7 @@
 		183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745171DCBC5EA00BD49C1 /* Letter.swift */; };
 		1837451A1DCCCE6500BD49C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745191DCCCE6500BD49C1 /* Extensions.swift */; };
 		1889465E1DCE6580009D65A3 /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889465D1DCE6580009D65A3 /* MenuCollectionViewController.swift */; };
+		18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC69A41DD1017E00EAB7E1 /* Level.swift */; };
 		18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B011DCBA7E1008930DA /* AppDelegate.swift */; };
 		18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B031DCBA7E1008930DA /* GameViewController.swift */; };
 		18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B051DCBA7E1008930DA /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		183745171DCBC5EA00BD49C1 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		183745191DCCCE6500BD49C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1889465D1DCE6580009D65A3 /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCollectionViewController.swift; path = ../MenuCollectionViewController.swift; sourceTree = "<group>"; };
+		18AC69A41DD1017E00EAB7E1 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		18B08AFE1DCBA7E1008930DA /* Decifrando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decifrando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B08B011DCBA7E1008930DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B08B031DCBA7E1008930DA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				18B08B011DCBA7E1008930DA /* AppDelegate.swift */,
 				18D5583C1DD0116300EF4437 /* AppData.swift */,
 				18D5583A1DD00C1900EF4437 /* DAO.swift */,
+				18AC69A41DD1017E00EAB7E1 /* Level.swift */,
 				18B08B031DCBA7E1008930DA /* GameViewController.swift */,
 				1889465D1DCE6580009D65A3 /* MenuCollectionViewController.swift */,
 				183745131DCBB39C00BD49C1 /* CategoryScene.swift */,
@@ -292,6 +295,7 @@
 				183745161DCBB40500BD49C1 /* Box.swift in Sources */,
 				18D5583D1DD0116300EF4437 /* AppData.swift in Sources */,
 				18D5583B1DD00C1900EF4437 /* DAO.swift in Sources */,
+				18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */,
 				18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */,
 				18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */,
 				18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */,
