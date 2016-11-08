@@ -44,7 +44,17 @@ class CategoryScene: SKScene {
         
             AppData.sharedInstance.selectedLevelIndex = Int(levelNumberText!)!-1
     
-            self.startLevel()
+            if AppData.sharedInstance.selectedLevelIndex == 0 {
+                
+                self.startLevel()
+                
+            }
+            
+            else if AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex-1].completed == true {
+                    
+                    self.startLevel()
+                    
+            }
             
         }
         

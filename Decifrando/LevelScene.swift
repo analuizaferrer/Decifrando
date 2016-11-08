@@ -136,6 +136,7 @@ class LevelScene: SKScene {
             print("você ganhou!")
             
             DAO().updateLevelCompleted(levelNumber: AppData.sharedInstance.selectedLevelIndex + 1)
+            AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
             
         }
         
