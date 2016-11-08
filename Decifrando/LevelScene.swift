@@ -138,6 +138,10 @@ class LevelScene: SKScene {
             DAO().updateLevelCompleted(levelNumber: AppData.sharedInstance.selectedLevelIndex + 1)
             AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
             
+            let reveal = SKTransition.fade(withDuration: 1)
+            let levelCompletedScene = LevelCompletedScene(size: self.size)
+            self.view?.presentScene(levelCompletedScene, transition: reveal)
+            
         }
         
     }
