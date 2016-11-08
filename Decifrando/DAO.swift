@@ -118,9 +118,16 @@ class DAO {
     
     func populateDatabase () {
         
-        let levelsList: [Level] = [Level(levelNumber: 1, word: "gato", image: "image", category: "animal", completed: false), Level(levelNumber: 2, word: "cachorro", image: "image", category: "animal", completed: false), Level(levelNumber: 3, word: "golfinho", image: "image", category: "animal", completed: false), Level(levelNumber: 4, word: "cavalo", image: "image", category: "animal", completed: false), Level(levelNumber: 5, word: "elefante", image: "image", category: "animal", completed: false)]
+        let animalLevelsList: [Level] = [Level(levelNumber: 1, word: "gato", image: "image", category: "animals", completed: false), Level(levelNumber: 2, word: "cachorro", image: "image", category: "animals", completed: false), Level(levelNumber: 3, word: "golfinho", image: "image", category: "animals", completed: false), Level(levelNumber: 4, word: "cavalo", image: "image", category: "animals", completed: false), Level(levelNumber: 5, word: "elefante", image: "image", category: "animals", completed: false)]
         
-        for level in levelsList {
+        let colorLevelsList: [Level] = [Level(levelNumber: 1, word: "vermelho", image: "image", category: "colors", completed: false), Level(levelNumber: 2, word: "amarelo", image: "image", category: "colors", completed: false), Level(levelNumber: 3, word: "laranja", image: "image", category: "colors", completed: false), Level(levelNumber: 4, word: "verde", image: "image", category: "colors", completed: false), Level(levelNumber: 5, word: "azul", image: "image", category: "colors", completed: false)]
+        
+        let fruitsLevelsList: [Level] = [Level(levelNumber: 1, word: "uva", image: "image", category: "fruits", completed: false), Level(levelNumber: 2, word: "banana", image: "image", category: "fruits", completed: false), Level(levelNumber: 3, word: "morango", image: "image", category: "fruits", completed: false), Level(levelNumber: 4, word: "abacaxi", image: "image", category: "fruits", completed: false), Level(levelNumber: 5, word: "melancia", image: "image", category: "fruits", completed: false)]
+        
+        let vehiclesLevelsList: [Level] = [Level(levelNumber: 1, word: "ônibus", image: "image", category: "vehicles", completed: false), Level(levelNumber: 2, word: "carro", image: "image", category: "vehicles", completed: false), Level(levelNumber: 3, word: "caminhão", image: "image", category: "vehicles", completed: false), Level(levelNumber: 4, word: "bicicleta", image: "image", category: "vehicles", completed: false), Level(levelNumber: 5, word: "skate", image: "image", category: "vehicles", completed: false)]
+
+        
+        for level in animalLevelsList {
             
             DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
             

@@ -37,12 +37,12 @@ class MenuScene: SKScene {
         let node = self.atPoint(touchLocation)
         
         if node.name == "animals" || node.name == "colors" || node.name == "fruits" || node.name == "vehicles" {
-            self.chooseCategory()
+            self.showCategoryMap()
         }
         
     }
     
-    func chooseCategory() {
+    func showCategoryMap() {
         let reveal = SKTransition.fade(withDuration: 1.0)
         let scene = CategoryScene(size: size)
         self.view?.presentScene(scene, transition:reveal)
