@@ -13,7 +13,7 @@ class AppData {
     
     static let sharedInstance = AppData()
     var levelsList = [Level]()
-    var selectedLevel: Int = 0
+    var selectedLevelIndex: Int = 0
     
     private init(){}
     

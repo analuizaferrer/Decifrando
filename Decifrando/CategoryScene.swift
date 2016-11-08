@@ -42,7 +42,7 @@ class CategoryScene: SKScene {
             let nodeNameArray = node.name?.components(separatedBy: " ")
             let levelNumberText = nodeNameArray?[1]
         
-            AppData.sharedInstance.selectedLevel = Int(levelNumberText!)!-1
+            AppData.sharedInstance.selectedLevelIndex = Int(levelNumberText!)!-1
     
             self.startLevel()
             
@@ -70,7 +70,7 @@ class CategoryScene: SKScene {
             
             if AppData.sharedInstance.levelsList[n-1].completed == true
             {
-                levelLabel.fontColor = SKColor.gray
+                levelLabel.fontColor = SKColor.red
             }
             
             else {

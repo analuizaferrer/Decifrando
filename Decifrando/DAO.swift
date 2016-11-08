@@ -85,6 +85,37 @@ class DAO {
         
     }
     
+    func updateLevelCompleted(levelNumber: Int) {
+        
+        let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WordLevel")
+        fetchRequest.predicate = NSPredicate(format: "levelNumber == %i", levelNumber)
+        
+        do {
+            
+            let results = try managedContext.fetch(fetchRequest)
+            
+            if results.count != 0 {
+             
+                let managedObject = results[0]
+                (managedObject as AnyObject).setValue(true, forKey: "completed")
+                
+                try! managedContext.save()
+                
+            }
+            
+        }
+            
+        catch {
+            
+            print("error")
+            
+        }
+        
+    }
+    
     func populateDatabase () {
         
         let levelsList: [Level] = [Level(levelNumber: 1, word: "gato", image: "image", category: "animal", completed: false), Level(levelNumber: 2, word: "cachorro", image: "image", category: "animal", completed: false), Level(levelNumber: 3, word: "golfinho", image: "image", category: "animal", completed: false), Level(levelNumber: 4, word: "cavalo", image: "image", category: "animal", completed: false), Level(levelNumber: 5, word: "elefante", image: "image", category: "animal", completed: false)]

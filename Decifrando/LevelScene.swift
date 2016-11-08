@@ -23,7 +23,7 @@ class LevelScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        let selectedLevel: Int = AppData.sharedInstance.selectedLevel
+        let selectedLevel: Int = AppData.sharedInstance.selectedLevelIndex
         correctWord = AppData.sharedInstance.levelsList[selectedLevel].word
         
         background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
@@ -134,6 +134,9 @@ class LevelScene: SKScene {
         
         if didWin() {
             print("você ganhou!")
+            
+            DAO().updateLevelCompleted(levelNumber: AppData.sharedInstance.selectedLevelIndex + 1)
+            
         }
         
     }
@@ -143,7 +146,7 @@ class LevelScene: SKScene {
         letterIsInsideBox()
         
         if didWin() {
-            print("você ganhou!")
+            print("você ganhou!!")
         }
         
     }
