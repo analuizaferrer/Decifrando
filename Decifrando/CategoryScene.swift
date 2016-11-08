@@ -15,8 +15,6 @@ class CategoryScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        DAO().fetch()
-        
         background = SKSpriteNode(color: UIColor.green, size: CGSize(width: self.size.width, height: self.size.height))
         self.background.name = "background"
         self.background.anchorPoint = CGPoint.zero

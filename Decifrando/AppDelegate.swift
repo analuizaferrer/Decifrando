@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             DAO().populateDatabase()
             
+            DAO().fetch()
+            
         }
         
         return true
