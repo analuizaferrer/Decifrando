@@ -12,7 +12,7 @@ import UIKit
 
 class DAO {
     
-    func save (word: String, image: String, category: String, completed: Bool) {
+    func save (levelNumber: Int, word: String, image: String, category: String, completed: Bool) {
         
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -21,6 +21,7 @@ class DAO {
         
         let level = NSManagedObject(entity: entity!, insertInto: managedContext)
         
+        level.setValue(levelNumber, forKey: "levelNumber")
         level.setValue(word, forKey: "word")
         level.setValue(image, forKey: "image")
         level.setValue(category, forKey: "category")
@@ -65,11 +66,11 @@ class DAO {
     
     func populateDatabase () {
         
-        let levelsList: [Level] = [Level(word: "gato", image: "image", category: "animal", completed: false)]
+        let levelsList: [Level] = [Level(levelNumber: 1, word: "gato", image: "image", category: "animal", completed: false), Level(levelNumber: 2, word: "cachorro", image: "image", category: "animal", completed: false), Level(levelNumber: 3, word: "golfinho", image: "image", category: "animal", completed: false), Level(levelNumber: 4, word: "cavalo", image: "image", category: "animal", completed: false), Level(levelNumber: 5, word: "elefante", image: "image", category: "animal", completed: false)]
         
         for level in levelsList {
             
-            DAO().save(word: level.word, image: level.image, category: level.category, completed: level.completed)
+            DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
             
         }
         
