@@ -79,6 +79,14 @@ class LevelScene: SKScene {
             
         }
         
+        let backLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
+        backLabel.text = "Back"
+        backLabel.fontSize = 40
+        backLabel.fontColor = SKColor.black
+        backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
+        addChild(backLabel)
+        backLabel.name = "Back"
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -103,6 +111,15 @@ class LevelScene: SKScene {
                 selectedNode = touchedNode as? Letter
             }
         }
+        
+        if touchedNode.name == "Back" {
+            
+            print("back")
+            
+            self.returnToMenu()
+            
+        }
+        
     }
     
     func panForTranslation(translation: CGPoint) {
@@ -207,4 +224,11 @@ class LevelScene: SKScene {
         self.view?.presentScene(levelCompletedScene, transition: reveal)
         
     }
+    
+    func returnToMenu() {
+        let reveal = SKTransition.fade(withDuration: 1.0)
+        let scene = CategoryScene(size: size)
+        self.view?.presentScene(scene, transition:reveal)
+    }
+    
 }
