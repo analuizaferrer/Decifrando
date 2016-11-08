@@ -24,6 +24,32 @@ class MenuScene: SKScene {
         self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
         
+        self.createMenuLabels()
+        
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard let touch = touches.first else {
+            return
+        }
+        let touchLocation = touch.location(in: self)
+        let node = self.atPoint(touchLocation)
+        
+        if node.name == "animals" || node.name == "colors" || node.name == "fruits" || node.name == "vehicles" {
+            self.chooseCategory()
+        }
+        
+    }
+    
+    func chooseCategory() {
+        let reveal = SKTransition.fade(withDuration: 1.0)
+        let scene = CategoryScene(size: size)
+        self.view?.presentScene(scene, transition:reveal)
+    }
+
+    func createMenuLabels() {
+        
         animals = SKSpriteNode(color: UIColor.blue, size: CGSize(width: 300, height: 300))
         self.animals.name = "animals"
         self.animals.anchorPoint = CGPoint.zero
@@ -50,10 +76,4 @@ class MenuScene: SKScene {
         
     }
     
-    func selectNodeForTouch(touchLocation: CGPoint) {
-        
-        let touchedNode = self.atPoint(touchLocation)
-        
-        
-    }
 }
