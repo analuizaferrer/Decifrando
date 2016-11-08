@@ -12,7 +12,8 @@ import CoreData
 class AppData {
     
     static let sharedInstance = AppData()
-    var levelsList = [NSManagedObject]()
+    var levelsList = [Level]()
+    var selectedLevel: Int = 0
     
     private init(){}
     

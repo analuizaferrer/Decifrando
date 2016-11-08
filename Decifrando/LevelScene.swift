@@ -11,7 +11,7 @@ import SpriteKit
 
 class LevelScene: SKScene {
     
-    let correctWord = "gato"
+    var correctWord: String!
     var boxArray: [Box]!
     var lettersArray: [Letter]!
     
@@ -22,6 +22,9 @@ class LevelScene: SKScene {
     var letterPreviousPosition: CGPoint!
     
     override func didMove(to view: SKView) {
+        
+        let selectedLevel: Int = AppData.sharedInstance.selectedLevel
+        correctWord = AppData.sharedInstance.levelsList[selectedLevel].word
         
         background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
         self.background.name = "background"

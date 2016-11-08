@@ -15,6 +15,8 @@ class CategoryScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        DAO().fetch()
+        
         background = SKSpriteNode(color: UIColor.green, size: CGSize(width: self.size.width, height: self.size.height))
         self.background.name = "background"
         self.background.anchorPoint = CGPoint.zero
@@ -34,8 +36,16 @@ class CategoryScene: SKScene {
         
         let index = node.name?.index((node.name?.startIndex)!, offsetBy:5)
         let name = node.name?.substring(to:index!)
+        
         if name == "Level" {
+            
+            let nodeNameArray = node.name?.components(separatedBy: " ")
+            let levelNumberText = nodeNameArray?[1]
+        
+            AppData.sharedInstance.selectedLevel = Int(levelNumberText!)!-1
+    
             self.startLevel()
+            
         }
         
     }
@@ -52,12 +62,23 @@ class CategoryScene: SKScene {
         
         var levelLabels = [SKLabelNode]()
         
-        for n in 1...5 {
+        for n in 1...AppData.sharedInstance.levelsList.count {
             
             let levelLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
             levelLabel.text = "\(n)"
             levelLabel.fontSize = 40
-            levelLabel.fontColor = SKColor.black
+            
+            if AppData.sharedInstance.levelsList[n-1].completed == true
+            {
+                levelLabel.fontColor = SKColor.gray
+            }
+            
+            else {
+                
+                levelLabel.fontColor = SKColor.black
+                
+            }
+            
             levelLabel.position = labelPositions[n-1]
             addChild(levelLabel)
             levelLabel.name = "Level \(n)"

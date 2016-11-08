@@ -30,7 +30,7 @@ class DAO {
         do {
             
             try managedContext.save()
-            AppData.sharedInstance.levelsList.append(level)
+//            AppData.sharedInstance.levelsList.append(level)
             
         }
         
@@ -44,6 +44,8 @@ class DAO {
     
     func fetch () {
         
+        var managedObjectArray = [NSManagedObject]()
+        
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
@@ -52,13 +54,32 @@ class DAO {
         do {
            
             let results = try managedContext.fetch(fetchRequest)
-            AppData.sharedInstance.levelsList = results as! [NSManagedObject]
+            managedObjectArray = results as! [NSManagedObject]
+            convertManagedObject(managedObjectArray: managedObjectArray)
             
         }
         
         catch {
             
             print("error")
+            
+        }
+        
+    }
+    
+    func convertManagedObject(managedObjectArray: [NSManagedObject]) {
+        
+        for object in managedObjectArray {
+            
+            let levelNumber = object.value(forKey: "levelNumber") as! Int
+            let word = object.value(forKey: "word") as! String
+            let image = object.value(forKey: "image") as! String
+            let category = object.value(forKey: "category") as! String
+            let completed = object.value(forKey: "completed") as! Bool
+            
+            let level = Level(levelNumber: levelNumber, word: word, image: image, category: category, completed: completed)
+            
+            AppData.sharedInstance.levelsList.append(level)
             
         }
         
