@@ -10,12 +10,14 @@ import Foundation
 
 class Level {
     
+    var levelNumber: Int!
     var word: String!
     var image: String!
     var category: String!
     var completed: Bool!
     
-    init(word: String, image: String, category: String, completed: Bool) {
+    init(levelNumber: Int, word: String, image: String, category: String, completed: Bool) {
+        self.levelNumber = levelNumber
         self.word = word
         self.image = image
         self.category = category

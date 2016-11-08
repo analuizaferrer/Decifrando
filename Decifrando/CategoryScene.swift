@@ -20,13 +20,7 @@ class CategoryScene: SKScene {
         self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
         
-        let levelLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
-        levelLabel.text = "1"
-        levelLabel.fontSize = 40
-        levelLabel.fontColor = SKColor.black
-        levelLabel.position = CGPoint(x: size.width/2, y: size.height/8)
-        addChild(levelLabel)
-        levelLabel.name = "Level 1"
+        createLevelLabels()
         
     }
     
@@ -38,16 +32,39 @@ class CategoryScene: SKScene {
         let touchLocation = touch.location(in: self)
         let node = self.atPoint(touchLocation)
         
-        if node.name == "Level 1" {
-            self.startGame()
+        let index = node.name?.index((node.name?.startIndex)!, offsetBy:5)
+        let name = node.name?.substring(to:index!)
+        if name == "Level" {
+            self.startLevel()
         }
         
     }
     
-    func startGame() {
+    func startLevel() {
         let reveal = SKTransition.fade(withDuration: 1.0)
         let scene = LevelScene(size: size)
         self.view?.presentScene(scene, transition:reveal)
+    }
+    
+    func createLevelLabels() {
+        
+        let labelPositions: [CGPoint] = [CGPoint(x: size.width/2, y: size.height/6), CGPoint(x: size.width/2, y: 2*size.height/6), CGPoint(x: size.width/2, y: 3*size.height/6), CGPoint(x: size.width/2, y: 4*size.height/6), CGPoint(x: size.width/2, y: 5*size.height/6)]
+        
+        var levelLabels = [SKLabelNode]()
+        
+        for n in 1...5 {
+            
+            let levelLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
+            levelLabel.text = "\(n)"
+            levelLabel.fontSize = 40
+            levelLabel.fontColor = SKColor.black
+            levelLabel.position = labelPositions[n-1]
+            addChild(levelLabel)
+            levelLabel.name = "Level \(n)"
+            levelLabels.append(levelLabel)
+            
+        }
+        
     }
     
 }
