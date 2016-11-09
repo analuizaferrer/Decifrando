@@ -31,6 +31,12 @@ class LevelScene: SKScene {
         self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
         
+        let imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
+        imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/3)
+        imageNode.size = CGSize(width: size.width/2, height: size.width/2)
+        self.addChild(imageNode)
+        
+        
         boxArray = []
         
         for letter in correctWord.characters {
@@ -44,7 +50,7 @@ class LevelScene: SKScene {
             
             let offsetFraction = (CGFloat(i) + 1.0)/(CGFloat(boxArray.count) + 1.0)
             
-            box.position = CGPoint(x: size.width * offsetFraction, y: size.height/2)
+            box.position = CGPoint(x: size.width * offsetFraction, y: size.height/3)
             addChild(box)
             
             i = i + 1
@@ -72,7 +78,7 @@ class LevelScene: SKScene {
             
             let offsetFraction = (CGFloat(j) + 1.0)/(CGFloat(lettersArray.count) + 1.0)
             
-            letter.position = CGPoint(x: size.width * offsetFraction, y: size.height/4)
+            letter.position = CGPoint(x: size.width * offsetFraction, y: size.height/8)
             letter.zPosition = 20
             background.addChild(letter)
             j = j + 1
