@@ -22,6 +22,14 @@ class CategoryScene: SKScene {
         
         createLevelLabels()
         
+        let backLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
+        backLabel.text = "Back"
+        backLabel.fontSize = 40
+        backLabel.fontColor = SKColor.black
+        backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
+        addChild(backLabel)
+        backLabel.name = "Back"
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -32,26 +40,36 @@ class CategoryScene: SKScene {
         let touchLocation = touch.location(in: self)
         let node = self.atPoint(touchLocation)
         
-        let index = node.name?.index((node.name?.startIndex)!, offsetBy:5)
-        let name = node.name?.substring(to:index!)
-        
-        if name == "Level" {
+        if node.name == "Back" {
             
-            let nodeNameArray = node.name?.components(separatedBy: " ")
-            let levelNumberText = nodeNameArray?[1]
-        
-            AppData.sharedInstance.selectedLevelIndex = Int(levelNumberText!)!-1
-    
-            if AppData.sharedInstance.selectedLevelIndex == 0 {
-                
-                self.startLevel()
-                
-            }
+            self.returnToMenuScene()
             
-            else if AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex-1].completed == true {
+        }
+        
+        else {
+            
+            let index = node.name?.index((node.name?.startIndex)!, offsetBy:5)
+            let name = node.name?.substring(to:index!)
+            
+            if name == "Level" {
+                
+                let nodeNameArray = node.name?.components(separatedBy: " ")
+                let levelNumberText = nodeNameArray?[1]
+                
+                AppData.sharedInstance.selectedLevelIndex = Int(levelNumberText!)!-1
+                
+                if AppData.sharedInstance.selectedLevelIndex == 0 {
                     
                     self.startLevel()
                     
+                }
+                    
+                else if AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex-1].completed == true {
+                    
+                    self.startLevel()
+                    
+                }
+                
             }
             
         }
@@ -93,6 +111,14 @@ class CategoryScene: SKScene {
             levelLabels.append(levelLabel)
             
         }
+        
+    }
+    
+    func returnToMenuScene() {
+        
+        let reveal = SKTransition.fade(withDuration: 1.0)
+        let scene = MenuScene(size: size)
+        self.view?.presentScene(scene, transition:reveal)
         
     }
     

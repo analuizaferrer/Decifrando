@@ -114,7 +114,7 @@ class LevelScene: SKScene {
         
         if touchedNode.name == "Back" {
             
-            self.returnToMenu()
+            self.returnToCategoryScene()
             
         }
         
@@ -223,7 +223,7 @@ class LevelScene: SKScene {
         
     }
     
-    func returnToMenu() {
+    func returnToCategoryScene() {
         
         let reveal = SKTransition.fade(withDuration: 1.0)
         let scene = CategoryScene(size: size)

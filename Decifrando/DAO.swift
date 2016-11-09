@@ -30,7 +30,6 @@ class DAO {
         do {
             
             try managedContext.save()
-//            AppData.sharedInstance.levelsList.append(level)
             
         }
         
@@ -67,7 +66,38 @@ class DAO {
         
     }
     
+    func fetchCategory (category: String) {
+        
+        let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WordLevel")
+        fetchRequest.predicate = NSPredicate(format: "category == %@", category)
+        
+        do {
+            
+            let results = try managedContext.fetch(fetchRequest)
+            
+            if results.count != 0 {
+                
+                let managedObjectArray = results as! [NSManagedObject]
+                convertManagedObject(managedObjectArray: managedObjectArray)
+                
+            }
+            
+        }
+            
+        catch {
+            
+            print("error")
+            
+        }
+        
+    }
+    
     func convertManagedObject(managedObjectArray: [NSManagedObject]) {
+        
+        AppData.sharedInstance.levelsList = []
         
         for object in managedObjectArray {
             
@@ -122,12 +152,30 @@ class DAO {
         
         let colorLevelsList: [Level] = [Level(levelNumber: 1, word: "vermelho", image: "image", category: "colors", completed: false), Level(levelNumber: 2, word: "amarelo", image: "image", category: "colors", completed: false), Level(levelNumber: 3, word: "laranja", image: "image", category: "colors", completed: false), Level(levelNumber: 4, word: "verde", image: "image", category: "colors", completed: false), Level(levelNumber: 5, word: "azul", image: "image", category: "colors", completed: false)]
         
-        let fruitsLevelsList: [Level] = [Level(levelNumber: 1, word: "uva", image: "image", category: "fruits", completed: false), Level(levelNumber: 2, word: "banana", image: "image", category: "fruits", completed: false), Level(levelNumber: 3, word: "morango", image: "image", category: "fruits", completed: false), Level(levelNumber: 4, word: "abacaxi", image: "image", category: "fruits", completed: false), Level(levelNumber: 5, word: "melancia", image: "image", category: "fruits", completed: false)]
+        let fruitLevelsList: [Level] = [Level(levelNumber: 1, word: "uva", image: "image", category: "fruits", completed: false), Level(levelNumber: 2, word: "banana", image: "image", category: "fruits", completed: false), Level(levelNumber: 3, word: "morango", image: "image", category: "fruits", completed: false), Level(levelNumber: 4, word: "abacaxi", image: "image", category: "fruits", completed: false), Level(levelNumber: 5, word: "melancia", image: "image", category: "fruits", completed: false)]
         
-        let vehiclesLevelsList: [Level] = [Level(levelNumber: 1, word: "ônibus", image: "image", category: "vehicles", completed: false), Level(levelNumber: 2, word: "carro", image: "image", category: "vehicles", completed: false), Level(levelNumber: 3, word: "caminhão", image: "image", category: "vehicles", completed: false), Level(levelNumber: 4, word: "bicicleta", image: "image", category: "vehicles", completed: false), Level(levelNumber: 5, word: "skate", image: "image", category: "vehicles", completed: false)]
+        let vehicleLevelsList: [Level] = [Level(levelNumber: 1, word: "ônibus", image: "image", category: "vehicles", completed: false), Level(levelNumber: 2, word: "carro", image: "image", category: "vehicles", completed: false), Level(levelNumber: 3, word: "caminhão", image: "image", category: "vehicles", completed: false), Level(levelNumber: 4, word: "bicicleta", image: "image", category: "vehicles", completed: false), Level(levelNumber: 5, word: "skate", image: "image", category: "vehicles", completed: false)]
 
         
         for level in animalLevelsList {
+            
+            DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
+            
+        }
+        
+        for level in colorLevelsList {
+            
+            DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
+            
+        }
+        
+        for level in fruitLevelsList {
+            
+            DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
+            
+        }
+        
+        for level in vehicleLevelsList {
             
             DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
             

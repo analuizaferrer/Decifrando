@@ -37,15 +37,19 @@ class MenuScene: SKScene {
         let node = self.atPoint(touchLocation)
         
         if node.name == "animals" || node.name == "colors" || node.name == "fruits" || node.name == "vehicles" {
-            self.showCategoryMap()
+        
+            self.showCategoryMap(category: node.name!)
         }
         
     }
     
-    func showCategoryMap() {
+    func showCategoryMap(category: String) {
+        
+        DAO().fetchCategory(category: category)
         let reveal = SKTransition.fade(withDuration: 1.0)
         let scene = CategoryScene(size: size)
         self.view?.presentScene(scene, transition:reveal)
+
     }
 
     func createMenuLabels() {
