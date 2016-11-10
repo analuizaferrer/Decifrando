@@ -12,6 +12,7 @@
 		183745161DCBB40500BD49C1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745151DCBB40500BD49C1 /* Box.swift */; };
 		183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745171DCBC5EA00BD49C1 /* Letter.swift */; };
 		1837451A1DCCCE6500BD49C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745191DCCCE6500BD49C1 /* Extensions.swift */; };
+		18594A601DD4AFAE0035E4C6 /* woof.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18594A5F1DD4AFAE0035E4C6 /* woof.mp3 */; };
 		18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC69A41DD1017E00EAB7E1 /* Level.swift */; };
 		18AC69A71DD21DB700EAB7E1 /* LevelCompletedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC69A61DD21DB700EAB7E1 /* LevelCompletedScene.swift */; };
 		18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B011DCBA7E1008930DA /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		183745151DCBB40500BD49C1 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		183745171DCBC5EA00BD49C1 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		183745191DCCCE6500BD49C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		18594A5F1DD4AFAE0035E4C6 /* woof.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = woof.mp3; sourceTree = "<group>"; };
 		18AC69A41DD1017E00EAB7E1 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		18AC69A61DD21DB700EAB7E1 /* LevelCompletedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCompletedScene.swift; sourceTree = "<group>"; };
 		18B08AFE1DCBA7E1008930DA /* Decifrando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decifrando.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 				183745191DCCCE6500BD49C1 /* Extensions.swift */,
 				18B08B051DCBA7E1008930DA /* Main.storyboard */,
 				18B08B0B1DCBA7E1008930DA /* Assets.xcassets */,
+				18594A5F1DD4AFAE0035E4C6 /* woof.mp3 */,
 				18B08B0D1DCBA7E1008930DA /* LaunchScreen.storyboard */,
 				18B08B101DCBA7E1008930DA /* Info.plist */,
 				18B08B081DCBA7E1008930DA /* Decifrando.xcdatamodeld */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */,
+				18594A601DD4AFAE0035E4C6 /* woof.mp3 in Resources */,
 				18B08B0C1DCBA7E1008930DA /* Assets.xcassets in Resources */,
 				18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */,
 			);

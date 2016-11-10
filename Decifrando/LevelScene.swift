@@ -14,11 +14,8 @@ class LevelScene: SKScene {
     var correctWord: String!
     var boxArray: [Box]!
     var lettersArray: [Letter]!
-    
     var background: SKSpriteNode!
-    
     var selectedNode: Letter?
-    
     var letterPreviousPosition: CGPoint!
     
     override func didMove(to view: SKView) {
@@ -194,6 +191,8 @@ class LevelScene: SKScene {
                     correctBox = true
                     box.isFull = true
                     
+                    playSound()
+                    
                 } else {
                     
                     selectedNode?.position = letterPreviousPosition
@@ -235,6 +234,12 @@ class LevelScene: SKScene {
         let reveal = SKTransition.fade(withDuration: 1.0)
         let scene = CategoryScene(size: size)
         self.view?.presentScene(scene, transition:reveal)
+        
+    }
+    
+    func playSound() {
+        
+        run(SKAction.playSoundFileNamed("woof.mp3", waitForCompletion: false))
         
     }
     
