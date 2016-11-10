@@ -239,7 +239,7 @@ class LevelScene: SKScene {
     
     func playSound() {
         
-        run(SKAction.playSoundFileNamed("woof.mp3", waitForCompletion: false))
+        run(SKAction.playSoundFileNamed("Som Genérico.mp3", waitForCompletion: false))
         
     }
     
