@@ -115,22 +115,27 @@ class DAO {
         
     }
     
-    func updateLevelCompleted(levelNumber: Int) {
+    func updateLevelCompleted(category: String) {
         
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WordLevel")
-        fetchRequest.predicate = NSPredicate(format: "levelNumber == %i", levelNumber)
+        fetchRequest.predicate = NSPredicate(format: "category == %@", category)
         
         do {
             
             let results = try managedContext.fetch(fetchRequest)
             
             if results.count != 0 {
-             
-                let managedObject = results[0]
-                (managedObject as AnyObject).setValue(true, forKey: "completed")
+                
+                let managedObjectArray = results as! [NSManagedObject]
+                
+                for i in 0...AppData.sharedInstance.levelsList.count-1 {
+                    
+                    managedObjectArray[i].setValue(AppData.sharedInstance.levelsList[i].completed, forKey: "completed")
+                    
+                }
                 
                 try! managedContext.save()
                 

@@ -167,6 +167,8 @@ class LevelScene: SKScene {
         
         if didWin() {
             print("você ganhou!!")
+            
+            levelWon()
         }
         
     }
@@ -219,8 +221,7 @@ class LevelScene: SKScene {
     }
     
     func levelWon () {
-        
-        DAO().updateLevelCompleted(levelNumber: AppData.sharedInstance.selectedLevelIndex + 1)
+    
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
         
         let reveal = SKTransition.fade(withDuration: 1)
