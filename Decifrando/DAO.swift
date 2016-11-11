@@ -153,7 +153,7 @@ class DAO {
     
     func populateDatabase () {
         
-        let animalLevelsList: [Level] = [Level(levelNumber: 1, word: "gato", image: "image", category: "animals", completed: false), Level(levelNumber: 2, word: "cachorro", image: "image", category: "animals", completed: false), Level(levelNumber: 3, word: "golfinho", image: "image", category: "animals", completed: false), Level(levelNumber: 4, word: "cavalo", image: "image", category: "animals", completed: false), Level(levelNumber: 5, word: "elefante", image: "image", category: "animals", completed: false)]
+        let animalLevelsList: [Level] = [Level(levelNumber: 1, word: "gato", image: "image", category: "animals", completed: false), Level(levelNumber: 2, word: "cavalo", image: "image", category: "animals", completed: false), Level(levelNumber: 3, word: "coruja", image: "image", category: "animals", completed: false), Level(levelNumber: 4, word: "peixe", image: "image", category: "animals", completed: false), Level(levelNumber: 5, word: "papagaio", image: "image", category: "animals", completed: false)]
         
         let colorLevelsList: [Level] = [Level(levelNumber: 1, word: "vermelho", image: "image", category: "colors", completed: false), Level(levelNumber: 2, word: "amarelo", image: "image", category: "colors", completed: false), Level(levelNumber: 3, word: "laranja", image: "image", category: "colors", completed: false), Level(levelNumber: 4, word: "verde", image: "image", category: "colors", completed: false), Level(levelNumber: 5, word: "azul", image: "image", category: "colors", completed: false)]
         
