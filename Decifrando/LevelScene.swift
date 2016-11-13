@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 class LevelScene: SKScene {
     
@@ -17,6 +18,11 @@ class LevelScene: SKScene {
     var background: SKSpriteNode!
     var selectedNode: Letter?
     var letterPreviousPosition: CGPoint!
+    var recordVoice: SKLabelNode!
+    var playVoice:SKLabelNode!
+    var soundRecorder: AVAudioRecorder!
+    var soundPlayer: AVAudioPlayer!
+    var fileName = "audioFile.m4a"
     
     override func didMove(to view: SKView) {
         
@@ -31,8 +37,19 @@ class LevelScene: SKScene {
         let imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
         imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/3)
         imageNode.size = CGSize(width: size.width/2, height: size.width/2)
-        self.addChild(imageNode)
+       // self.addChild(imageNode)
         
+        self.recordVoice = SKLabelNode(text: "Record voice")
+        self.recordVoice.fontName = "Arial Rounded MT Bold"
+        self.recordVoice.name = "Record"
+        self.recordVoice.position = CGPoint(x: size.width-350, y: size.height-70)
+        self.background.addChild(recordVoice)
+        
+        self.playVoice = SKLabelNode(text: "Play voice")
+        self.playVoice.fontName = "Arial Rounded MT Bold"
+        self.playVoice.name = "Play"
+        self.playVoice.position = CGPoint(x: size.width-120, y: size.height-70)
+        self.background.addChild(playVoice)
         
         boxArray = []
         
@@ -90,6 +107,8 @@ class LevelScene: SKScene {
         addChild(backLabel)
         backLabel.name = "Back"
         
+        self.setupRecorder()
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -113,14 +132,36 @@ class LevelScene: SKScene {
                 
                 selectedNode = touchedNode as? Letter
             }
-        }
-        
-        if touchedNode.name == "Back" {
+        } else if touchedNode.name == "Back" {
             
             self.returnToCategoryScene()
             
+        } else if touchedNode.name == "Record" {
+            
+            self.soundRecorder.record()
+            touchedNode.name = "Stop"
+            self.recordVoice.text = "Stop recording"
+            
+        } else if touchedNode.name == "Stop" {
+            
+            self.soundRecorder.stop()
+            touchedNode.name = "Record"
+            self.recordVoice.text = "Record voice"
+            
+        } else if touchedNode.name == "Play" {
+            
+            self.preparePlayer()
+            soundPlayer.play()
+            touchedNode.name = "Pause"
+            self.playVoice.text = "Stop"
+            
+        } else if touchedNode.name == "Pause" {
+            
+            soundPlayer.stop()
+            touchedNode.name = "Play"
+            self.playVoice.text = "Play voice"
+            
         }
-        
     }
     
     func panForTranslation(translation: CGPoint) {
@@ -242,5 +283,61 @@ class LevelScene: SKScene {
         run(SKAction.playSoundFileNamed("Som Genérico.mp3", waitForCompletion: false))
         
     }
+}
+
+
+extension LevelScene: AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
+    func setupRecorder() {
+        
+        let recordSettings = [AVFormatIDKey: kAudioFormatAppleLossless,
+                              AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
+                              AVEncoderBitRateKey: 320000,
+                              AVNumberOfChannelsKey: 2,
+                              AVSampleRateKey: 44100.0] as [String : Any]
+        
+        do {
+            soundRecorder = try AVAudioRecorder(url: getFileURL() as URL, settings: recordSettings as [String: AnyObject])
+            soundRecorder.delegate = self
+            soundRecorder.prepareToRecord()
+            
+        } catch {
+            
+            print("deu merda")
+            
+        }
+        
+    }
+    
+    func getFileURL()->NSURL {
+        
+        let path = NSURL(fileURLWithPath: getCacheDirectory()).appendingPathComponent(fileName)
+        
+        return path! as NSURL
+        
+    }
+    
+    func getCacheDirectory()->String {
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        
+        return paths[0]
+        
+    }
+    
+    func preparePlayer() {
+        
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: getFileURL() as URL)
+            soundPlayer.delegate = self
+            soundPlayer.prepareToPlay()
+            soundPlayer.volume = 1.0
+       
+        } catch {
+            
+            print("deu merda")
+            
+        }
+        
+    }
 }
