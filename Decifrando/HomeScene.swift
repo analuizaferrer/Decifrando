@@ -37,7 +37,7 @@ class HomeScene: SKScene {
         self.start.position = CGPoint(x: size.width/2, y: size.height/2 - 100)
         background.addChild(start)
         
-        help = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
+        help = SKLabelNode(fontNamed: "OpenDyslexic-Bold")
         self.help.fontSize = 40
         self.help.fontColor = SKColor.black
         self.help.text = "Ajuda"

@@ -71,6 +71,15 @@
 		18B08B261DCBA7E1008930DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D5583A1DD00C1900EF4437 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		18D5583C1DD0116300EF4437 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		A8654F491DDCD1C20051F0FC /* OpenDyslexic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Bold.otf"; sourceTree = "<group>"; };
+		A8654F4A1DDCD1C20051F0FC /* OpenDyslexic-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-BoldItalic.otf"; sourceTree = "<group>"; };
+		A8654F4B1DDCD1C20051F0FC /* OpenDyslexic-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Italic.otf"; sourceTree = "<group>"; };
+		A8654F4C1DDCD1C20051F0FC /* OpenDyslexic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Regular.otf"; sourceTree = "<group>"; };
+		A8654F4D1DDCD1C20051F0FC /* OpenDyslexicAlta-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-Bold.otf"; sourceTree = "<group>"; };
+		A8654F4E1DDCD1C20051F0FC /* OpenDyslexicAlta-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-BoldItalic.otf"; sourceTree = "<group>"; };
+		A8654F4F1DDCD1C20051F0FC /* OpenDyslexicAlta-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-Italic.otf"; sourceTree = "<group>"; };
+		A8654F501DDCD1C20051F0FC /* OpenDyslexicAlta-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-Regular.otf"; sourceTree = "<group>"; };
+		A8654F511DDCD1C20051F0FC /* OpenDyslexicMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicMono-Regular.otf"; sourceTree = "<group>"; };
 		F62D6E191DD142D800172280 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		F64CD6C61DDCB8F300704CDE /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +158,22 @@
 			path = DecifrandoUITests;
 			sourceTree = "<group>";
 		};
+		A8654F481DDCD1AE0051F0FC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A8654F491DDCD1C20051F0FC /* OpenDyslexic-Bold.otf */,
+				A8654F4A1DDCD1C20051F0FC /* OpenDyslexic-BoldItalic.otf */,
+				A8654F4B1DDCD1C20051F0FC /* OpenDyslexic-Italic.otf */,
+				A8654F4C1DDCD1C20051F0FC /* OpenDyslexic-Regular.otf */,
+				A8654F4D1DDCD1C20051F0FC /* OpenDyslexicAlta-Bold.otf */,
+				A8654F4E1DDCD1C20051F0FC /* OpenDyslexicAlta-BoldItalic.otf */,
+				A8654F4F1DDCD1C20051F0FC /* OpenDyslexicAlta-Italic.otf */,
+				A8654F501DDCD1C20051F0FC /* OpenDyslexicAlta-Regular.otf */,
+				A8654F511DDCD1C20051F0FC /* OpenDyslexicMono-Regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		F64CD6C81DDCC1C100704CDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +213,7 @@
 		F64CD6CB1DDCC22C00704CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A8654F481DDCD1AE0051F0FC /* Fonts */,
 				183745191DCCCE6500BD49C1 /* Extensions.swift */,
 				18594A611DD4B3F90035E4C6 /* Som Genérico.mp3 */,
 				18B08B0B1DCBA7E1008930DA /* Assets.xcassets */,
