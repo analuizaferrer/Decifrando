@@ -26,6 +26,7 @@
 		18D5583B1DD00C1900EF4437 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5583A1DD00C1900EF4437 /* DAO.swift */; };
 		18D5583D1DD0116300EF4437 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5583C1DD0116300EF4437 /* AppData.swift */; };
 		F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D6E191DD142D800172280 /* MenuScene.swift */; };
+		F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64CD6C61DDCB8F300704CDE /* HomeScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		18D5583A1DD00C1900EF4437 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		18D5583C1DD0116300EF4437 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		F62D6E191DD142D800172280 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		F64CD6C61DDCB8F300704CDE /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				18B08B0D1DCBA7E1008930DA /* LaunchScreen.storyboard */,
 				18B08B101DCBA7E1008930DA /* Info.plist */,
 				18B08B081DCBA7E1008930DA /* Decifrando.xcdatamodeld */,
+				F64CD6C61DDCB8F300704CDE /* HomeScene.swift */,
 			);
 			path = Decifrando;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				1837451A1DCCCE6500BD49C1 /* Extensions.swift in Sources */,
 				183745141DCBB39C00BD49C1 /* CategoryScene.swift in Sources */,
 				183745161DCBB40500BD49C1 /* Box.swift in Sources */,
+				F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */,
 				18D5583D1DD0116300EF4437 /* AppData.swift in Sources */,
 				18D5583B1DD00C1900EF4437 /* DAO.swift in Sources */,
 				18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */,

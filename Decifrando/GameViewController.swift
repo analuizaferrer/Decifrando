@@ -19,7 +19,7 @@ class GameViewController: UIViewController {
             
 //            DAO().fetch()
             
-            let scene = MenuScene(size: view.bounds.size)
+            let scene = HomeScene(size: view.bounds.size)
             //let scene = CategoryScene(size: view.bounds.size)
             
             scene.scaleMode = .aspectFill
