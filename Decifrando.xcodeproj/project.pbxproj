@@ -25,6 +25,15 @@
 		18B08B251DCBA7E1008930DA /* DecifrandoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B241DCBA7E1008930DA /* DecifrandoUITests.swift */; };
 		18D5583B1DD00C1900EF4437 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5583A1DD00C1900EF4437 /* DAO.swift */; };
 		18D5583D1DD0116300EF4437 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D5583C1DD0116300EF4437 /* AppData.swift */; };
+		A8654F521DDCD2AD0051F0FC /* OpenDyslexic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F491DDCD1C20051F0FC /* OpenDyslexic-Bold.otf */; };
+		A8654F531DDCD2B00051F0FC /* OpenDyslexic-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F4A1DDCD1C20051F0FC /* OpenDyslexic-BoldItalic.otf */; };
+		A8654F541DDCD2B20051F0FC /* OpenDyslexic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F4B1DDCD1C20051F0FC /* OpenDyslexic-Italic.otf */; };
+		A8654F551DDCD2B40051F0FC /* OpenDyslexic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F4C1DDCD1C20051F0FC /* OpenDyslexic-Regular.otf */; };
+		A8654F561DDCD2B70051F0FC /* OpenDyslexicAlta-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F4D1DDCD1C20051F0FC /* OpenDyslexicAlta-Bold.otf */; };
+		A8654F571DDCD2B90051F0FC /* OpenDyslexicAlta-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F4E1DDCD1C20051F0FC /* OpenDyslexicAlta-BoldItalic.otf */; };
+		A8654F581DDCD2BB0051F0FC /* OpenDyslexicAlta-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F4F1DDCD1C20051F0FC /* OpenDyslexicAlta-Italic.otf */; };
+		A8654F591DDCD2BD0051F0FC /* OpenDyslexicAlta-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F501DDCD1C20051F0FC /* OpenDyslexicAlta-Regular.otf */; };
+		A8654F5A1DDCD2BF0051F0FC /* OpenDyslexicMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F511DDCD1C20051F0FC /* OpenDyslexicMono-Regular.otf */; };
 		F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D6E191DD142D800172280 /* MenuScene.swift */; };
 		F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64CD6C61DDCB8F300704CDE /* HomeScene.swift */; };
 /* End PBXBuildFile section */
@@ -289,7 +298,7 @@
 				TargetAttributes = {
 					18B08AFD1DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 585K33F6HA;
+						DevelopmentTeam = KZ64B2L85T;
 						ProvisioningStyle = Automatic;
 					};
 					18B08B141DCBA7E1008930DA = {
@@ -329,6 +338,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8654F521DDCD2AD0051F0FC /* OpenDyslexic-Bold.otf in Resources */,
+				A8654F531DDCD2B00051F0FC /* OpenDyslexic-BoldItalic.otf in Resources */,
+				A8654F541DDCD2B20051F0FC /* OpenDyslexic-Italic.otf in Resources */,
+				A8654F551DDCD2B40051F0FC /* OpenDyslexic-Regular.otf in Resources */,
+				A8654F561DDCD2B70051F0FC /* OpenDyslexicAlta-Bold.otf in Resources */,
+				A8654F571DDCD2B90051F0FC /* OpenDyslexicAlta-BoldItalic.otf in Resources */,
+				A8654F581DDCD2BB0051F0FC /* OpenDyslexicAlta-Italic.otf in Resources */,
+				A8654F591DDCD2BD0051F0FC /* OpenDyslexicAlta-Regular.otf in Resources */,
+				A8654F5A1DDCD2BF0051F0FC /* OpenDyslexicMono-Regular.otf in Resources */,
 				18594A621DD4B3F90035E4C6 /* Som Genérico.mp3 in Resources */,
 				18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */,
 				18B08B0C1DCBA7E1008930DA /* Assets.xcassets in Resources */,
@@ -524,7 +542,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 585K33F6HA;
+				DEVELOPMENT_TEAM = KZ64B2L85T;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
@@ -538,7 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 585K33F6HA;
+				DEVELOPMENT_TEAM = KZ64B2L85T;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
