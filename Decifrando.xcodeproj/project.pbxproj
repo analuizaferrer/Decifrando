@@ -34,6 +34,7 @@
 		A8654F581DDCD2BB0051F0FC /* OpenDyslexicAlta-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F4F1DDCD1C20051F0FC /* OpenDyslexicAlta-Italic.otf */; };
 		A8654F591DDCD2BD0051F0FC /* OpenDyslexicAlta-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F501DDCD1C20051F0FC /* OpenDyslexicAlta-Regular.otf */; };
 		A8654F5A1DDCD2BF0051F0FC /* OpenDyslexicMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F511DDCD1C20051F0FC /* OpenDyslexicMono-Regular.otf */; };
+		A8B9BAB41DDF4ECC006ADAD9 /* Riffic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8B9BAB31DDF4ECC006ADAD9 /* Riffic.otf */; };
 		F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D6E191DD142D800172280 /* MenuScene.swift */; };
 		F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64CD6C61DDCB8F300704CDE /* HomeScene.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		A8654F4F1DDCD1C20051F0FC /* OpenDyslexicAlta-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-Italic.otf"; sourceTree = "<group>"; };
 		A8654F501DDCD1C20051F0FC /* OpenDyslexicAlta-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-Regular.otf"; sourceTree = "<group>"; };
 		A8654F511DDCD1C20051F0FC /* OpenDyslexicMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicMono-Regular.otf"; sourceTree = "<group>"; };
+		A8B9BAB31DDF4ECC006ADAD9 /* Riffic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Riffic.otf; sourceTree = "<group>"; };
 		F62D6E191DD142D800172280 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		F64CD6C61DDCB8F300704CDE /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 				A8654F4F1DDCD1C20051F0FC /* OpenDyslexicAlta-Italic.otf */,
 				A8654F501DDCD1C20051F0FC /* OpenDyslexicAlta-Regular.otf */,
 				A8654F511DDCD1C20051F0FC /* OpenDyslexicMono-Regular.otf */,
+				A8B9BAB31DDF4ECC006ADAD9 /* Riffic.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				A8654F551DDCD2B40051F0FC /* OpenDyslexic-Regular.otf in Resources */,
 				A8654F561DDCD2B70051F0FC /* OpenDyslexicAlta-Bold.otf in Resources */,
 				A8654F571DDCD2B90051F0FC /* OpenDyslexicAlta-BoldItalic.otf in Resources */,
+				A8B9BAB41DDF4ECC006ADAD9 /* Riffic.otf in Resources */,
 				A8654F581DDCD2BB0051F0FC /* OpenDyslexicAlta-Italic.otf in Resources */,
 				A8654F591DDCD2BD0051F0FC /* OpenDyslexicAlta-Regular.otf in Resources */,
 				A8654F5A1DDCD2BF0051F0FC /* OpenDyslexicMono-Regular.otf in Resources */,
