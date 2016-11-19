@@ -23,7 +23,6 @@ class HomeScene: SKScene {
         background = SKSpriteNode(imageNamed:"background")
         background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         background.zPosition = 0
-
         self.background.name = "background"
         //    var background = SKSpriteNode(imageNamed: "bgimage")
 
@@ -39,21 +38,21 @@ class HomeScene: SKScene {
     func createHomeLabels() {
     
         start = SKLabelNode(fontNamed: "Riffic")
-        self.start.fontSize = 55
+        self.start.fontSize = 75
         self.start.fontColor = SKColor.white
         self.start.text = "início"
         self.start.name = "Start"
-        self.start.position = CGPoint(x: size.width/2, y: size.height/2 - 220)
-        start.zPosition = 1
+        self.start.position = CGPoint(x: size.width/2, y: size.height/2 - 250)
+            self.start.zPosition = 1
         background.addChild(start)
          
         help = SKLabelNode(fontNamed: "Riffic-bold")
-        self.help.fontSize = 55
+        self.help.fontSize = 75
         self.help.fontColor = SKColor.white
         self.help.text = "ajuda"
         self.help.name = "Help"
-        self.help.position = CGPoint(x: size.width/2, y: size.height/2 - 320)
-        help.zPosition = 1
+        self.help.position = CGPoint(x: size.width/2, y: size.height/2 - 350)
+        self.help.zPosition = 1
         background.addChild(help)
         
         settings = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
