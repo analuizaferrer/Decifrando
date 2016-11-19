@@ -44,6 +44,7 @@ class LevelScene: SKScene {
         self.recordVoice.fontColor = UIColor.black
         self.recordVoice.name = "Record"
         self.recordVoice.position = CGPoint(x: size.width-350, y: size.height-70)
+        self.recordVoice.isHidden = true
         self.background.addChild(recordVoice)
         
         self.playVoice = SKLabelNode(text: "Tocar voz")
@@ -51,6 +52,7 @@ class LevelScene: SKScene {
         self.playVoice.fontColor = UIColor.black
         self.playVoice.name = "Play"
         self.playVoice.position = CGPoint(x: size.width-120, y: size.height-70)
+        self.playVoice.isHidden = true
         self.background.addChild(playVoice)
         
         boxArray = []
@@ -149,19 +151,18 @@ class LevelScene: SKScene {
             self.soundRecorder.stop()
             touchedNode.name = "Record"
             self.recordVoice.text = "Gravar voz"
+            self.playVoice.isHidden = false
             
         } else if touchedNode.name == "Play" {
             
             self.preparePlayer()
             soundPlayer.play()
             touchedNode.name = "Pause"
-            self.playVoice.text = "Parar de tocar"
             
         } else if touchedNode.name == "Pause" {
             
             soundPlayer.stop()
             touchedNode.name = "Play"
-            self.playVoice.text = "Tocar voz"
             
         }
     }
@@ -193,8 +194,8 @@ class LevelScene: SKScene {
         
         if didWin() {
             
-            levelWon()
-            
+            levelComplete()
+    
         }
     }
     
@@ -204,7 +205,7 @@ class LevelScene: SKScene {
         
         if didWin() {
             
-            levelWon()
+            levelComplete()
             
         }
     }
@@ -258,13 +259,15 @@ class LevelScene: SKScene {
         return true
     }
     
-    func levelWon () {
+    func levelComplete () {
     
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
         
-        let reveal = SKTransition.fade(withDuration: 1)
-        let levelCompletedScene = LevelCompletedScene(size: self.size)
-        self.view?.presentScene(levelCompletedScene, transition: reveal)
+        self.recordVoice.isHidden = false
+        
+//        let reveal = SKTransition.fade(withDuration: 1)
+//        let levelCompletedScene = LevelCompletedScene(size: self.size)
+//        self.view?.presentScene(levelCompletedScene, transition: reveal)
         
     }
     
