@@ -39,14 +39,16 @@ class LevelScene: SKScene {
         imageNode.size = CGSize(width: size.width/2, height: size.width/2)
        // self.addChild(imageNode)
         
-        self.recordVoice = SKLabelNode(text: "Record voice")
-        self.recordVoice.fontName = "Arial Rounded MT Bold"
+        self.recordVoice = SKLabelNode(text: "Gravar voz")
+        self.recordVoice.fontName = "Riffic"
+        self.recordVoice.fontColor = UIColor.black
         self.recordVoice.name = "Record"
         self.recordVoice.position = CGPoint(x: size.width-350, y: size.height-70)
         self.background.addChild(recordVoice)
         
-        self.playVoice = SKLabelNode(text: "Play voice")
-        self.playVoice.fontName = "Arial Rounded MT Bold"
+        self.playVoice = SKLabelNode(text: "Tocar voz")
+        self.playVoice.fontName = "Riffic"
+        self.playVoice.fontColor = UIColor.black
         self.playVoice.name = "Play"
         self.playVoice.position = CGPoint(x: size.width-120, y: size.height-70)
         self.background.addChild(playVoice)
@@ -99,8 +101,8 @@ class LevelScene: SKScene {
             
         }
         
-        let backLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
-        backLabel.text = "Back"
+        let backLabel = SKLabelNode(fontNamed: "Riffic")
+        backLabel.text = "Voltar"
         backLabel.fontSize = 40
         backLabel.fontColor = SKColor.black
         backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
@@ -140,26 +142,26 @@ class LevelScene: SKScene {
             
             self.soundRecorder.record()
             touchedNode.name = "Stop"
-            self.recordVoice.text = "Stop recording"
+            self.recordVoice.text = "Parar de gravar"
             
         } else if touchedNode.name == "Stop" {
             
             self.soundRecorder.stop()
             touchedNode.name = "Record"
-            self.recordVoice.text = "Record voice"
+            self.recordVoice.text = "Gravar voz"
             
         } else if touchedNode.name == "Play" {
             
             self.preparePlayer()
             soundPlayer.play()
             touchedNode.name = "Pause"
-            self.playVoice.text = "Stop"
+            self.playVoice.text = "Parar de tocar"
             
         } else if touchedNode.name == "Pause" {
             
             soundPlayer.stop()
             touchedNode.name = "Play"
-            self.playVoice.text = "Play voice"
+            self.playVoice.text = "Tocar voz"
             
         }
     }
@@ -170,7 +172,6 @@ class LevelScene: SKScene {
         if selectedNode?.name != nil && selectedNode?.name! == Letter.kLetterNodeName {
             selectedNode?.position = CGPoint(x: (position?.x)! + translation.x, y: (position?.y)! + translation.y)
         }
-        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -184,7 +185,6 @@ class LevelScene: SKScene {
                 panForTranslation(translation: translation)
 
         }
-    
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -196,7 +196,6 @@ class LevelScene: SKScene {
             levelWon()
             
         }
-        
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -204,11 +203,10 @@ class LevelScene: SKScene {
         letterIsInsideBox()
         
         if didWin() {
-            print("você ganhou!!")
             
             levelWon()
+            
         }
-        
     }
     
     func letterIsInsideBox() {
@@ -285,7 +283,6 @@ class LevelScene: SKScene {
     }
 }
 
-
 extension LevelScene: AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
     func setupRecorder() {
@@ -303,10 +300,9 @@ extension LevelScene: AVAudioPlayerDelegate, AVAudioRecorderDelegate {
             
         } catch {
             
-            print("deu merda")
+            print("erro")
             
         }
-        
     }
     
     func getFileURL()->NSURL {
@@ -335,9 +331,8 @@ extension LevelScene: AVAudioPlayerDelegate, AVAudioRecorderDelegate {
        
         } catch {
             
-            print("deu merda")
+            print("erro")
             
         }
-        
     }
 }

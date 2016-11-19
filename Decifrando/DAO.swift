@@ -31,14 +31,11 @@ class DAO {
             
             try managedContext.save()
             
-        }
-        
-        catch {
+        } catch {
             
             print("error")
     
         }
-        
     }
     
     func fetch () {
@@ -56,14 +53,11 @@ class DAO {
             managedObjectArray = results as! [NSManagedObject]
             convertManagedObject(managedObjectArray: managedObjectArray)
             
-        }
-        
-        catch {
+        } catch {
             
             print("error")
             
         }
-        
     }
     
     func fetchCategory (category: String) {
@@ -85,14 +79,11 @@ class DAO {
                 
             }
             
-        }
-            
-        catch {
+        } catch {
             
             print("error")
             
         }
-        
     }
     
     func convertManagedObject(managedObjectArray: [NSManagedObject]) {
@@ -134,21 +125,17 @@ class DAO {
                 for i in 0...AppData.sharedInstance.levelsList.count-1 {
                     
                     managedObjectArray[i].setValue(AppData.sharedInstance.levelsList[i].completed, forKey: "completed")
-                    
                 }
                 
                 try! managedContext.save()
                 
             }
             
-        }
-            
-        catch {
+        } catch {
             
             print("error")
             
         }
-        
     }
     
     func populateDatabase () {
@@ -185,7 +172,5 @@ class DAO {
             DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
             
         }
-        
     }
-
 }
