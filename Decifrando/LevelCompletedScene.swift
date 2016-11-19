@@ -22,16 +22,16 @@ class LevelCompletedScene: SKScene {
         self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
         
-        let menuLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
-        menuLabel.text = "Return to Menu"
+        let menuLabel = SKLabelNode(fontNamed: "Riffic")
+        menuLabel.text = "Voltar para o Menu"
         menuLabel.fontSize = 40
         menuLabel.fontColor = SKColor.black
         menuLabel.position = CGPoint(x: size.width/2, y: 2*size.height/3)
         addChild(menuLabel)
         menuLabel.name = "Menu"
         
-        let nextLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
-        nextLabel.text = "Next Word"
+        let nextLabel = SKLabelNode(fontNamed: "Riffic")
+        nextLabel.text = "Próxima palavra"
         nextLabel.fontSize = 40
         nextLabel.fontColor = SKColor.black
         nextLabel.position = CGPoint(x: size.width/2, y: size.height/3)

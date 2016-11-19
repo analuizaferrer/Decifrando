@@ -22,8 +22,8 @@ class CategoryScene: SKScene {
         
         createLevelLabels()
         
-        let backLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
-        backLabel.text = "Back"
+        let backLabel = SKLabelNode(fontNamed: "Riffic")
+        backLabel.text = "Voltar"
         backLabel.fontSize = 40
         backLabel.fontColor = SKColor.black
         backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
@@ -90,7 +90,7 @@ class CategoryScene: SKScene {
         
         for n in 1...AppData.sharedInstance.levelsList.count {
             
-            let levelLabel = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
+            let levelLabel = SKLabelNode(fontNamed: "Riffic")
             levelLabel.text = "\(n)"
             levelLabel.fontSize = 40
             

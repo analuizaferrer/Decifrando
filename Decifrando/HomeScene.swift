@@ -46,7 +46,7 @@ class HomeScene: SKScene {
             self.start.zPosition = 1
         background.addChild(start)
          
-        help = SKLabelNode(fontNamed: "Riffic-bold")
+        help = SKLabelNode(fontNamed: "Riffic")
         self.help.fontSize = 75
         self.help.fontColor = SKColor.white
         self.help.text = "ajuda"
@@ -55,7 +55,7 @@ class HomeScene: SKScene {
         self.help.zPosition = 1
         background.addChild(help)
         
-        settings = SKLabelNode(fontNamed: "Arial Rounded MT Bold")
+        settings = SKLabelNode(fontNamed: "Riffic")
         self.settings.fontSize = 30
         self.settings.fontColor = SKColor.gray
         self.settings.text = "Configurações"

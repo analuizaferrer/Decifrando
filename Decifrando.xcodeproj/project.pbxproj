@@ -143,10 +143,10 @@
 		18B08B001DCBA7E1008930DA /* Decifrando */ = {
 			isa = PBXGroup;
 			children = (
-				F64CD6CB1DDCC22C00704CDE /* Supporting Files */,
 				F64CD6CA1DDCC1D600704CDE /* Controller */,
 				F64CD6C81DDCC1C100704CDE /* Model */,
 				F64CD6C91DDCC1C800704CDE /* View */,
+				F64CD6CB1DDCC22C00704CDE /* Supporting Files */,
 			);
 			path = Decifrando;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 				TargetAttributes = {
 					18B08AFD1DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = KZ64B2L85T;
+						DevelopmentTeam = 585K33F6HA;
 						ProvisioningStyle = Automatic;
 					};
 					18B08B141DCBA7E1008930DA = {
@@ -546,7 +546,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KZ64B2L85T;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
@@ -560,7 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KZ64B2L85T;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
