@@ -40,7 +40,7 @@ class MenuScene: SKScene {
         let touchLocation = touch.location(in: self)
         let node = self.atPoint(touchLocation)
         
-        if node.name == "animals" || node.name == "colors" || node.name == "fruits" || node.name == "vehicles" {
+        if node.name == "animals" /* || node.name == "colors" || node.name == "fruits" || node.name == "vehicles" */ {
         
             self.showCategoryMap(category: node.name!)
         }

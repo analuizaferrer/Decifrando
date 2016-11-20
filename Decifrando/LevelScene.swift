@@ -35,8 +35,8 @@ class LevelScene: SKScene {
         self.addChild(background)
         
         let imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
-        imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/3)
-        imageNode.size = CGSize(width: size.width/2, height: size.width/2)
+        imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/2.7)
+        imageNode.size = CGSize(width: size.width/3, height: size.width/3)
         self.addChild(imageNode)
         
         self.recordVoice = SKLabelNode(text: "Gravar voz")
