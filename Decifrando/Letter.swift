@@ -15,7 +15,7 @@ class Letter: SKLabelNode {
     
     init (letter: Character) {
         
-        super.init(fontNamed: "Riffic")
+        super.init(fontNamed: "OpenDyslexic-Bold")
         self.text = "\(letter)"
         self.fontSize = 100
         self.fontColor = SKColor.black
@@ -27,7 +27,7 @@ class Letter: SKLabelNode {
     override init() {
         
         super.init()
-        self.fontName = "Riffic"
+        self.fontName = "OpenDyslexic-Bold"
         self.text = randomString(length: 1)
         self.fontSize = 100
         self.fontColor = SKColor.black

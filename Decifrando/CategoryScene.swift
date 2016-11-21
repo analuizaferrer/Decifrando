@@ -31,8 +31,8 @@ class CategoryScene: SKScene {
         backButton.size = s
 //        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
         backButton.position = CGPoint(x: 400, y: 400)
-        addChild(backButton)
         backButton.name = "Back"
+        addChild(backButton)
         
 
         

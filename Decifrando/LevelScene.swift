@@ -110,6 +110,18 @@ class LevelScene: SKScene {
         backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
         backLabel.name = "Back"
         addChild(backLabel)
+        
+//        
+//        let s = getAspectFitSize(toX: 130, toY: 130)
+//        let backButton = SKSpriteNode(imageNamed: "backButton")
+//        //        backLabel.text = "Voltar"
+//        //        backLabel.fontSize = 40
+//        //        backLabel.fontColor = SKColor.black
+//        backButton.size = s
+//        //        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
+//        backButton.position = CGPoint(x: 400, y: 400)
+//        backButton.name = "Back"
+//        addChild(backButton)
 
         self.setupRecorder()
         
