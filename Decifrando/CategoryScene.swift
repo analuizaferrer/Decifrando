@@ -22,7 +22,7 @@ class CategoryScene: SKScene {
         
         createLevelLabels()
         
-        let s = getAspectFitSize(toX: 130, toY: 130)
+        let s = getAspectFitSize(toX: 50, toY: 50)
         let backButton = SKSpriteNode(imageNamed: "backButton")
 //        backLabel.text = "Voltar"
 //        backLabel.fontSize = 40
@@ -31,7 +31,7 @@ class CategoryScene: SKScene {
         backButton.size = s
         backButton.zPosition = 1
 //        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-        backButton.position = CGPoint(x: 400, y: 400)
+        backButton.position = CGPoint(x: 120, y: 900)
         backButton.name = "Back"
         addChild(backButton)
         
@@ -107,7 +107,9 @@ class CategoryScene: SKScene {
     
     func createLevelLabels() {
         
-        let labelPositions: [CGPoint] = [CGPoint(x: size.width/2, y: size.height/6), CGPoint(x: size.width/2, y: 2*size.height/6), CGPoint(x: size.width/2, y: 3*size.height/6), CGPoint(x: size.width/2, y: 4*size.height/6), CGPoint(x: size.width/2, y: 5*size.height/6)]
+//        let labelPositions: [CGPoint] = [CGPoint(x: size.width/10, y: size.height/6), CGPoint(x: size.width/20, y: 2*size.height/40), CGPoint(x: size.width/25, y: 3*size.height/65), CGPoint(x: size.width/100, y: 4*size.height/36), CGPoint(x: size.width/2, y: 5*size.height/6)]
+        
+       let labelPositions: [CGPoint] = [CGPoint(x: 800, y: 400), CGPoint(x: 100, y: 500), CGPoint(x: 200, y: 65), CGPoint(x: 300, y: 700), CGPoint(x: 500, y: 5*size.height/6)]
         
         var levelLabels = [SKSpriteNode]()
         
