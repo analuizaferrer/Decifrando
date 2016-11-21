@@ -108,9 +108,9 @@ class LevelScene: SKScene {
         backLabel.fontSize = 40
         backLabel.fontColor = SKColor.black
         backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-        addChild(backLabel)
         backLabel.name = "Back"
-        
+        addChild(backLabel)
+
         self.setupRecorder()
         
     }

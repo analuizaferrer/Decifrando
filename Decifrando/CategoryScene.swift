@@ -15,20 +15,26 @@ class CategoryScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        background = SKSpriteNode(color: UIColor.green, size: CGSize(width: self.size.width, height: self.size.height))
-        self.background.name = "background"
+//        background = SKSpriteNode(color: UIColor.green, size: CGSize(width: self.size.width, height: self.size.height))
+        background = SKSpriteNode(imageNamed: "animalsWorld")
+        self.background.name = "animalsWorld"
         self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
         
         createLevelLabels()
         
-        let backLabel = SKLabelNode(fontNamed: "Riffic")
-        backLabel.text = "Voltar"
-        backLabel.fontSize = 40
-        backLabel.fontColor = SKColor.black
-        backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-        addChild(backLabel)
-        backLabel.name = "Back"
+        let s = getAspectFitSize(toX: 130, toY: 130)
+        let backButton = SKSpriteNode(imageNamed: "backButton")
+//        backLabel.text = "Voltar"
+//        backLabel.fontSize = 40
+//        backLabel.fontColor = SKColor.black
+        backButton.size = s
+//        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
+        backButton.position = CGPoint(x: 400, y: 400)
+        addChild(backButton)
+        backButton.name = "Back"
+        
+
         
     }
     

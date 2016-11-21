@@ -19,10 +19,10 @@ class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-//        background = SKSpriteNode(imageNamed:"backgroundLetras")
-//        background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        background = SKSpriteNode(imageNamed:"backgroundLetras")
+        background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
      
-       background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
+//       background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
         self.background.name = "backgroundLetras"
         self.background.anchorPoint = CGPoint.zero
         self.background.zPosition = 0
