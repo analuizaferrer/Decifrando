@@ -48,22 +48,22 @@ class HomeScene: SKScene {
             self.start.zPosition = 1
         background.addChild(start)
          
-        help = SKLabelNode(fontNamed: "Riffic")
-        self.help.fontSize = 75
-        self.help.fontColor = SKColor.white
-        self.help.text = "ajuda"
-        self.help.name = "Help"
-        self.help.position = CGPoint(x: size.width/2, y: size.height/2 - 350)
-        self.help.zPosition = 1
-        background.addChild(help)
+//        help = SKLabelNode(fontNamed: "Riffic")
+//        self.help.fontSize = 75
+//        self.help.fontColor = SKColor.white
+//        self.help.text = "ajuda"
+//        self.help.name = "Help"
+//        self.help.position = CGPoint(x: size.width/2, y: size.height/2 - 350)
+//        self.help.zPosition = 1
+//        background.addChild(help)
         
-        settings = SKLabelNode(fontNamed: "Riffic")
-        self.settings.fontSize = 30
-        self.settings.fontColor = SKColor.gray
-        self.settings.text = "Configurações"
-        self.settings.name = "Settings"
-        self.settings.position = CGPoint(x: size.width - 100, y: size.height - 70)
-        background.addChild(settings)
+//        settings = SKLabelNode(fontNamed: "Riffic")
+//        self.settings.fontSize = 30
+//        self.settings.fontColor = SKColor.gray
+//        self.settings.text = "Configurações"
+//        self.settings.name = "Settings"
+//        self.settings.position = CGPoint(x: size.width - 100, y: size.height - 70)
+//        background.addChild(settings)
         
     }
     
