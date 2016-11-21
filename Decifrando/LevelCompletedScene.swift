@@ -17,13 +17,15 @@ class LevelCompletedScene: SKScene {
         
         super.init(size: size)
         
-        background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
+        background = SKSpriteNode(imageNamed:"backgroundLetras")
         self.background.name = "background"
+        self.background.zPosition = 0
         self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
         
         let menuLabel = SKLabelNode(fontNamed: "Riffic")
         menuLabel.text = "Voltar para o Menu"
+        menuLabel.zPosition = 1
         menuLabel.fontSize = 40
         menuLabel.fontColor = SKColor.black
         menuLabel.position = CGPoint(x: size.width/2, y: 2*size.height/3)
@@ -32,6 +34,7 @@ class LevelCompletedScene: SKScene {
         
         let nextLabel = SKLabelNode(fontNamed: "Riffic")
         nextLabel.text = "Próxima palavra"
+        nextLabel.zPosition = 1
         nextLabel.fontSize = 40
         nextLabel.fontColor = SKColor.black
         nextLabel.position = CGPoint(x: size.width/2, y: size.height/3)

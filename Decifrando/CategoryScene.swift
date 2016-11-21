@@ -18,7 +18,6 @@ class CategoryScene: SKScene {
 //        background = SKSpriteNode(color: UIColor.green, size: CGSize(width: self.size.width, height: self.size.height))
         background = SKSpriteNode(imageNamed: "animalsWorld")
         self.background.name = "animalsWorld"
-        self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
         
         createLevelLabels()
@@ -27,8 +26,10 @@ class CategoryScene: SKScene {
         let backButton = SKSpriteNode(imageNamed: "backButton")
 //        backLabel.text = "Voltar"
 //        backLabel.fontSize = 40
-//        backLabel.fontColor = SKColor.black
+        //        backLabel.fontColor = SKColor.black
+        background.position = CGPoint(x: size.width/2,y: s.height/2)
         backButton.size = s
+        backButton.zPosition = 1
 //        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
         backButton.position = CGPoint(x: 400, y: 400)
         backButton.name = "Back"
@@ -36,6 +37,22 @@ class CategoryScene: SKScene {
         
 
         
+    }
+    
+    var lastPos : CGPoint!
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        lastPos = touches.first!.location(in: self)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let p = touches.first!.location(in: self)
+        let dist = CGPoint(x: p.x-lastPos.x,y: p.y-lastPos.y)
+        let bp = background.position
+        background.position.x = max(min(background.size.width/2,bp.x+dist.x),size.width-background.size.width/2)
+        background.position.y = max(min(background.size.height/2,bp.y+dist.y),size.height-background.size.height/2)
+        lastPos = p
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -92,26 +109,27 @@ class CategoryScene: SKScene {
         
         let labelPositions: [CGPoint] = [CGPoint(x: size.width/2, y: size.height/6), CGPoint(x: size.width/2, y: 2*size.height/6), CGPoint(x: size.width/2, y: 3*size.height/6), CGPoint(x: size.width/2, y: 4*size.height/6), CGPoint(x: size.width/2, y: 5*size.height/6)]
         
-        var levelLabels = [SKLabelNode]()
+        var levelLabels = [SKSpriteNode]()
         
         for n in 1...AppData.sharedInstance.levelsList.count {
             
-            let levelLabel = SKLabelNode(fontNamed: "Riffic")
-            levelLabel.text = "\(n)"
-            levelLabel.fontSize = 40
+            let levelLabel = SKSpriteNode(imageNamed: String(n))
+           
             
-            if AppData.sharedInstance.levelsList[n-1].completed == true
-            {
-                levelLabel.fontColor = SKColor.red
-            }
-            
-            else {
-                
-                levelLabel.fontColor = SKColor.black
-                
-            }
+//            if AppData.sharedInstance.levelsList[n-1].completed == true
+//            {
+//                levelLabel.fontColor = SKColor.red
+//            }
+//            
+//            else {
+//                
+//                levelLabel.fontColor = SKColor.black
+//                
+//            }
             
             levelLabel.position = labelPositions[n-1]
+            levelLabel.zPosition = 1
+            levelLabel.size = CGSize(width: 200, height: 200)
             addChild(levelLabel)
             levelLabel.name = "Level \(n)"
             levelLabels.append(levelLabel)

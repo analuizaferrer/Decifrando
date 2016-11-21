@@ -29,9 +29,13 @@ class LevelScene: SKScene {
         let selectedLevel: Int = AppData.sharedInstance.selectedLevelIndex
         correctWord = AppData.sharedInstance.levelsList[selectedLevel].word
         
-        background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
+//        background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
+        
+        background = SKSpriteNode(imageNamed:"backgroundLetras")
+        background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         self.background.name = "background"
         self.background.anchorPoint = CGPoint.zero
+        self.background.zPosition = 0
         self.addChild(background)
         
         let imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
@@ -45,6 +49,7 @@ class LevelScene: SKScene {
         self.recordVoice.name = "Record"
         self.recordVoice.position = CGPoint(x: size.width-350, y: size.height-70)
         self.recordVoice.isHidden = true
+        self.recordVoice.zPosition = 1
         self.background.addChild(recordVoice)
         
         self.playVoice = SKLabelNode(text: "Tocar voz")
@@ -53,6 +58,7 @@ class LevelScene: SKScene {
         self.playVoice.name = "Play"
         self.playVoice.position = CGPoint(x: size.width-120, y: size.height-70)
         self.playVoice.isHidden = true
+        self.playVoice.zPosition = 1
         self.background.addChild(playVoice)
         
         boxArray = []

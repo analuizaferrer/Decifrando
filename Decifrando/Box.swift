@@ -26,7 +26,7 @@ class Box: SKSpriteNode {
         
         if letter == "b" || letter == "d" || letter == "f" || letter == "h" || letter == "k" || letter == "l" || letter == "t" {
             
-            size = CGSize(width: boxWidth, height: boxWidth*2)
+            size = CGSize(width: boxWidth, height: 150)
             anchorPoint = CGPoint(x: 0.5, y: 0.25)
             
         } else if letter == "g" || letter == "j" || letter == "p" || letter == "q" || letter == "y" {
@@ -41,7 +41,8 @@ class Box: SKSpriteNode {
             
         }
         
-        super.init(texture: nil, color: UIColor.red, size: size)
+        super.init(texture: SKTexture(imageNamed:"caseWithLetter"), color: UIColor.red, size: size)
+        self.zPosition = 1
         self.anchorPoint = anchorPoint
         
     }
