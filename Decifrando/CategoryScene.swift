@@ -111,7 +111,7 @@ class CategoryScene: SKScene {
                 
             }
             
-            levelLabel.position = labelPositions[n-1]self.nextLabel.name = "Next"
+            levelLabel.position = labelPositions[n-1]
             addChild(levelLabel)
             levelLabel.name = "Level \(n)"
             levelLabels.append(levelLabel)
