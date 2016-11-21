@@ -43,6 +43,11 @@ class MenuScene: SKScene {
         if node.name == "animals" /* || node.name == "colors" || node.name == "fruits" || node.name == "vehicles" */ {
         
             self.showCategoryMap(category: node.name!)
+        
+        } else if node.name == "Back" {
+            
+            self.returnToHomeScene()
+            
         }
         
     }
@@ -97,6 +102,23 @@ class MenuScene: SKScene {
         self.vehicles.zPosition = 1
 
         background.addChild(vehicles)
+        
+        let backLabel = SKLabelNode(fontNamed: "Riffic")
+        backLabel.text = "Voltar"
+        backLabel.fontSize = 35
+        backLabel.fontColor = SKColor.black
+        backLabel.position = CGPoint(x: size.width/12, y: 11*size.height/12)
+        backLabel.zPosition = 1
+        backLabel.name = "Back"
+        background.addChild(backLabel)
+        
+    }
+    
+    func returnToHomeScene() {
+        
+        let reveal = SKTransition.fade(withDuration: 1.0)
+        let scene = HomeScene(size: size)
+        self.view?.presentScene(scene, transition:reveal)
         
     }
     

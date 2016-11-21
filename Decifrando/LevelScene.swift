@@ -18,6 +18,8 @@ class LevelScene: SKScene {
     var background: SKSpriteNode!
     var selectedNode: Letter?
     var letterPreviousPosition: CGPoint!
+    var backLabel: SKLabelNode!
+    var nextLabel: SKLabelNode!
     var recordVoice: SKLabelNode!
     var playVoice:SKLabelNode!
     var soundRecorder: AVAudioRecorder!
@@ -60,6 +62,15 @@ class LevelScene: SKScene {
         self.playVoice.isHidden = true
         self.playVoice.zPosition = 1
         self.background.addChild(playVoice)
+        
+        self.nextLabel = SKLabelNode(fontNamed: "Riffic")
+        self.nextLabel.text = "Próxima palavra"
+        self.nextLabel.fontSize = 40
+        self.nextLabel.fontColor = SKColor.black
+        self.nextLabel.name = "Next"
+        self.nextLabel.position = CGPoint(x: size.width/2, y: size.height/50)
+        self.nextLabel.isHidden = true
+        self.background.addChild(nextLabel)
         
         boxArray = []
         
@@ -109,13 +120,13 @@ class LevelScene: SKScene {
             
         }
         
-        let backLabel = SKLabelNode(fontNamed: "Riffic")
-        backLabel.text = "Voltar"
-        backLabel.fontSize = 40
-        backLabel.fontColor = SKColor.black
-        backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-        backLabel.name = "Back"
-        addChild(backLabel)
+        self.backLabel = SKLabelNode(fontNamed: "Riffic")
+        self.backLabel.text = "Voltar"
+        self.backLabel.fontSize = 40
+        self.backLabel.fontColor = SKColor.black
+        self.backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
+        self.backLabel.name = "Back"
+        self.background.addChild(backLabel)
         
 //        
 //        let s = getAspectFitSize(toX: 130, toY: 130)
@@ -181,6 +192,10 @@ class LevelScene: SKScene {
             
             soundPlayer.stop()
             touchedNode.name = "Play"
+            
+        } else if touchedNode.name == "Next" {
+            
+            self.nextLevel()
             
         }
     }
@@ -249,7 +264,7 @@ class LevelScene: SKScene {
                     correctBox = true
                     box.isFull = true
                     
-                    playSound()
+                    //playSound()
                     
                 } else {
                     
@@ -282,11 +297,7 @@ class LevelScene: SKScene {
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
         
         self.recordVoice.isHidden = false
-        
-//        let reveal = SKTransition.fade(withDuration: 1)
-//        let levelCompletedScene = LevelCompletedScene(size: self.size)
-//        self.view?.presentScene(levelCompletedScene, transition: reveal)
-        
+        self.nextLabel.isHidden = false
     }
     
     func returnToCategoryScene() {
@@ -301,6 +312,15 @@ class LevelScene: SKScene {
         
         run(SKAction.playSoundFileNamed("Som Genérico.mp3", waitForCompletion: false))
         
+    }
+    
+    func nextLevel() {
+        
+        AppData.sharedInstance.selectedLevelIndex = AppData.sharedInstance.selectedLevelIndex + 1
+        
+        let reveal = SKTransition.fade(withDuration: 1.0)
+        let scene = LevelScene(size: size)
+        self.view?.presentScene(scene, transition:reveal)
     }
 }
 
