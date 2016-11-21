@@ -19,11 +19,11 @@ class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        background = SKSpriteNode(imageNamed:"backgroundLetras")
-        background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//        background = SKSpriteNode(imageNamed:"backgroundLetras")
+//        background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
      
-//        background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
-//        self.background.name = "backgroundLetras"
+       background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
+        self.background.name = "backgroundLetras"
         self.background.anchorPoint = CGPoint.zero
         self.background.zPosition = 0
         self.addChild(background)
@@ -58,41 +58,42 @@ class MenuScene: SKScene {
 
     func createMenuLabels() {
         
+        let s = getAspectFitSize(toX: 380, toY: 242)
         animals = SKSpriteNode(imageNamed: "animals")
-        self.animals.size = CGSize(width: 380, height: 242)
+        self.animals.size = s
         self.animals.name = "animals"
-        self.animals.anchorPoint = CGPoint.zero
-        self.animals.position = CGPoint(x: size.width/2-400, y: size.height/2+20)
+        //self.animals.anchorPoint = CGPoint.zero
+        self.animals.position = CGPoint(x: size.width*0.25, y: size.height*0.75)
         self.animals.zPosition = 1
         background.addChild(animals)
         
         
 //        background = SKSpriteNode(imageNamed:"background")
 //        background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        
+        //1024 768
         colors = SKSpriteNode(imageNamed: "boxLocked")
-        self.colors.size = CGSize(width: 380, height: 242)
+        self.colors.size = s
         self.colors.name = "colors"
-        self.colors.anchorPoint = CGPoint.zero
-        self.colors.position = CGPoint(x: size.width/2+50, y: size.height/2+20)
+        //self.colors.anchorPoint = CGPoint.zero
+        self.colors.position = CGPoint(x: size.width*0.75, y: size.height*0.75)
         self.colors.zPosition = 1
 
         background.addChild(colors)
         
         fruits = SKSpriteNode(imageNamed: "boxLocked")
-        self.fruits.size = CGSize(width: 380, height: 242)
+        self.fruits.size = s
         self.fruits.name = "fruits"
-        self.fruits.anchorPoint = CGPoint.zero
-        self.fruits.position = CGPoint(x: size.width/2-400, y: 50+20)
+        //self.fruits.anchorPoint = CGPoint.zero
+        self.fruits.position = CGPoint(x: size.width*0.25, y: size.height*0.25)
         self.fruits.zPosition = 1
 
         background.addChild(fruits)
         
         vehicles = SKSpriteNode(imageNamed: "boxLocked")
-        self.vehicles.size = CGSize(width: 380, height: 242)
+        self.vehicles.size = s
         self.vehicles.name = "vehicles"
-        self.vehicles.anchorPoint = CGPoint.zero
-        self.vehicles.position = CGPoint(x: size.width/2+50, y: 50+20)
+        //self.vehicles.anchorPoint = CGPoint.zero
+        self.vehicles.position = CGPoint(x: size.width*0.75, y: size.height*0.25)
         self.vehicles.zPosition = 1
 
         background.addChild(vehicles)

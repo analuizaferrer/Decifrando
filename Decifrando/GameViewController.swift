@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SizeSettings.screenSize = view.frame.size
         
         for family: String in UIFont.familyNames
         {

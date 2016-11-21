@@ -18,6 +18,8 @@ class HomeScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        print(view.frame.size)
+        
 //        background = SKSpriteNode(color: UIColor.white, size: CGSize(width: self.size.width, height: self.size.height))
         
         background = SKSpriteNode(imageNamed:"background")
