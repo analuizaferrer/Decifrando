@@ -41,8 +41,9 @@ class LevelScene: SKScene {
         self.addChild(background)
         
         let imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
-        imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/2.7)
+        imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/3)
         imageNode.size = CGSize(width: size.width/3, height: size.width/3)
+        imageNode.zPosition = 1
         self.addChild(imageNode)
         
         self.recordVoice = SKLabelNode(text: "Gravar voz")
@@ -70,7 +71,17 @@ class LevelScene: SKScene {
         self.nextLabel.name = "Next"
         self.nextLabel.position = CGPoint(x: size.width/2, y: size.height/50)
         self.nextLabel.isHidden = true
+        self.nextLabel.zPosition = 1
         self.background.addChild(nextLabel)
+        
+        self.backLabel = SKLabelNode(fontNamed: "Riffic")
+        self.backLabel.text = "Voltar"
+        self.backLabel.fontSize = 40
+        self.backLabel.fontColor = SKColor.black
+        self.backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
+        self.backLabel.name = "Back"
+        self.backLabel.zPosition = 1
+        self.background.addChild(backLabel)
         
         boxArray = []
         
@@ -119,26 +130,6 @@ class LevelScene: SKScene {
             j = j + 1
             
         }
-        
-        self.backLabel = SKLabelNode(fontNamed: "Riffic")
-        self.backLabel.text = "Voltar"
-        self.backLabel.fontSize = 40
-        self.backLabel.fontColor = SKColor.black
-        self.backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-        self.backLabel.name = "Back"
-        self.background.addChild(backLabel)
-        
-//        
-//        let s = getAspectFitSize(toX: 130, toY: 130)
-//        let backButton = SKSpriteNode(imageNamed: "backButton")
-//        //        backLabel.text = "Voltar"
-//        //        backLabel.fontSize = 40
-//        //        backLabel.fontColor = SKColor.black
-//        backButton.size = s
-//        //        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-//        backButton.position = CGPoint(x: 400, y: 400)
-//        backButton.name = "Back"
-//        addChild(backButton)
 
         self.setupRecorder()
         
