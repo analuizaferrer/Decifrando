@@ -286,9 +286,16 @@ class LevelScene: SKScene {
     func levelComplete () {
     
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
+        DAO().updateLevelCompleted(category: AppData.sharedInstance.levelsList[0].category)
         
         self.recordVoice.isHidden = false
-        self.nextLabel.isHidden = false
+        
+        if AppData.sharedInstance.selectedLevelIndex < AppData.sharedInstance.levelsList.count - 1 {
+            
+            self.nextLabel.isHidden = false
+            
+        }
+        
     }
     
     func returnToCategoryScene() {
