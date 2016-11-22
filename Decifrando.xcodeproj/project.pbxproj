@@ -304,18 +304,18 @@
 				TargetAttributes = {
 					18B08AFD1DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 833JWEH774;
+						DevelopmentTeam = 585K33F6HA;
 						ProvisioningStyle = Automatic;
 					};
 					18B08B141DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 833JWEH774;
+						DevelopmentTeam = 585K33F6HA;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 18B08AFD1DCBA7E1008930DA;
 					};
 					18B08B1F1DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 833JWEH774;
+						DevelopmentTeam = 585K33F6HA;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 18B08AFD1DCBA7E1008930DA;
 					};
@@ -552,7 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
@@ -566,7 +566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
@@ -581,7 +581,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = DecifrandoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoTests;
@@ -596,7 +596,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = DecifrandoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoTests;
@@ -610,7 +610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = DecifrandoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoUITests;
@@ -624,7 +624,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = DecifrandoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoUITests;
