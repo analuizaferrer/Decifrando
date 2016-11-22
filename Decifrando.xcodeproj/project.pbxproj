@@ -14,7 +14,6 @@
 		1837451A1DCCCE6500BD49C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745191DCCCE6500BD49C1 /* Extensions.swift */; };
 		18594A621DD4B3F90035E4C6 /* Som Genérico.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18594A611DD4B3F90035E4C6 /* Som Genérico.mp3 */; };
 		18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC69A41DD1017E00EAB7E1 /* Level.swift */; };
-		18AC69A71DD21DB700EAB7E1 /* LevelCompletedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC69A61DD21DB700EAB7E1 /* LevelCompletedScene.swift */; };
 		18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B011DCBA7E1008930DA /* AppDelegate.swift */; };
 		18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B031DCBA7E1008930DA /* GameViewController.swift */; };
 		18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B08B051DCBA7E1008930DA /* Main.storyboard */; };
@@ -38,6 +37,7 @@
 		A8E392941DE3704E00321AAA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E392931DE3704D00321AAA /* Extension.swift */; };
 		F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D6E191DD142D800172280 /* MenuScene.swift */; };
 		F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64CD6C61DDCB8F300704CDE /* HomeScene.swift */; };
+		F6EEFCAD1DE4735C00DAD4A8 /* LevelSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,6 @@
 		183745191DCCCE6500BD49C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		18594A611DD4B3F90035E4C6 /* Som Genérico.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Som Genérico.mp3"; sourceTree = "<group>"; };
 		18AC69A41DD1017E00EAB7E1 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		18AC69A61DD21DB700EAB7E1 /* LevelCompletedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCompletedScene.swift; sourceTree = "<group>"; };
 		18B08AFE1DCBA7E1008930DA /* Decifrando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decifrando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B08B011DCBA7E1008930DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B08B031DCBA7E1008930DA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		A8E392931DE3704D00321AAA /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F62D6E191DD142D800172280 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		F64CD6C61DDCB8F300704CDE /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSceneExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +220,7 @@
 				A8E392931DE3704D00321AAA /* Extension.swift */,
 				183745131DCBB39C00BD49C1 /* CategoryScene.swift */,
 				183745111DCBB09B00BD49C1 /* LevelScene.swift */,
-				18AC69A61DD21DB700EAB7E1 /* LevelCompletedScene.swift */,
+				F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -304,16 +304,18 @@
 				TargetAttributes = {
 					18B08AFD1DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = KZ64B2L85T;
+						DevelopmentTeam = 833JWEH774;
 						ProvisioningStyle = Automatic;
 					};
 					18B08B141DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 833JWEH774;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 18B08AFD1DCBA7E1008930DA;
 					};
 					18B08B1F1DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 833JWEH774;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 18B08AFD1DCBA7E1008930DA;
 					};
@@ -389,11 +391,11 @@
 				F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */,
 				18D5583D1DD0116300EF4437 /* AppData.swift in Sources */,
 				18D5583B1DD00C1900EF4437 /* DAO.swift in Sources */,
+				F6EEFCAD1DE4735C00DAD4A8 /* LevelSceneExtension.swift in Sources */,
 				18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */,
 				18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */,
 				18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */,
 				18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */,
-				18AC69A71DD21DB700EAB7E1 /* LevelCompletedScene.swift in Sources */,
 				F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */,
 				183745121DCBB09B00BD49C1 /* LevelScene.swift in Sources */,
 				183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */,
@@ -550,7 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KZ64B2L85T;
+				DEVELOPMENT_TEAM = 833JWEH774;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
@@ -564,7 +566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KZ64B2L85T;
+				DEVELOPMENT_TEAM = 833JWEH774;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
@@ -579,6 +581,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 833JWEH774;
 				INFOPLIST_FILE = DecifrandoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoTests;
@@ -593,6 +596,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 833JWEH774;
 				INFOPLIST_FILE = DecifrandoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoTests;
@@ -606,6 +610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 833JWEH774;
 				INFOPLIST_FILE = DecifrandoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoUITests;
@@ -619,6 +624,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 833JWEH774;
 				INFOPLIST_FILE = DecifrandoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.DecifrandoUITests;

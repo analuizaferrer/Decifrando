@@ -40,48 +40,7 @@ class LevelScene: SKScene {
         self.background.zPosition = 0
         self.addChild(background)
         
-        let imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
-        imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/3)
-        imageNode.size = CGSize(width: size.width/3, height: size.width/3)
-        imageNode.zPosition = 1
-        self.addChild(imageNode)
-        
-        self.recordVoice = SKLabelNode(text: "Gravar voz")
-        self.recordVoice.fontName = "Riffic"
-        self.recordVoice.fontColor = UIColor.black
-        self.recordVoice.name = "Record"
-        self.recordVoice.position = CGPoint(x: size.width-350, y: size.height-70)
-        self.recordVoice.isHidden = true
-        self.recordVoice.zPosition = 1
-        self.background.addChild(recordVoice)
-        
-        self.playVoice = SKLabelNode(text: "Tocar voz")
-        self.playVoice.fontName = "Riffic"
-        self.playVoice.fontColor = UIColor.black
-        self.playVoice.name = "Play"
-        self.playVoice.position = CGPoint(x: size.width-120, y: size.height-70)
-        self.playVoice.isHidden = true
-        self.playVoice.zPosition = 1
-        self.background.addChild(playVoice)
-        
-        self.nextLabel = SKLabelNode(fontNamed: "Riffic")
-        self.nextLabel.text = "Próxima palavra"
-        self.nextLabel.fontSize = 40
-        self.nextLabel.fontColor = SKColor.black
-        self.nextLabel.name = "Next"
-        self.nextLabel.position = CGPoint(x: size.width/2, y: size.height/50)
-        self.nextLabel.isHidden = true
-        self.nextLabel.zPosition = 1
-        self.background.addChild(nextLabel)
-        
-        self.backLabel = SKLabelNode(fontNamed: "Riffic")
-        self.backLabel.text = "Voltar"
-        self.backLabel.fontSize = 40
-        self.backLabel.fontColor = SKColor.black
-        self.backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-        self.backLabel.name = "Back"
-        self.backLabel.zPosition = 1
-        self.background.addChild(backLabel)
+        self.createLevelLabels()
         
         boxArray = []
         
@@ -132,6 +91,53 @@ class LevelScene: SKScene {
         }
 
         self.setupRecorder()
+        
+    }
+    
+    func createLevelLabels() {
+        
+        let imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
+        imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/3)
+        imageNode.size = CGSize(width: size.width/3, height: size.width/3)
+        imageNode.zPosition = 1
+        self.addChild(imageNode)
+        
+        self.recordVoice = SKLabelNode(text: "Gravar voz")
+        self.recordVoice.fontName = "Riffic"
+        self.recordVoice.fontColor = UIColor.black
+        self.recordVoice.name = "Record"
+        self.recordVoice.position = CGPoint(x: size.width-350, y: size.height-70)
+        self.recordVoice.isHidden = true
+        self.recordVoice.zPosition = 1
+        self.background.addChild(recordVoice)
+        
+        self.playVoice = SKLabelNode(text: "Tocar voz")
+        self.playVoice.fontName = "Riffic"
+        self.playVoice.fontColor = UIColor.black
+        self.playVoice.name = "Play"
+        self.playVoice.position = CGPoint(x: size.width-120, y: size.height-70)
+        self.playVoice.isHidden = true
+        self.playVoice.zPosition = 1
+        self.background.addChild(playVoice)
+        
+        self.nextLabel = SKLabelNode(fontNamed: "Riffic")
+        self.nextLabel.text = "Próxima palavra"
+        self.nextLabel.fontSize = 40
+        self.nextLabel.fontColor = SKColor.black
+        self.nextLabel.name = "Next"
+        self.nextLabel.position = CGPoint(x: size.width/2, y: size.height/50)
+        self.nextLabel.isHidden = true
+        self.nextLabel.zPosition = 1
+        self.background.addChild(nextLabel)
+        
+        self.backLabel = SKLabelNode(fontNamed: "Riffic")
+        self.backLabel.text = "Voltar"
+        self.backLabel.fontSize = 40
+        self.backLabel.fontColor = SKColor.black
+        self.backLabel.position = CGPoint(x: size.width/8, y: 9*size.height/10)
+        self.backLabel.name = "Back"
+        self.backLabel.zPosition = 1
+        self.background.addChild(backLabel)
         
     }
     
@@ -286,17 +292,15 @@ class LevelScene: SKScene {
     func levelComplete () {
     
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
+        DAO().updateLevelCompleted(category: AppData.sharedInstance.levelsList[0].category)
         
         self.recordVoice.isHidden = false
-        self.nextLabel.isHidden = false
-    }
-    
-    func returnToCategoryScene() {
         
-        let reveal = SKTransition.fade(withDuration: 1.0)
-        let scene = CategoryScene(size: size)
-        self.view?.presentScene(scene, transition:reveal)
-        
+        if AppData.sharedInstance.selectedLevelIndex < AppData.sharedInstance.levelsList.count - 1 {
+            
+            self.nextLabel.isHidden = false
+            
+        }
     }
     
     func playSound() {
@@ -313,58 +317,13 @@ class LevelScene: SKScene {
         let scene = LevelScene(size: size)
         self.view?.presentScene(scene, transition:reveal)
     }
+    
+    func returnToCategoryScene() {
+        
+        let reveal = SKTransition.fade(withDuration: 1.0)
+        let scene = CategoryScene(size: size)
+        self.view?.presentScene(scene, transition:reveal)
+        
+    }
 }
 
-extension LevelScene: AVAudioPlayerDelegate, AVAudioRecorderDelegate {
-    
-    func setupRecorder() {
-        
-        let recordSettings = [AVFormatIDKey: kAudioFormatAppleLossless,
-                              AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
-                              AVEncoderBitRateKey: 320000,
-                              AVNumberOfChannelsKey: 2,
-                              AVSampleRateKey: 44100.0] as [String : Any]
-        
-        do {
-            soundRecorder = try AVAudioRecorder(url: getFileURL() as URL, settings: recordSettings as [String: AnyObject])
-            soundRecorder.delegate = self
-            soundRecorder.prepareToRecord()
-            
-        } catch {
-            
-            print("erro")
-            
-        }
-    }
-    
-    func getFileURL()->NSURL {
-        
-        let path = NSURL(fileURLWithPath: getCacheDirectory()).appendingPathComponent(fileName)
-        
-        return path! as NSURL
-        
-    }
-    
-    func getCacheDirectory()->String {
-        
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        
-        return paths[0]
-        
-    }
-    
-    func preparePlayer() {
-        
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getFileURL() as URL)
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-       
-        } catch {
-            
-            print("erro")
-            
-        }
-    }
-}
