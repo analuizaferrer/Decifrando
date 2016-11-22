@@ -288,7 +288,11 @@ class LevelScene: SKScene {
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
         
         self.recordVoice.isHidden = false
-        self.nextLabel.isHidden = false
+        
+        if AppData.sharedInstance.selectedLevelIndex != 4 {
+          
+            self.nextLabel.isHidden = false
+        }
     }
     
     func returnToCategoryScene() {
