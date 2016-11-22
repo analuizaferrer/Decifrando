@@ -42,7 +42,7 @@ class Letter: SKLabelNode {
     
     func randomString(length: Int) -> String {
         
-        let letters : NSString = "abcdefghijklmnopqrstuvwxyz"
+        let letters : NSString = "bcdeopq"
         let len = UInt32(letters.length)
         
         var randomString = ""
