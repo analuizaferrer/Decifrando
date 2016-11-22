@@ -146,8 +146,6 @@ class CategoryScene: SKScene {
         let scene = MenuScene(size: size)
         self.view?.presentScene(scene, transition:reveal)
         
-        DAO().updateLevelCompleted(category: AppData.sharedInstance.levelsList[0].category)
-        
     }
     
 }
