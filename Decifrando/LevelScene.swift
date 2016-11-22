@@ -295,7 +295,6 @@ class LevelScene: SKScene {
             self.nextLabel.isHidden = false
             
         }
-        
     }
     
     func returnToCategoryScene() {
