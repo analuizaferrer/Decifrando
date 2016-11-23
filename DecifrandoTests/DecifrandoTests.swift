@@ -59,10 +59,17 @@ class DecifrandoTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let resultObtained = letter.randomString(length: 1)
-
-        XCTAssertGreaterThanOrEqual(resultObtained, "b")
-        XCTAssertLessThanOrEqual(resultObtained, "q")
+        let stringObtained = letter.randomString(length: 1)
+        let characterObtained: Character = stringObtained.characters.first!
+        
+        let letters : String = "bcdeopq"
+        
+        for letter in letters.characters {
+            
+            if letter == characterObtained {
+                XCTAssertEqual(letter, characterObtained)
+            }
+        }
     }
     
     func testPerformanceExample() {

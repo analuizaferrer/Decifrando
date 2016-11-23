@@ -59,6 +59,8 @@ class CategoryScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         lastPos = touches.first!.location(in: self)
         
+        //print("POSITION: \(touches.first!.location(in: background))")
+        
 
     }
     
@@ -126,7 +128,7 @@ class CategoryScene: SKScene {
         
 //        let labelPositions: [CGPoint] = [CGPoint(x: size.width/10, y: size.height/6), CGPoint(x: size.width/20, y: 2*size.height/40), CGPoint(x: size.width/25, y: 3*size.height/65), CGPoint(x: size.width/100, y: 4*size.height/36), CGPoint(x: size.width/2, y: 5*size.height/6)]
         
-       let labelPositions: [CGPoint] = [CGPoint(x: 800, y: 400), CGPoint(x: 100, y: 500), CGPoint(x: 200, y: 65), CGPoint(x: 300, y: 700), CGPoint(x: 500, y: 5*size.height/6)]
+       let labelPositions: [CGPoint] = [CGPoint(x: -808, y: -898), CGPoint(x: 259, y: -108), CGPoint(x: 789, y: 420), CGPoint(x: 325, y: 853), CGPoint(x: -689, y: 515)]
         
         var levelLabels = [SKSpriteNode]()
         
