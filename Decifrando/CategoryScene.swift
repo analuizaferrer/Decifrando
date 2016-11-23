@@ -12,6 +12,7 @@ import SpriteKit
 class CategoryScene: SKScene {
     
     var background: SKSpriteNode!
+    var cam: SKCameraNode!
     
     override func didMove(to view: SKView) {
         
@@ -21,6 +22,12 @@ class CategoryScene: SKScene {
         self.addChild(background)
         
         createLevelLabels()
+        
+        cam = SKCameraNode()
+        cam.setScale(CGFloat(1))
+        
+        self.camera = cam
+        self.addChild(cam)
         
         let s = getAspectFitSize(toX: 50, toY: 50)
         let backButton = SKSpriteNode(imageNamed: "backButton")
@@ -33,17 +40,20 @@ class CategoryScene: SKScene {
 //        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
         backButton.position = CGPoint(x: 120, y: 900)
         backButton.name = "Back"
-        addChild(backButton)
+        cam.addChild(backButton)
         
-
+        
+        
+        //position the camera on the gamescene.
+        cam.position = CGPoint(x: size.width/2, y: size.height/2)
         
     }
     
     var lastPos : CGPoint!
+
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lastPos = touches.first!.location(in: self)
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -132,10 +142,9 @@ class CategoryScene: SKScene {
             levelLabel.position = labelPositions[n-1]
             levelLabel.zPosition = 1
             levelLabel.size = CGSize(width: 200, height: 200)
-            addChild(levelLabel)
             levelLabel.name = "Level \(n)"
             levelLabels.append(levelLabel)
-            
+            background.addChild(levelLabel)
         }
         
     }
