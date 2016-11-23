@@ -50,10 +50,17 @@ class CategoryScene: SKScene {
     }
     
     var lastPos : CGPoint!
-
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//    override func update(_ currentTime: TimeInterval) {
+//        let zoomInAction = SKAction.scale(to: 0.5, duration: 1)
+//        cam.run(zoomInAction)
 //    }
+//    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        lastPos = touches.first!.location(in: self)
+        
+
+    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
