@@ -14,6 +14,9 @@ class CategoryScene: SKScene {
     var background: SKSpriteNode!
     var cam: SKCameraNode!
     
+    var levelLabels = [SKSpriteNode]()
+    var nextLevel = -1
+    
     override func didMove(to view: SKView) {
         
 //        background = SKSpriteNode(color: UIColor.green, size: CGSize(width: self.size.width, height: self.size.height))
@@ -45,7 +48,7 @@ class CategoryScene: SKScene {
         
         
         //position the camera on the gamescene.
-        cam.position = CGPoint(x: size.width/2, y: size.height/2)
+        cam.position = CGPoint(x: size.width/2 - level, y: size.height/2)
         
     }
     
@@ -130,10 +133,6 @@ class CategoryScene: SKScene {
         
        let labelPositions: [CGPoint] = [CGPoint(x: -808, y: -898), CGPoint(x: 259, y: -108), CGPoint(x: 789, y: 420), CGPoint(x: 325, y: 853), CGPoint(x: -689, y: 515)]
         
-        var levelLabels = [SKSpriteNode]()
-        
-        var nextLevel = false
-        
         for n in 1...AppData.sharedInstance.levelsList.count {
             
             var levelLabel: SKSpriteNode
@@ -147,11 +146,11 @@ class CategoryScene: SKScene {
             
             else {
                 
-                if nextLevel == false {
+                if nextLevel == -1 {
                     
                     levelLabel = SKSpriteNode(imageNamed: String(n))
                     
-                    nextLevel = true
+                    nextLevel = n
                     
                 }
                 
@@ -169,6 +168,12 @@ class CategoryScene: SKScene {
             levelLabel.name = "Level \(n)"
             levelLabels.append(levelLabel)
             background.addChild(levelLabel)
+        }
+        
+        if nextLevel == -1 {
+            
+            nextLevel = levelLabels.count
+            
         }
         
     }
