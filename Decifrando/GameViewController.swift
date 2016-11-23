@@ -16,15 +16,6 @@ class GameViewController: UIViewController {
         
         SizeSettings.screenSize = view.frame.size
         
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
-        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             
