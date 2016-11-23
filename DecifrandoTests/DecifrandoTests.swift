@@ -67,11 +67,9 @@ class DecifrandoTests: XCTestCase {
         for letter in letters.characters {
             
             if letter == characterObtained {
-                
+                XCTAssertEqual(letter, characterObtained)
             }
         }
-        
-        
     }
     
     func testPerformanceExample() {
