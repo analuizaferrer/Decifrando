@@ -27,14 +27,35 @@ class DecifrandoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testDAO() {
+    func testSave() {
         
-        let resultObtained = dao.save(levelNumber: 1, word: "gato", image: "cat", category: "Animals", completed: false)
+        let resultObtained = dao.save(levelNumber: 1, word: "gato", image: "cat", category: "animals", completed: false)
         
-        XCTAssertEqual(resultObtained, true)
+        XCTAssertTrue(resultObtained)
     }
     
-    func testExample() {
+    func testFetch() {
+        
+        let resultObtained = dao.fetch()
+        
+        XCTAssertTrue(resultObtained)
+    }
+    
+    func testFetchCategory() {
+        
+        let resultObtained = dao.fetchCategory(category: "animals")
+        
+        XCTAssertTrue(resultObtained)
+    }
+    
+    func testUpdateLevelCompleted() {
+        
+        let resultObtained = dao.updateLevelCompleted(category: "amimals")
+        
+        XCTAssertTrue(resultObtained)
+    }
+    
+    func testRandomLetter() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
@@ -42,26 +63,6 @@ class DecifrandoTests: XCTestCase {
 
         XCTAssertGreaterThanOrEqual(resultObtained, "b")
         XCTAssertLessThanOrEqual(resultObtained, "q")
-        
-//        let letterXPosition = 204.272735595703
-//        let letterYPosition = 215.5
-//        
-//        let boxXPosition = 204.800003051758
-//        let boxYPosition = 256.0
-//        let boxWidth = 100.0
-//        let boxHeight = 100.0
-//        let boxYAnchorPoint = 0.75
-//        
-//        let xMin = boxXPosition - boxWidth/2
-//        let xMax = boxXPosition + boxWidth/2
-//        let yMin = boxYPosition - boxYAnchorPoint * boxHeight
-//        let yMax = boxYPosition + (1 - boxYAnchorPoint) * boxHeight
-//        
-//        XCTAssertLessThan(xMin, letterXPosition)
-//        XCTAssertLessThan(letterXPosition, xMax)
-//        XCTAssertLessThan(yMin, letterYPosition)
-//        XCTAssertLessThan(letterYPosition, yMax)
-
     }
     
     func testPerformanceExample() {

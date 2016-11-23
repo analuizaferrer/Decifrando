@@ -12,7 +12,7 @@ import UIKit
 
 class DAO {
     
-    func save (levelNumber: Int, word: String, image: String, category: String, completed: Bool)->Bool {
+    func save(levelNumber: Int, word: String, image: String, category: String, completed: Bool)->Bool {
         
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -37,10 +37,11 @@ class DAO {
             print("error")
     
         }
+        
         return false
     }
     
-    func fetch () {
+    func fetch()->Bool {
         
         var managedObjectArray = [NSManagedObject]()
         
@@ -54,15 +55,18 @@ class DAO {
             let results = try managedContext.fetch(fetchRequest)
             managedObjectArray = results as! [NSManagedObject]
             convertManagedObject(managedObjectArray: managedObjectArray)
+            return true
             
         } catch {
             
             print("error")
             
         }
+        
+        return false
     }
     
-    func fetchCategory (category: String) {
+    func fetchCategory(category: String)->Bool {
         
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -78,7 +82,7 @@ class DAO {
                 
                 let managedObjectArray = results as! [NSManagedObject]
                 convertManagedObject(managedObjectArray: managedObjectArray)
-                
+                return true
             }
             
         } catch {
@@ -86,6 +90,8 @@ class DAO {
             print("error")
             
         }
+        
+        return false
     }
     
     func convertManagedObject(managedObjectArray: [NSManagedObject]) {
@@ -108,7 +114,7 @@ class DAO {
         
     }
     
-    func updateLevelCompleted(category: String) {
+    func updateLevelCompleted(category: String)->Bool {
         
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -131,6 +137,8 @@ class DAO {
                 
                 try! managedContext.save()
                 
+                return true
+                
             }
             
         } catch {
@@ -138,9 +146,11 @@ class DAO {
             print("error")
             
         }
+        
+        return false
     }
     
-    func populateDatabase () {
+    func populateDatabase() {
         
         let animalLevelsList: [Level] = [Level(levelNumber: 1, word: "gato", image: "cat", category: "animals", completed: false), Level(levelNumber: 2, word: "cavalo", image: "horse", category: "animals", completed: false), Level(levelNumber: 3, word: "coruja", image: "owl", category: "animals", completed: false), Level(levelNumber: 4, word: "baleia", image: "whale", category: "animals", completed: false), Level(levelNumber: 5, word: "papagaio", image: "parrot", category: "animals", completed: false)]
         
@@ -153,32 +163,32 @@ class DAO {
         
         for level in animalLevelsList {
             
-            if DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
-                
+            if !DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
+                print("error")
             }
             
         }
         
         for level in colorLevelsList {
             
-            if DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
-                
+            if !DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
+                print("error")
             }
             
         }
         
         for level in fruitLevelsList {
             
-            if DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
-                
+            if !DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
+                print("error")
             }
             
         }
         
         for level in vehicleLevelsList {
             
-            if DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
-                
+            if !DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
+                print("error")
             }
             
         }
