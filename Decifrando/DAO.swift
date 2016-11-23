@@ -12,7 +12,7 @@ import UIKit
 
 class DAO {
     
-    func save (levelNumber: Int, word: String, image: String, category: String, completed: Bool) {
+    func save (levelNumber: Int, word: String, image: String, category: String, completed: Bool)->Bool {
         
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let managedContext: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -30,12 +30,14 @@ class DAO {
         do {
             
             try managedContext.save()
+            return true
             
         } catch {
             
             print("error")
     
         }
+        return false
     }
     
     func fetch () {
@@ -151,25 +153,33 @@ class DAO {
         
         for level in animalLevelsList {
             
-            DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
+            if DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
+                
+            }
             
         }
         
         for level in colorLevelsList {
             
-            DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
+            if DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
+                
+            }
             
         }
         
         for level in fruitLevelsList {
             
-            DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
+            if DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
+                
+            }
             
         }
         
         for level in vehicleLevelsList {
             
-            DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed)
+            if DAO().save(levelNumber: level.levelNumber, word: level.word, image: level.image, category: level.category, completed: level.completed) {
+                
+            }
             
         }
     }

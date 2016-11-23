@@ -245,9 +245,7 @@ class LevelScene: SKScene {
         var correctBox = false
         
         for box in boxArray {
-            
-            print(selectedNode?.position.x)
-            print(selectedNode?.position.y)
+
             
             let xMin = box.position.x - box.size.width/2
             let xMax = box.position.x + box.size.width/2
