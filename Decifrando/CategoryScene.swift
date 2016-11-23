@@ -132,21 +132,36 @@ class CategoryScene: SKScene {
         
         var levelLabels = [SKSpriteNode]()
         
+        var nextLevel = false
+        
         for n in 1...AppData.sharedInstance.levelsList.count {
             
-            let levelLabel = SKSpriteNode(imageNamed: String(n))
-           
+            var levelLabel: SKSpriteNode
             
-//            if AppData.sharedInstance.levelsList[n-1].completed == true
-//            {
-//                levelLabel.fontColor = SKColor.red
-//            }
-//            
-//            else {
-//                
-//                levelLabel.fontColor = SKColor.black
-//                
-//            }
+            if AppData.sharedInstance.levelsList[n-1].completed == true
+            {
+                
+                levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Red")
+                
+            }
+            
+            else {
+                
+                if nextLevel == false {
+                    
+                    levelLabel = SKSpriteNode(imageNamed: String(n))
+                    
+                    nextLevel = true
+                    
+                }
+                
+                else {
+                 
+                    levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Black")
+                    
+                }
+                
+            }
             
             levelLabel.position = labelPositions[n-1]
             levelLabel.zPosition = 1
