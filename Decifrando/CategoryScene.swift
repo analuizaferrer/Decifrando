@@ -48,7 +48,7 @@ class CategoryScene: SKScene {
         
         
         //position the camera on the gamescene.
-        cam.position = CGPoint(x: size.width/2 - level, y: size.height/2)
+        cam.position = CGPoint(x: size.width/2, y: size.height/2)
         
     }
     

@@ -29,45 +29,47 @@ class DecifrandoTests: XCTestCase {
     
     func testSave() {
         
-        let resultObtained = dao.save(levelNumber: 1, word: "gato", image: "cat", category: "animals", completed: false)
+        let obtainedResult = dao.save(levelNumber: 1, word: "gato", image: "cat", category: "animals", completed: false)
         
-        XCTAssertTrue(resultObtained)
+        XCTAssertTrue(obtainedResult)
     }
     
     func testFetch() {
         
-        let resultObtained = dao.fetch()
+        let obtainedResult = dao.fetch()
         
-        XCTAssertTrue(resultObtained)
+        XCTAssertTrue(obtainedResult)
     }
     
     func testFetchCategory() {
         
-        let resultObtained = dao.fetchCategory(category: "animals")
+        let obtainedResult = dao.fetchCategory(category: "animals")
         
-        XCTAssertTrue(resultObtained)
+        XCTAssertTrue(obtainedResult)
     }
     
     func testUpdateLevelCompleted() {
         
-        let resultObtained = dao.updateLevelCompleted(category: "amimals")
+        let obtainedResult = dao.updateLevelCompleted(category: "amimals")
         
-        XCTAssertTrue(resultObtained)
+        XCTAssertTrue(obtainedResult)
     }
     
     func testRandomLetter() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let stringObtained = letter.randomString(length: 1)
-        let characterObtained: Character = stringObtained.characters.first!
+        let expectedString = letter.randomString(length: 1)
+        let expectedResult: Character = expectedString.characters.first!
         
         let letters : String = "bcdeopq"
         
-        for letter in letters.characters {
+        for obtainedResult in letters.characters {
             
-            if letter == characterObtained {
-                XCTAssertEqual(letter, characterObtained)
+            if obtainedResult == expectedResult {
+                XCTAssertEqual(obtainedResult, expectedResult)
+            } else {
+                XCTAssertNotEqual(obtainedResult, expectedResult)
             }
         }
     }
