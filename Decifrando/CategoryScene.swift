@@ -17,9 +17,10 @@ class CategoryScene: SKScene {
     var levelLabels = [SKSpriteNode]()
     var nextLevel = -1
     
+    var lastPos : CGPoint!
+    
     override func didMove(to view: SKView) {
         
-//        background = SKSpriteNode(color: UIColor.green, size: CGSize(width: self.size.width, height: self.size.height))
         background = SKSpriteNode(imageNamed: "animalsWorld")
         self.background.name = "animalsWorld"
         self.addChild(background)
@@ -34,17 +35,15 @@ class CategoryScene: SKScene {
         
         let s = getAspectFitSize(toX: 50, toY: 50)
         let backButton = SKSpriteNode(imageNamed: "backButton")
-//        backLabel.text = "Voltar"
-//        backLabel.fontSize = 40
-        //        backLabel.fontColor = SKColor.black
+
         background.position = CGPoint(x: size.width/2,y: s.height/2)
         backButton.size = s
         backButton.zPosition = 1
 //        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-        backButton.position = CGPoint(x: 120, y: 900)
+        backButton.position = CGPoint(x: size.width/12, y: 11*size.height/12)
         backButton.name = "Back"
-        cam.addChild(backButton)
         
+        self.addChild(backButton)
         
         
         //position the camera on the gamescene.
@@ -52,19 +51,16 @@ class CategoryScene: SKScene {
         
     }
     
-    var lastPos : CGPoint!
-    
 //    override func update(_ currentTime: TimeInterval) {
 //        let zoomInAction = SKAction.scale(to: 0.5, duration: 1)
 //        cam.run(zoomInAction)
 //    }
 //    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         lastPos = touches.first!.location(in: self)
         
         //print("POSITION: \(touches.first!.location(in: background))")
-        
-
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -114,14 +110,12 @@ class CategoryScene: SKScene {
                     self.startLevel()
                     
                 }
-                
             }
-            
         }
-        
     }
     
     func startLevel() {
+        
         let reveal = SKTransition.fade(withDuration: 1.0)
         let scene = LevelScene(size: size)
         self.view?.presentScene(scene, transition:reveal)
@@ -129,37 +123,25 @@ class CategoryScene: SKScene {
     
     func createLevelLabels() {
         
-//        let labelPositions: [CGPoint] = [CGPoint(x: size.width/10, y: size.height/6), CGPoint(x: size.width/20, y: 2*size.height/40), CGPoint(x: size.width/25, y: 3*size.height/65), CGPoint(x: size.width/100, y: 4*size.height/36), CGPoint(x: size.width/2, y: 5*size.height/6)]
-        
        let labelPositions: [CGPoint] = [CGPoint(x: -808, y: -898), CGPoint(x: 259, y: -108), CGPoint(x: 789, y: 420), CGPoint(x: 325, y: 853), CGPoint(x: -689, y: 515)]
         
         for n in 1...AppData.sharedInstance.levelsList.count {
             
             var levelLabel: SKSpriteNode
             
-            if AppData.sharedInstance.levelsList[n-1].completed == true
-            {
+            if AppData.sharedInstance.levelsList[n-1].completed == true {
                 
                 levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Red")
                 
-            }
-            
-            else {
-                
-                if nextLevel == -1 {
+            } else if nextLevel == -1 {
                     
-                    levelLabel = SKSpriteNode(imageNamed: String(n))
+                levelLabel = SKSpriteNode(imageNamed: String(n))
                     
-                    nextLevel = n
+                nextLevel = n
                     
-                }
-                
-                else {
+            } else {
                  
-                    levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Black")
-                    
-                }
-                
+                levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Black")
             }
             
             levelLabel.position = labelPositions[n-1]
@@ -175,7 +157,6 @@ class CategoryScene: SKScene {
             nextLevel = levelLabels.count
             
         }
-        
     }
     
     func returnToMenuScene() {
@@ -185,5 +166,4 @@ class CategoryScene: SKScene {
         self.view?.presentScene(scene, transition:reveal)
         
     }
-    
 }
