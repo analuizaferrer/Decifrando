@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181D7C051DE9CEA800441950 /* HeartParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 181D7C041DE9CEA800441950 /* HeartParticle.sks */; };
 		183745121DCBB09B00BD49C1 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745111DCBB09B00BD49C1 /* LevelScene.swift */; };
 		183745141DCBB39C00BD49C1 /* CategoryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745131DCBB39C00BD49C1 /* CategoryScene.swift */; };
 		183745161DCBB40500BD49C1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745151DCBB40500BD49C1 /* Box.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181D7C041DE9CEA800441950 /* HeartParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeartParticle.sks; sourceTree = "<group>"; };
 		183745111DCBB09B00BD49C1 /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		183745131DCBB39C00BD49C1 /* CategoryScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryScene.swift; sourceTree = "<group>"; };
 		183745151DCBB40500BD49C1 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -227,10 +229,10 @@
 				18B08B031DCBA7E1008930DA /* GameViewController.swift */,
 				F64CD6C61DDCB8F300704CDE /* HomeScene.swift */,
 				F62D6E191DD142D800172280 /* MenuScene.swift */,
-				A8E392931DE3704D00321AAA /* Extension.swift */,
 				183745131DCBB39C00BD49C1 /* CategoryScene.swift */,
 				183745111DCBB09B00BD49C1 /* LevelScene.swift */,
 				F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */,
+				A8E392931DE3704D00321AAA /* Extension.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -238,6 +240,7 @@
 		F64CD6CB1DDCC22C00704CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				181D7C041DE9CEA800441950 /* HeartParticle.sks */,
 				F636AA911DE9C9C200D4F064 /* papagaio.mp3 */,
 				F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */,
 				F636AA8B1DE9C3A800D4F064 /* gato.mp3 */,
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F636AA901DE9C5F300D4F064 /* baleia.mp3 in Resources */,
+				181D7C051DE9CEA800441950 /* HeartParticle.sks in Resources */,
 				A8654F521DDCD2AD0051F0FC /* OpenDyslexic-Bold.otf in Resources */,
 				F636AA8D1DE9C3A800D4F064 /* gato.mp3 in Resources */,
 				A8654F531DDCD2B00051F0FC /* OpenDyslexic-BoldItalic.otf in Resources */,
