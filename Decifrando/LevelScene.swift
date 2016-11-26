@@ -263,11 +263,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         if ((firstBody.categoryBitMask & PhysicsCategory.Box != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Letter != 0)) {
             
-            if (secondBody.node as! Letter).text?.characters.first == (firstBody.node as! Box).boxLetter {
-                
-                (firstBody.node as! Box).texture = SKTexture(imageNamed: "backgroundLetras")
-              
-            }
+            (firstBody.node as! Box).texture = SKTexture(imageNamed: "backgroundLetras")
             
         }
         
@@ -288,10 +284,10 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         if ((firstBody.categoryBitMask & PhysicsCategory.Box != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Letter != 0)) {
             
-            if (secondBody.node as! Letter).text?.characters.first == (firstBody.node as! Box).boxLetter {
+            
+            for box in boxArray {
                 
-                print("didEnd")
-                (firstBody.node as! Box).texture = SKTexture(imageNamed: "caseWithLetter")
+                box.texture = SKTexture(imageNamed: "caseWithLetter")
                 
             }
             
