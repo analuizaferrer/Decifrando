@@ -262,8 +262,6 @@ class LevelScene: SKScene {
                     correctBox = true
                     box.isFull = true
                     
-                    //playSound()
-                    
                 } else {
                     
                     selectedNode?.position = letterPreviousPosition
@@ -302,11 +300,15 @@ class LevelScene: SKScene {
             self.nextLabel.isHidden = false
             
         }
+        
+        playSound()
     }
     
     func playSound() {
         
-        run(SKAction.playSoundFileNamed("Som Genérico.mp3", waitForCompletion: false))
+        let sound = "\(correctWord!).mp3"
+        
+        run(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
         
     }
     

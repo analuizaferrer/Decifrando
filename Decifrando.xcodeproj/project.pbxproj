@@ -36,6 +36,11 @@
 		A8B9BAB41DDF4ECC006ADAD9 /* Riffic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8B9BAB31DDF4ECC006ADAD9 /* Riffic.otf */; };
 		A8E392941DE3704E00321AAA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E392931DE3704D00321AAA /* Extension.swift */; };
 		F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D6E191DD142D800172280 /* MenuScene.swift */; };
+		F636AA8A1DE9C05100D4F064 /* coruja.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA891DE9C05100D4F064 /* coruja.mp3 */; };
+		F636AA8D1DE9C3A800D4F064 /* gato.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA8B1DE9C3A800D4F064 /* gato.mp3 */; };
+		F636AA8E1DE9C3A800D4F064 /* cavalo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA8C1DE9C3A800D4F064 /* cavalo.mp3 */; };
+		F636AA901DE9C5F300D4F064 /* baleia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */; };
+		F636AA921DE9C9C200D4F064 /* papagaio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA911DE9C9C200D4F064 /* papagaio.mp3 */; };
 		F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64CD6C61DDCB8F300704CDE /* HomeScene.swift */; };
 		F6EEFCAD1DE4735C00DAD4A8 /* LevelSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +98,11 @@
 		A8B9BAB31DDF4ECC006ADAD9 /* Riffic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Riffic.otf; sourceTree = "<group>"; };
 		A8E392931DE3704D00321AAA /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F62D6E191DD142D800172280 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		F636AA891DE9C05100D4F064 /* coruja.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coruja.mp3; sourceTree = "<group>"; };
+		F636AA8B1DE9C3A800D4F064 /* gato.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gato.mp3; sourceTree = "<group>"; };
+		F636AA8C1DE9C3A800D4F064 /* cavalo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cavalo.mp3; sourceTree = "<group>"; };
+		F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = baleia.mp3; sourceTree = "<group>"; };
+		F636AA911DE9C9C200D4F064 /* papagaio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = papagaio.mp3; sourceTree = "<group>"; };
 		F64CD6C61DDCB8F300704CDE /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSceneExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +238,11 @@
 		F64CD6CB1DDCC22C00704CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F636AA911DE9C9C200D4F064 /* papagaio.mp3 */,
+				F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */,
+				F636AA8B1DE9C3A800D4F064 /* gato.mp3 */,
+				F636AA8C1DE9C3A800D4F064 /* cavalo.mp3 */,
+				F636AA891DE9C05100D4F064 /* coruja.mp3 */,
 				A8654F481DDCD1AE0051F0FC /* Fonts */,
 				183745191DCCCE6500BD49C1 /* Extensions.swift */,
 				18594A611DD4B3F90035E4C6 /* Som Genérico.mp3 */,
@@ -346,7 +361,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F636AA901DE9C5F300D4F064 /* baleia.mp3 in Resources */,
 				A8654F521DDCD2AD0051F0FC /* OpenDyslexic-Bold.otf in Resources */,
+				F636AA8D1DE9C3A800D4F064 /* gato.mp3 in Resources */,
 				A8654F531DDCD2B00051F0FC /* OpenDyslexic-BoldItalic.otf in Resources */,
 				A8654F541DDCD2B20051F0FC /* OpenDyslexic-Italic.otf in Resources */,
 				A8654F551DDCD2B40051F0FC /* OpenDyslexic-Regular.otf in Resources */,
@@ -354,10 +371,13 @@
 				A8654F571DDCD2B90051F0FC /* OpenDyslexicAlta-BoldItalic.otf in Resources */,
 				A8B9BAB41DDF4ECC006ADAD9 /* Riffic.otf in Resources */,
 				A8654F581DDCD2BB0051F0FC /* OpenDyslexicAlta-Italic.otf in Resources */,
+				F636AA921DE9C9C200D4F064 /* papagaio.mp3 in Resources */,
 				A8654F591DDCD2BD0051F0FC /* OpenDyslexicAlta-Regular.otf in Resources */,
+				F636AA8A1DE9C05100D4F064 /* coruja.mp3 in Resources */,
 				A8654F5A1DDCD2BF0051F0FC /* OpenDyslexicMono-Regular.otf in Resources */,
 				18594A621DD4B3F90035E4C6 /* Som Genérico.mp3 in Resources */,
 				18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */,
+				F636AA8E1DE9C3A800D4F064 /* cavalo.mp3 in Resources */,
 				18B08B0C1DCBA7E1008930DA /* Assets.xcassets in Resources */,
 				18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */,
 			);
