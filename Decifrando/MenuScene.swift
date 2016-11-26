@@ -41,7 +41,7 @@ class MenuScene: SKScene {
         let node = self.atPoint(touchLocation)
         
         if node.name == "animals" /* || node.name == "colors" || node.name == "fruits" || node.name == "vehicles" */ {
-        
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.showCategoryMap(category: node.name!)
         
         } else if node.name == "Back" {

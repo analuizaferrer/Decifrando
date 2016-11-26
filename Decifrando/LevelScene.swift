@@ -32,6 +32,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
     var fileName = "audioFile.m4a"
+    var imageNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
         
@@ -104,7 +105,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     
     func createLevelLabels() {
         
-        let imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
+        imageNode = SKSpriteNode(imageNamed: AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].image)
         imageNode.position = CGPoint(x: size.width/2, y: 2*size.height/3)
         imageNode.size = CGSize(width: size.width/3, height: size.width/3)
         imageNode.zPosition = 1
@@ -172,16 +173,19 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             }
         } else if touchedNode.name == "Back" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.returnToCategoryScene()
             
         } else if touchedNode.name == "Record" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.soundRecorder.record()
             touchedNode.name = "Stop"
             self.recordVoice.text = "Parar de gravar"
             
         } else if touchedNode.name == "Stop" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.soundRecorder.stop()
             touchedNode.name = "Record"
             self.recordVoice.text = "Gravar voz"
@@ -189,17 +193,20 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             
         } else if touchedNode.name == "Play" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.preparePlayer()
             soundPlayer.play()
             touchedNode.name = "Pause"
             
         } else if touchedNode.name == "Pause" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             soundPlayer.stop()
             touchedNode.name = "Play"
             
         } else if touchedNode.name == "Next" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.nextLevel()
             
         }
@@ -339,7 +346,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func levelComplete () {
-    
+        
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
         DAO().updateLevelCompleted(category: AppData.sharedInstance.levelsList[0].category)
         
@@ -352,6 +359,31 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         }
         
         playSound()
+        
+        run(SKAction.repeatForever(
+            SKAction.sequence([
+                SKAction.run(addParticles),
+                SKAction.wait(forDuration: 1.0)
+                ])
+        ))
+     
+    }
+    
+    func addParticles() {
+        
+        let path = Bundle.main.path(forResource: "HeartParticle", ofType: "sks")
+        let heartParticle = NSKeyedUnarchiver.unarchiveObject(withFile: path!) as! SKEmitterNode
+        
+        heartParticle.targetNode = self.scene
+        heartParticle.position.x = imageNode.position.x
+        heartParticle.position.y = imageNode.position.y + imageNode.size.height/2
+        heartParticle.xScale = 0.3
+        heartParticle.yScale = 0.3
+        
+        heartParticle.numParticlesToEmit = 10
+        
+        self.addChild(heartParticle)
+        
     }
     
     func playSound() {
