@@ -45,6 +45,12 @@ class Box: SKSpriteNode {
         self.zPosition = 1
         self.anchorPoint = anchorPoint
         
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        self.physicsBody?.isDynamic = true
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Box
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Letter
+        self.physicsBody?.collisionBitMask = PhysicsCategory.None
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
