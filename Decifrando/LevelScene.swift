@@ -327,11 +327,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        if !correctBox {
-            
-            selectedNode?.position = letterPreviousPosition
-            
-        }
     }
     
     func didWin()->Bool {
