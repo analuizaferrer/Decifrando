@@ -10,7 +10,14 @@ import Foundation
 import SpriteKit
 import AVFoundation
 
-class LevelScene: SKScene {
+struct PhysicsCategory {
+    static let None      : UInt32 = 0
+    static let All       : UInt32 = UInt32.max
+    static let Box   : UInt32 = 0b1
+    static let Letter: UInt32 = 0b10
+}
+
+class LevelScene: SKScene, SKPhysicsContactDelegate {
     
     var correctWord: String!
     var boxArray: [Box]!
@@ -30,8 +37,6 @@ class LevelScene: SKScene {
         
         let selectedLevel: Int = AppData.sharedInstance.selectedLevelIndex
         correctWord = AppData.sharedInstance.levelsList[selectedLevel].word
-        
-//        background = SKSpriteNode(color: UIColor.yellow, size: CGSize(width: self.size.width, height: self.size.height))
         
         background = SKSpriteNode(imageNamed:"backgroundLetras")
         background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -91,6 +96,9 @@ class LevelScene: SKScene {
         }
 
         self.setupRecorder()
+        
+        physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        physicsWorld.contactDelegate = self
         
     }
     
@@ -240,6 +248,53 @@ class LevelScene: SKScene {
         }
     }
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if ((firstBody.categoryBitMask & PhysicsCategory.Box != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Letter != 0)) {
+            
+            (firstBody.node as! Box).texture = SKTexture(imageNamed: "backgroundLetras")
+            
+        }
+        
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if ((firstBody.categoryBitMask & PhysicsCategory.Box != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Letter != 0)) {
+            
+            
+            for box in boxArray {
+                
+                box.texture = SKTexture(imageNamed: "caseWithLetter")
+                
+            }
+            
+        }
+        
+    }
+    
     func letterIsInsideBox() {
         
         var correctBox = false
@@ -270,11 +325,6 @@ class LevelScene: SKScene {
             }
         }
         
-        if !correctBox {
-            
-            selectedNode?.position = letterPreviousPosition
-            
-        }
     }
     
     func didWin()->Bool {
