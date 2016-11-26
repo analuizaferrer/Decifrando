@@ -368,11 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F636AA901DE9C5F300D4F064 /* baleia.mp3 in Resources */,
-<<<<<<< HEAD
+
 				F6EAE1851DEA2CD900EFB161 /* click.mp3 in Resources */,
-=======
+
 				181D7C051DE9CEA800441950 /* HeartParticle.sks in Resources */,
->>>>>>> 5e66448fb5af5903496308af5251e2f9811730e2
+
 				A8654F521DDCD2AD0051F0FC /* OpenDyslexic-Bold.otf in Resources */,
 				F636AA8D1DE9C3A800D4F064 /* gato.mp3 in Resources */,
 				A8654F531DDCD2B00051F0FC /* OpenDyslexic-BoldItalic.otf in Resources */,
