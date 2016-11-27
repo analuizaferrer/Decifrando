@@ -43,6 +43,7 @@
 		F636AA901DE9C5F300D4F064 /* baleia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */; };
 		F636AA921DE9C9C200D4F064 /* papagaio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA911DE9C9C200D4F064 /* papagaio.mp3 */; };
 		F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64CD6C61DDCB8F300704CDE /* HomeScene.swift */; };
+		F6EAE1851DEA2CD900EFB161 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6EAE1841DEA2CD900EFB161 /* click.mp3 */; };
 		F6EEFCAD1DE4735C00DAD4A8 /* LevelSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = baleia.mp3; sourceTree = "<group>"; };
 		F636AA911DE9C9C200D4F064 /* papagaio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = papagaio.mp3; sourceTree = "<group>"; };
 		F64CD6C61DDCB8F300704CDE /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		F6EAE1841DEA2CD900EFB161 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSceneExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +248,7 @@
 				F636AA8B1DE9C3A800D4F064 /* gato.mp3 */,
 				F636AA8C1DE9C3A800D4F064 /* cavalo.mp3 */,
 				F636AA891DE9C05100D4F064 /* coruja.mp3 */,
+				F6EAE1841DEA2CD900EFB161 /* click.mp3 */,
 				A8654F481DDCD1AE0051F0FC /* Fonts */,
 				183745191DCCCE6500BD49C1 /* Extensions.swift */,
 				18594A611DD4B3F90035E4C6 /* Som Genérico.mp3 */,
@@ -322,7 +325,7 @@
 				TargetAttributes = {
 					18B08AFD1DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 833JWEH774;
+						DevelopmentTeam = 585K33F6HA;
 						ProvisioningStyle = Automatic;
 					};
 					18B08B141DCBA7E1008930DA = {
@@ -365,7 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F636AA901DE9C5F300D4F064 /* baleia.mp3 in Resources */,
+
+				F6EAE1851DEA2CD900EFB161 /* click.mp3 in Resources */,
+
 				181D7C051DE9CEA800441950 /* HeartParticle.sks in Resources */,
+
 				A8654F521DDCD2AD0051F0FC /* OpenDyslexic-Bold.otf in Resources */,
 				F636AA8D1DE9C3A800D4F064 /* gato.mp3 in Resources */,
 				A8654F531DDCD2B00051F0FC /* OpenDyslexic-BoldItalic.otf in Resources */,
@@ -576,7 +583,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
@@ -590,7 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;

@@ -83,6 +83,7 @@ class CategoryScene: SKScene {
         
         if node.name == "Back" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.returnToMenuScene()
             
         }
@@ -93,6 +94,8 @@ class CategoryScene: SKScene {
             let name = node.name?.substring(to:index!)
             
             if name == "Level" {
+                
+                run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
                 
                 let nodeNameArray = node.name?.components(separatedBy: " ")
                 let levelNumberText = nodeNameArray?[1]

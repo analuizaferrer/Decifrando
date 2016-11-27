@@ -77,6 +77,8 @@ class HomeScene: SKScene {
         
         if node.name == "Start" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
+            
             let reveal = SKTransition.fade(withDuration: 1.0)
             let scene = MenuScene(size: size)
             self.view?.presentScene(scene, transition:reveal)

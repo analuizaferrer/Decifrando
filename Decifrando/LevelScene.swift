@@ -170,16 +170,19 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             }
         } else if touchedNode.name == "Back" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.returnToCategoryScene()
             
         } else if touchedNode.name == "Record" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.soundRecorder.record()
             touchedNode.name = "Stop"
             self.recordVoice.text = "Parar de gravar"
             
         } else if touchedNode.name == "Stop" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.soundRecorder.stop()
             touchedNode.name = "Record"
             self.recordVoice.text = "Gravar voz"
@@ -187,17 +190,20 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             
         } else if touchedNode.name == "Play" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.preparePlayer()
             soundPlayer.play()
             touchedNode.name = "Pause"
             
         } else if touchedNode.name == "Pause" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             soundPlayer.stop()
             touchedNode.name = "Play"
             
         } else if touchedNode.name == "Next" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.nextLevel()
             
         }
