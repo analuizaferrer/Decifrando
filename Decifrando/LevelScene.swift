@@ -10,13 +10,6 @@ import Foundation
 import SpriteKit
 import AVFoundation
 
-struct PhysicsCategory {
-    static let None      : UInt32 = 0
-    static let All       : UInt32 = UInt32.max
-    static let Box   : UInt32 = 0b1
-    static let Letter: UInt32 = 0b10
-}
-
 class LevelScene: SKScene, SKPhysicsContactDelegate {
     
     var correctWord: String!
@@ -73,13 +66,13 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         for letter in correctWord.characters {
             
             lettersArray.append(Letter(letter: letter))
-    
+            
         }
         
         for _ in 0 ..< 10-correctWord.characters.count {
-        
+            
             lettersArray.append(Letter())
-        
+            
         }
         
         lettersArray.shuffle()
@@ -95,7 +88,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             j = j + 1
             
         }
-
+        
         self.setupRecorder()
         
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
@@ -151,10 +144,14 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         let touch = touches.first!
         let positionInScene = touch.location(in: self)
         
         selectNodeForTouch(touchLocation: positionInScene)
+        
+        
+        
     }
     
     func selectNodeForTouch(touchLocation: CGPoint) {
@@ -207,34 +204,46 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func panForTranslation(translation: CGPoint) {
+        
         let position = selectedNode?.position
         
-        if selectedNode?.name != nil && selectedNode?.name! == Letter.kLetterNodeName {
-            selectedNode?.position = CGPoint(x: (position?.x)! + translation.x, y: (position?.y)! + translation.y)
+        if selectedNode?.name != nil && selectedNode?.name! == Letter.kLetterNodeName && (selectedNode?.movable)! {
+            
+            let newPosition = CGPoint(x: (position?.x)! + translation.x, y: (position?.y)! + translation.y)
+            
+            if newPosition.x - (selectedNode?.frame.width)!/2 > 0 && newPosition.x + (selectedNode?.frame.width)!/2 < self.frame.width && newPosition.y - (selectedNode?.frame.height)!/2 > 0 && newPosition.y + (selectedNode?.frame.width)!/2 < self.frame.height {
+            
+                selectedNode?.position = newPosition
+            
+            }
+            
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if touches.first != nil {
-        let touch = touches.first!
-        let positionInScene = touch.location(in: self)
-        let previousPosition = touch.previousLocation(in: self)
-        let translation = CGPoint(x: positionInScene.x - previousPosition.x, y: positionInScene.y - previousPosition.y)
             
-                panForTranslation(translation: translation)
-
+            let touch = touches.first!
+            let positionInScene = touch.location(in: self)
+            let previousPosition = touch.previousLocation(in: self)
+            let translation = CGPoint(x: positionInScene.x - previousPosition.x, y: positionInScene.y - previousPosition.y)
+            
+            panForTranslation(translation: translation)
+            
+            highlightBox()
+            
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-     
+        
         letterIsInsideBox()
         
         if didWin() {
             
             levelComplete()
-    
+            
         }
     }
     
@@ -249,63 +258,14 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func didBegin(_ contact: SKPhysicsContact) {
-        
-        var firstBody: SKPhysicsBody
-        var secondBody: SKPhysicsBody
-        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        } else {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-        
-        if ((firstBody.categoryBitMask & PhysicsCategory.Box != 0) &&
-            (secondBody.categoryBitMask & PhysicsCategory.Letter != 0)) {
-            
-            (firstBody.node as! Box).texture = SKTexture(imageNamed: "backgroundLetras")
-            
-        }
-        
-    }
-    
-    func didEnd(_ contact: SKPhysicsContact) {
-        
-        var firstBody: SKPhysicsBody
-        var secondBody: SKPhysicsBody
-        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        } else {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-        
-        if ((firstBody.categoryBitMask & PhysicsCategory.Box != 0) &&
-            (secondBody.categoryBitMask & PhysicsCategory.Letter != 0)) {
-            
-            
-            for box in boxArray {
-                
-                box.texture = SKTexture(imageNamed: "caseWithLetter")
-                
-            }
-            
-        }
-        
-    }
-    
     func letterIsInsideBox() {
         
-        var correctBox = false
-        
         for box in boxArray {
-
+            
             
             let xMin = box.position.x - box.size.width/2
             let xMax = box.position.x + box.size.width/2
-            let yMin = box.position.y - box.anchorPoint.y*box.size.height
+            let yMin = box.position.y - box.anchorPoint.y*box.size.height - 50
             let yMax = box.position.y + (1-box.anchorPoint.y)*box.size.height
             
             if (selectedNode?.position.x)! > xMin && (selectedNode?.position.x)! < xMax && (selectedNode?.position.y)! > yMin && (selectedNode?.position.y)! < yMax {
@@ -315,14 +275,41 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
                     selectedNode?.position.x = box.position.x
                     selectedNode?.position.y = box.position.y - (selectedNode?.fontSize)!/4
                     
-                    correctBox = true
                     box.isFull = true
+                    selectedNode?.movable = false
                     
                 } else {
                     
                     selectedNode?.position = letterPreviousPosition
-                    
+                    if !box.isFull {
+                        box.texture = SKTexture(imageNamed: "caseWithLetter")
+                    }
                 }
+            }
+        }
+        
+    }
+    
+    func highlightBox() {
+        
+        for box in boxArray {
+            
+            
+            let xMin = box.position.x - box.size.width/2
+            let xMax = box.position.x + box.size.width/2
+            let yMin = box.position.y - box.anchorPoint.y*box.size.height - 50
+            let yMax = box.position.y + (1-box.anchorPoint.y)*box.size.height
+            
+            if (selectedNode?.position.x)! > xMin && (selectedNode?.position.x)! < xMax && (selectedNode?.position.y)! > yMin && (selectedNode?.position.y)! < yMax {
+                
+                box.texture = SKTexture(imageNamed: "case")
+                
+            }
+                
+            else if !box.isFull {
+                
+                box.texture = SKTexture(imageNamed: "caseWithLetter")
+                
             }
         }
         
@@ -360,23 +347,23 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
                 SKAction.wait(forDuration: 1.0)
                 ])
         ))
-     
+        
     }
     
     func addParticles() {
         
         let path = Bundle.main.path(forResource: "HeartParticle", ofType: "sks")
-        let heartParticle = NSKeyedUnarchiver.unarchiveObject(withFile: path!) as! SKEmitterNode
+        let particle = NSKeyedUnarchiver.unarchiveObject(withFile: path!) as! SKEmitterNode
         
-        heartParticle.targetNode = self.scene
-        heartParticle.position.x = imageNode.position.x
-        heartParticle.position.y = imageNode.position.y + imageNode.size.height/2
-        heartParticle.xScale = 0.3
-        heartParticle.yScale = 0.3
+        particle.targetNode = self.scene
+        particle.position.x = imageNode.position.x
+        particle.position.y = imageNode.position.y + imageNode.size.height/2
+        particle.xScale = 0.3
+        particle.yScale = 0.3
         
-        heartParticle.numParticlesToEmit = 10
+        particle.numParticlesToEmit = 10
         
-        self.addChild(heartParticle)
+        self.addChild(particle)
         
     }
     

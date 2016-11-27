@@ -12,6 +12,7 @@ import SpriteKit
 class Letter: SKLabelNode {
     
     static let kLetterNodeName = "movable"
+    var movable = true
     
     init (letter: Character) {
         
@@ -20,14 +21,6 @@ class Letter: SKLabelNode {
         self.fontSize = 100
         self.fontColor = SKColor.black
         self.name = Letter.kLetterNodeName
-        //self.verticalAlignmentMode = .center
-        
-        self.physicsBody = SKPhysicsBody(circleOfRadius: self.fontSize/2)
-        self.physicsBody?.isDynamic = true
-        self.physicsBody?.categoryBitMask = PhysicsCategory.Letter
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Box
-        self.physicsBody?.collisionBitMask = PhysicsCategory.None
-        self.physicsBody?.usesPreciseCollisionDetection = true
         
     }
     
@@ -39,7 +32,6 @@ class Letter: SKLabelNode {
         self.fontSize = 100
         self.fontColor = SKColor.black
         self.name = Letter.kLetterNodeName
-        //self.verticalAlignmentMode = .center
 
     }
     
