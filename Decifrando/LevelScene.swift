@@ -163,6 +163,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         let touchedNode = self.atPoint(touchLocation)
         letterPreviousPosition = touchedNode.position
+        
         if touchedNode is Letter {
             
             if !(selectedNode?.isEqual(touchedNode))! && selectedNode != nil{
@@ -170,7 +171,13 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
                 selectedNode?.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
                 
                 selectedNode = touchedNode as? Letter
+                
+                let sound = "\(selectedNode!.text!).mp3"
+                
+                run(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
+
             }
+            
         } else if touchedNode.name == "Back" {
             
             run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
