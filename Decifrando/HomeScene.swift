@@ -77,6 +77,8 @@ class HomeScene: SKScene {
         
         if node.name == "Start" {
             
+            self.start.fontColor = SKColor.black
+            
             run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             
             let reveal = SKTransition.fade(withDuration: 1.0)

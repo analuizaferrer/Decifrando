@@ -178,7 +178,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
 
             }
             
-        } else if touchedNode.name == "Back" {
+        } else if touchedNode.name == "Back" || touchedNode.name == "Next" {
             
             run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.returnToCategoryScene()
@@ -210,12 +210,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             soundPlayer.stop()
             touchedNode.name = "Play"
-            
-        } else if touchedNode.name == "Next" {
-            
-            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
-            self.nextLevel()
-            
         }
     }
     
@@ -352,6 +346,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         if AppData.sharedInstance.selectedLevelIndex < AppData.sharedInstance.levelsList.count - 1 {
             
             self.nextLabel.isHidden = false
+            self.backLabel.isHidden = true
             
         }
         
@@ -399,15 +394,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         run(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
 
-    }
-    
-    func nextLevel() {
-        
-        AppData.sharedInstance.selectedLevelIndex = AppData.sharedInstance.selectedLevelIndex + 1
-        
-        let reveal = SKTransition.fade(withDuration: 1.0)
-        let scene = LevelScene(size: size)
-        self.view?.presentScene(scene, transition:reveal)
     }
     
     func returnToCategoryScene() {
