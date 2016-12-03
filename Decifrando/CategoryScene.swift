@@ -19,6 +19,11 @@ class CategoryScene: SKScene {
     
     var lastPos : CGPoint!
     
+    //var mySkNode: SKNode!
+    //var panGestureRecognizer: UIPanGestureRecognizer!
+    //var pinchGestureRecognizer: UIPinchGestureRecognizer!
+
+    
     override func didMove(to view: SKView) {
         
         background = SKSpriteNode(imageNamed: "animalsWorld")
@@ -49,7 +54,81 @@ class CategoryScene: SKScene {
         //position the camera on the gamescene.
         cam.position = CGPoint(x: size.width/2, y: size.height/2)
         
+//        self.panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan))
+//        self.view?.addGestureRecognizer(panGestureRecognizer)
+        
+//        self.pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(self.handleZoom))
+//        self.view?.addGestureRecognizer(pinchGestureRecognizer)
+        
     }
+    
+//    func handlePan(from recognizer: UIPanGestureRecognizer) {
+//        if recognizer.state == .began {
+//            recognizer.setTranslation(CGPoint.zero, in: recognizer.view)
+//        }
+//        else if recognizer.state == .changed {
+//            var translation = recognizer.translation(in: recognizer.view)
+//            translation = CGPoint(x: CGFloat(-translation.x), y: CGFloat(translation.y))
+//            self.mySkNode.position = CGPoint(x: mySkNode.position.x - translation.x, y: mySkNode.position.y - translation.y)
+//            recognizer.setTranslation(CGPoint.zero, in: recognizer.view)
+//        }
+//        else if recognizer.state == .ended {
+//            // No code needed for panning.
+//        }
+//        
+//    }
+    
+//    func handleZoom(from recognizer: UIPinchGestureRecognizer) {
+//        
+//        var anchorPoint = recognizer.location(in: recognizer.view)
+//        anchorPoint = self.convertPoint(fromView: anchorPoint)
+//        
+//        if recognizer.state == .began {
+//           
+//            // No code needed for zooming...
+//        
+//        } else if recognizer.state == .changed {
+//           
+//            let anchorPointInMySkNode = mySkNode.convert(anchorPoint, from: self)
+//            mySkNode.setScale((mySkNode.xScale * recognizer.scale))
+//            let mySkNodeAnchorPointInScene = self.convert(anchorPointInMySkNode, from: mySkNode)
+//            let translationOfAnchorInScene = CGPoint(x: anchorPoint.x - mySkNodeAnchorPointInScene.x, y: anchorPoint.y - mySkNodeAnchorPointInScene.y)
+//            self.mySkNode.position = CGPoint(x: mySkNode.position.x + translationOfAnchorInScene.x, y: mySkNode.position.y + translationOfAnchorInScene.y)
+//            recognizer.scale = 1.0
+//        
+//        } else if recognizer.state == .ended {
+//           
+//            // No code needed here for zooming...
+//        }
+//        
+//    }
+
+    
+    /*
+     
+     // Method that is called by my UIPinchGestureRecognizer.
+     
+     func handleZoom(from recognizer: UIPinchGestureRecognizer) {
+     var anchorPoint = recognizer.location(in: recognizer.view)
+     anchorPoint = self.convertPoint(fromView: anchorPoint)
+     if recognizer.state == .began {
+     // No code needed for zooming...
+     }
+     else if recognizer.state == .changed {
+     var anchorPointInMySkNode = mySkNode.convertPoint(anchorPoint, from: self)
+     mySkNode.setScale((mySkNode.xScale * recognizer.scale))
+     var mySkNodeAnchorPointInScene = self.convertPoint(anchorPointInMySkNode, from: mySkNode)
+     var translationOfAnchorInScene = CGPointSubtract(anchorPoint, mySkNodeAnchorPointInScene)
+     self.mySkNode.position = CGPointAdd(mySkNode.position, translationOfAnchorInScene)
+     recognizer.scale = 1.0
+     }
+     else if recognizer.state == .ended {
+     // No code needed here for zooming...
+     }
+     
+     }
+     */
+    
     
 //    override func update(_ currentTime: TimeInterval) {
 //        let zoomInAction = SKAction.scale(to: 0.5, duration: 1)

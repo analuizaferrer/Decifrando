@@ -36,13 +36,17 @@
 		A8654F5A1DDCD2BF0051F0FC /* OpenDyslexicMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8654F511DDCD1C20051F0FC /* OpenDyslexicMono-Regular.otf */; };
 		A8B9BAB41DDF4ECC006ADAD9 /* Riffic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8B9BAB31DDF4ECC006ADAD9 /* Riffic.otf */; };
 		A8E392941DE3704E00321AAA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E392931DE3704D00321AAA /* Extension.swift */; };
+		F606885E1DECDD8A002F63DE /* baleia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F606885D1DECDD8A002F63DE /* baleia.mp3 */; };
 		F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D6E191DD142D800172280 /* MenuScene.swift */; };
 		F636AA8A1DE9C05100D4F064 /* coruja.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA891DE9C05100D4F064 /* coruja.mp3 */; };
 		F636AA8D1DE9C3A800D4F064 /* gato.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA8B1DE9C3A800D4F064 /* gato.mp3 */; };
 		F636AA8E1DE9C3A800D4F064 /* cavalo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA8C1DE9C3A800D4F064 /* cavalo.mp3 */; };
-		F636AA901DE9C5F300D4F064 /* baleia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */; };
 		F636AA921DE9C9C200D4F064 /* papagaio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F636AA911DE9C9C200D4F064 /* papagaio.mp3 */; };
 		F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64CD6C61DDCB8F300704CDE /* HomeScene.swift */; };
+		F673BB0B1DF27423007176E7 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F673BB0A1DF27423007176E7 /* cat.mp3 */; };
+		F673BB0D1DF27546007176E7 /* owl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F673BB0C1DF27546007176E7 /* owl.mp3 */; };
+		F673BB0F1DF27567007176E7 /* parrot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F673BB0E1DF27567007176E7 /* parrot.mp3 */; };
+		F673BB111DF27570007176E7 /* horse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F673BB101DF27570007176E7 /* horse.mp3 */; };
 		F6EAE1851DEA2CD900EFB161 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6EAE1841DEA2CD900EFB161 /* click.mp3 */; };
 		F6EEFCAD1DE4735C00DAD4A8 /* LevelSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */; };
 /* End PBXBuildFile section */
@@ -100,13 +104,17 @@
 		A8654F511DDCD1C20051F0FC /* OpenDyslexicMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicMono-Regular.otf"; sourceTree = "<group>"; };
 		A8B9BAB31DDF4ECC006ADAD9 /* Riffic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Riffic.otf; sourceTree = "<group>"; };
 		A8E392931DE3704D00321AAA /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F606885D1DECDD8A002F63DE /* baleia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = baleia.mp3; sourceTree = "<group>"; };
 		F62D6E191DD142D800172280 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		F636AA891DE9C05100D4F064 /* coruja.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coruja.mp3; sourceTree = "<group>"; };
 		F636AA8B1DE9C3A800D4F064 /* gato.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gato.mp3; sourceTree = "<group>"; };
 		F636AA8C1DE9C3A800D4F064 /* cavalo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cavalo.mp3; sourceTree = "<group>"; };
-		F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = baleia.mp3; sourceTree = "<group>"; };
 		F636AA911DE9C9C200D4F064 /* papagaio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = papagaio.mp3; sourceTree = "<group>"; };
 		F64CD6C61DDCB8F300704CDE /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		F673BB0A1DF27423007176E7 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
+		F673BB0C1DF27546007176E7 /* owl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = owl.mp3; sourceTree = "<group>"; };
+		F673BB0E1DF27567007176E7 /* parrot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = parrot.mp3; sourceTree = "<group>"; };
+		F673BB101DF27570007176E7 /* horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = horse.mp3; sourceTree = "<group>"; };
 		F6EAE1841DEA2CD900EFB161 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSceneExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,8 +251,12 @@
 			isa = PBXGroup;
 			children = (
 				181D7C041DE9CEA800441950 /* HeartParticle.sks */,
+				F606885D1DECDD8A002F63DE /* baleia.mp3 */,
+				F673BB0A1DF27423007176E7 /* cat.mp3 */,
+				F673BB101DF27570007176E7 /* horse.mp3 */,
+				F673BB0C1DF27546007176E7 /* owl.mp3 */,
+				F673BB0E1DF27567007176E7 /* parrot.mp3 */,
 				F636AA911DE9C9C200D4F064 /* papagaio.mp3 */,
-				F636AA8F1DE9C5F300D4F064 /* baleia.mp3 */,
 				F636AA8B1DE9C3A800D4F064 /* gato.mp3 */,
 				F636AA8C1DE9C3A800D4F064 /* cavalo.mp3 */,
 				F636AA891DE9C05100D4F064 /* coruja.mp3 */,
@@ -325,7 +337,7 @@
 				TargetAttributes = {
 					18B08AFD1DCBA7E1008930DA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 833JWEH774;
+						DevelopmentTeam = 585K33F6HA;
 						ProvisioningStyle = Automatic;
 					};
 					18B08B141DCBA7E1008930DA = {
@@ -367,7 +379,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F636AA901DE9C5F300D4F064 /* baleia.mp3 in Resources */,
+				F673BB0F1DF27567007176E7 /* parrot.mp3 in Resources */,
 				F6EAE1851DEA2CD900EFB161 /* click.mp3 in Resources */,
 				181D7C051DE9CEA800441950 /* HeartParticle.sks in Resources */,
 				A8654F521DDCD2AD0051F0FC /* OpenDyslexic-Bold.otf in Resources */,
@@ -381,11 +393,15 @@
 				A8654F581DDCD2BB0051F0FC /* OpenDyslexicAlta-Italic.otf in Resources */,
 				F636AA921DE9C9C200D4F064 /* papagaio.mp3 in Resources */,
 				A8654F591DDCD2BD0051F0FC /* OpenDyslexicAlta-Regular.otf in Resources */,
+				F673BB0B1DF27423007176E7 /* cat.mp3 in Resources */,
+				F673BB0D1DF27546007176E7 /* owl.mp3 in Resources */,
 				F636AA8A1DE9C05100D4F064 /* coruja.mp3 in Resources */,
+				F673BB111DF27570007176E7 /* horse.mp3 in Resources */,
 				A8654F5A1DDCD2BF0051F0FC /* OpenDyslexicMono-Regular.otf in Resources */,
 				18594A621DD4B3F90035E4C6 /* Som Genérico.mp3 in Resources */,
 				18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */,
 				F636AA8E1DE9C3A800D4F064 /* cavalo.mp3 in Resources */,
+				F606885E1DECDD8A002F63DE /* baleia.mp3 in Resources */,
 				18B08B0C1DCBA7E1008930DA /* Assets.xcassets in Resources */,
 				18B08B071DCBA7E1008930DA /* Main.storyboard in Resources */,
 			);
@@ -580,7 +596,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;
@@ -594,7 +610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 833JWEH774;
+				DEVELOPMENT_TEAM = 585K33F6HA;
 				INFOPLIST_FILE = Decifrando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AHJ.Decifrando;

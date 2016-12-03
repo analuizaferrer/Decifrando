@@ -12,7 +12,8 @@ import AVFoundation
 
 class LevelScene: SKScene, SKPhysicsContactDelegate {
     
-    var correctWord: String!
+    var correctWordPT: String!
+    var correctWordEN: String!
     var boxArray: [Box]!
     var lettersArray: [Letter]!
     var background: SKSpriteNode!
@@ -30,7 +31,9 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         let selectedLevel: Int = AppData.sharedInstance.selectedLevelIndex
-        correctWord = AppData.sharedInstance.levelsList[selectedLevel].word
+        
+        correctWordPT = AppData.sharedInstance.levelsList[selectedLevel].word
+        correctWordEN = AppData.sharedInstance.levelsList[selectedLevel].image
         
         background = SKSpriteNode(imageNamed:"backgroundLetras")
         background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -43,7 +46,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         boxArray = []
         
-        for letter in correctWord.characters {
+        for letter in correctWordPT.characters {
             
             boxArray.append(Box(letter: letter))
             
@@ -63,13 +66,13 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         lettersArray = []
         
-        for letter in correctWord.characters {
+        for letter in correctWordPT.characters {
             
             lettersArray.append(Letter(letter: letter))
             
         }
         
-        for _ in 0 ..< 10-correctWord.characters.count {
+        for _ in 0 ..< 10-correctWordPT.characters.count {
             
             lettersArray.append(Letter())
             
@@ -337,7 +340,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
         DAO().updateLevelCompleted(category: AppData.sharedInstance.levelsList[0].category)
         
-        self.recordVoice.isHidden = false
+        //self.recordVoice.isHidden = false
         
         if AppData.sharedInstance.selectedLevelIndex < AppData.sharedInstance.levelsList.count - 1 {
             
@@ -345,14 +348,16 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        playSound()
+        playAnimalSound()
         
-        run(SKAction.repeatForever(
-            SKAction.sequence([
-                SKAction.run(addParticles),
-                SKAction.wait(forDuration: 1.0)
-                ])
-        ))
+        playAnimalNameSound()
+        
+//        run(SKAction.repeatForever(
+//            SKAction.sequence([
+//                SKAction.run(addParticles),
+//                SKAction.wait(forDuration: 1.0)
+//                ])
+//        ))
         
     }
     
@@ -373,12 +378,20 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    func playSound() {
+    func playAnimalSound() {
         
-        let sound = "\(correctWord!).mp3"
+        let sound = "\(correctWordPT!).mp3"
         
         run(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
         
+    }
+    
+    func playAnimalNameSound() {
+    
+        let sound = "\(correctWordEN!).mp3"
+        
+        run(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
+
     }
     
     func nextLevel() {
