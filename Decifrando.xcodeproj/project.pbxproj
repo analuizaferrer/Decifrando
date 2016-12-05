@@ -13,7 +13,6 @@
 		183745161DCBB40500BD49C1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745151DCBB40500BD49C1 /* Box.swift */; };
 		183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745171DCBC5EA00BD49C1 /* Letter.swift */; };
 		1837451A1DCCCE6500BD49C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745191DCCCE6500BD49C1 /* Extensions.swift */; };
-		18594A621DD4B3F90035E4C6 /* Som Genérico.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18594A611DD4B3F90035E4C6 /* Som Genérico.mp3 */; };
 		18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC69A41DD1017E00EAB7E1 /* Level.swift */; };
 		18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B011DCBA7E1008930DA /* AppDelegate.swift */; };
 		18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B031DCBA7E1008930DA /* GameViewController.swift */; };
@@ -91,7 +90,6 @@
 		183745151DCBB40500BD49C1 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		183745171DCBC5EA00BD49C1 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		183745191DCCCE6500BD49C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		18594A611DD4B3F90035E4C6 /* Som Genérico.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Som Genérico.mp3"; sourceTree = "<group>"; };
 		18AC69A41DD1017E00EAB7E1 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		18B08AFE1DCBA7E1008930DA /* Decifrando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decifrando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B08B011DCBA7E1008930DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -309,21 +307,36 @@
 		F64CD6CB1DDCC22C00704CDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F6004E891DF2E77C00AFEF58 /* Phonemes */,
+				A8654F481DDCD1AE0051F0FC /* Fonts */,
+				F6958CA61DF59CDB00DA15A4 /* Sounds */,
+				18B08B0B1DCBA7E1008930DA /* Assets.xcassets */,
+				183745191DCCCE6500BD49C1 /* Extensions.swift */,
 				181D7C041DE9CEA800441950 /* HeartParticle.sks */,
+				18B08B101DCBA7E1008930DA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6958CA61DF59CDB00DA15A4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F6EAE1841DEA2CD900EFB161 /* click.mp3 */,
+				F6958CA71DF59CE500DA15A4 /* Animals */,
+				F6004E891DF2E77C00AFEF58 /* Phonemes */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		F6958CA71DF59CE500DA15A4 /* Animals */ = {
+			isa = PBXGroup;
+			children = (
 				F60AF56A1DF31B8500B433F2 /* baleia.mp3 */,
 				F6004E8C1DF2F31700AFEF58 /* cavalo.mp3 */,
 				F6004E8D1DF2F31700AFEF58 /* coruja.mp3 */,
 				F6004E8E1DF2F31700AFEF58 /* gato.mp3 */,
 				F6004E8F1DF2F31700AFEF58 /* papagaio.mp3 */,
-				F6EAE1841DEA2CD900EFB161 /* click.mp3 */,
-				A8654F481DDCD1AE0051F0FC /* Fonts */,
-				183745191DCCCE6500BD49C1 /* Extensions.swift */,
-				18594A611DD4B3F90035E4C6 /* Som Genérico.mp3 */,
-				18B08B0B1DCBA7E1008930DA /* Assets.xcassets */,
-				18B08B101DCBA7E1008930DA /* Info.plist */,
 			);
-			name = "Supporting Files";
+			name = Animals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,7 +481,6 @@
 				F6004E881DF2E76D00AFEF58 /* z.mp3 in Resources */,
 				A8654F5A1DDCD2BF0051F0FC /* OpenDyslexicMono-Regular.otf in Resources */,
 				F6004E801DF2E76D00AFEF58 /* p.mp3 in Resources */,
-				18594A621DD4B3F90035E4C6 /* Som Genérico.mp3 in Resources */,
 				F6004E7B1DF2E76D00AFEF58 /* g.mp3 in Resources */,
 				18B08B0F1DCBA7E1008930DA /* LaunchScreen.storyboard in Resources */,
 				F6004E911DF2F31700AFEF58 /* coruja.mp3 in Resources */,
