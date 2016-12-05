@@ -33,7 +33,7 @@ class CategoryScene: SKScene {
         createLevelLabels()
         
         cam = SKCameraNode()
-        cam.setScale(CGFloat(2))
+        cam.setScale(CGFloat(1.5))
         
         self.camera = cam
         self.addChild(cam)
@@ -206,7 +206,7 @@ class CategoryScene: SKScene {
     func createLevelLabels() {
         
        let labelPositions: [CGPoint] = [CGPoint(x: -808, y: -898), CGPoint(x: 259, y: -108), CGPoint(x: 789, y: 420), CGPoint(x: 325, y: 853), CGPoint(x: -689, y: 515)]
-        let pathPositions: [CGPoint] = [CGPoint(x: -1008, y: -1300)]
+        let pathPositions: [CGPoint] = [CGPoint(x: -1008, y: -1300), CGPoint(x: -997, y: -1310), CGPoint(x: -960, y: -1320), CGPoint(x: -1000, y: -1320)]
         
         for n in 1...AppData.sharedInstance.levelsList.count {
             
@@ -216,12 +216,15 @@ class CategoryScene: SKScene {
                 
                 levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Red")
                 
-                if n > 1 {
-                    let path = SKSpriteNode(imageNamed: "\(n-1)to\(n)")
+                var i = 1
+                while i <= n {
+                    print("entrou aqui")
+                    let path = SKSpriteNode(imageNamed: "\(i)to\(i+1)")
                     path.anchorPoint = CGPoint.zero
                     path.zPosition = 1
-                    path.position = pathPositions[n-2]
+                    path.position = pathPositions[i-1]
                     background.addChild(path)
+                    i += 1
                 }
                 
             } else if nextLevel == -1 {
