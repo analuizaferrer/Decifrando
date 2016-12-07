@@ -22,6 +22,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     var backLabel: SKLabelNode!
     var nextLabel: SKLabelNode!
     var imageNode: SKSpriteNode!
+    var win: Bool!
     
     override func didMove(to view: SKView) {
         
@@ -89,6 +90,8 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         physicsWorld.contactDelegate = self
+        
+        self.win = false
         
     }
     
@@ -197,8 +200,9 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         letterIsInsideBox()
         
-        if didWin() {
+        if didWin() && self.win == false {
             
+            self.win = true
             levelComplete()
             
         }
@@ -208,8 +212,9 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         letterIsInsideBox()
         
-        if didWin() {
+        if didWin() && self.win == false {
             
+            self.win = true
             levelComplete()
             
         }

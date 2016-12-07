@@ -45,7 +45,7 @@ class CategoryScene: SKScene {
         backButton.size = s
         backButton.zPosition = 1
 //        backButton.position = CGPoint(x: size.width/8, y: 9*size.height/10)
-        backButton.position = CGPoint(x: size.width/12, y: 11*size.height/12)
+        backButton.position = CGPoint(x: -130, y: 830)
         backButton.name = "Back"
         
         self.addChild(backButton)
@@ -145,9 +145,13 @@ class CategoryScene: SKScene {
         let p = touches.first!.location(in: self)
         let dist = CGPoint(x: p.x-lastPos.x,y: p.y-lastPos.y)
         let bp = background.position
-        background.position.x = max(min(background.size.width/2,bp.x+dist.x),size.width-background.size.width/2)
-        background.position.y = max(min(background.size.height/2,bp.y+dist.y),size.height-background.size.height/2)
+        background.position.x = max(min(background.size.width/3,bp.x+dist.x),size.width-background.size.width/3)
+        background.position.y = max(min(background.size.height/2.5,bp.y+dist.y),size.height-background.size.height/2.5)
         lastPos = p
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -210,9 +214,25 @@ class CategoryScene: SKScene {
             
             var levelLabel: SKSpriteNode
             
+            print(n)
+            
             if AppData.sharedInstance.levelsList[n-1].completed == true {
                 
                 levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Red")
+                
+                if n == AppData.sharedInstance.levelsList.count {
+                    
+                    var i = 2
+                    while i <= n {
+                        
+                        let path = SKSpriteNode(imageNamed: "\(i-1)to\(i)")
+                        path.anchorPoint = CGPoint.zero
+                        path.zPosition = 1
+                        path.position = pathPositions[i-2]
+                        background.addChild(path)
+                        i += 1
+                    }
+                }
                 
             } else if nextLevel == -1 {
                     
