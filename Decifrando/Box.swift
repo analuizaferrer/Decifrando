@@ -26,18 +26,18 @@ class Box: SKSpriteNode {
         
         if letter == "b" || letter == "d" || letter == "f" || letter == "h" || letter == "k" || letter == "l" || letter == "t" {
             
-            size = CGSize(width: boxWidth, height: 150)
-            anchorPoint = CGPoint(x: 0.5, y: 0.25)
+            size = CGSize(width: boxWidth, height: 140)
+            anchorPoint = CGPoint(x: 0.5, y: 40/size.height)
             
         } else if letter == "g" || letter == "j" || letter == "p" || letter == "q" || letter == "y" {
             
-            size = CGSize(width: boxWidth, height: boxWidth*2)
-            anchorPoint = CGPoint(x: 0.5, y: 0.75)
+            size = CGSize(width: boxWidth, height: 140)
+            anchorPoint = CGPoint(x: 0.5, y: 1-(60/size.height))
             
         } else {
             
             size = CGSize(width: boxWidth, height: boxWidth)
-            anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            anchorPoint = CGPoint(x: 0.5, y: 0.4)
             
         }
         
