@@ -339,7 +339,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     func levelComplete () {
         
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
-        DAO().updateLevelCompleted(category: AppData.sharedInstance.levelsList[0].category)
+        _ = DAO().updateLevelCompleted(category: AppData.sharedInstance.levelsList[0].category)
         
         //self.recordVoice.isHidden = false
         
