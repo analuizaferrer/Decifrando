@@ -19,8 +19,6 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             
-//            DAO().fetch()
-            
             let scene = HomeScene(size: view.bounds.size)
             //let scene = CategoryScene(size: view.bounds.size)
             
@@ -28,8 +26,8 @@ class GameViewController: UIViewController {
             view.presentScene(scene)
             view.ignoresSiblingOrder = true
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+//            view.showsFPS = true
+//            view.showsNodeCount = true
         }
         
         
