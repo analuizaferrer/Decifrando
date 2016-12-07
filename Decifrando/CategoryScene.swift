@@ -214,8 +214,6 @@ class CategoryScene: SKScene {
             
             var levelLabel: SKSpriteNode
             
-            print(n)
-            
             if AppData.sharedInstance.levelsList[n-1].completed == true {
                 
                 levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Red")
