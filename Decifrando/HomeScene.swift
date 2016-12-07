@@ -6,7 +6,7 @@
 //
 //
 
-import UIKit
+import Foundation
 import SpriteKit
 
 class HomeScene: SKScene {

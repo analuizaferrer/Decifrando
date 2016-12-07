@@ -220,13 +220,18 @@ class CategoryScene: SKScene {
                     
                 nextLevel = n
                 
-                if n > 1 && n < AppData.sharedInstance.levelsList.count {
+                if n > 1 && n <= AppData.sharedInstance.levelsList.count {
                     
-                    let path = SKSpriteNode(imageNamed: "\(n-1)to\(n)")
-                    path.anchorPoint = CGPoint.zero
-                    path.zPosition = 1
-                    path.position = pathPositions[n-2]
-                    background.addChild(path)
+                    var i = 2
+                    while i <= n {
+                        
+                        let path = SKSpriteNode(imageNamed: "\(i-1)to\(i)")
+                        path.anchorPoint = CGPoint.zero
+                        path.zPosition = 1
+                        path.position = pathPositions[i-2]
+                        background.addChild(path)
+                        i += 1
+                    }
                 }
 
                     
