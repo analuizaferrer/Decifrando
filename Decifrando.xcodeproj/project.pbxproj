@@ -63,7 +63,6 @@
 		F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D6E191DD142D800172280 /* MenuScene.swift */; };
 		F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64CD6C61DDCB8F300704CDE /* HomeScene.swift */; };
 		F6EAE1851DEA2CD900EFB161 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6EAE1841DEA2CD900EFB161 /* click.mp3 */; };
-		F6EEFCAD1DE4735C00DAD4A8 /* LevelSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,7 +145,6 @@
 		F62D6E191DD142D800172280 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		F64CD6C61DDCB8F300704CDE /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		F6EAE1841DEA2CD900EFB161 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
-		F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSceneExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,7 +296,6 @@
 				F62D6E191DD142D800172280 /* MenuScene.swift */,
 				183745131DCBB39C00BD49C1 /* CategoryScene.swift */,
 				183745111DCBB09B00BD49C1 /* LevelScene.swift */,
-				F6EEFCAC1DE4735C00DAD4A8 /* LevelSceneExtension.swift */,
 				A8E392931DE3704D00321AAA /* Extension.swift */,
 			);
 			name = Controller;
@@ -519,7 +516,6 @@
 				F64CD6C71DDCB8F300704CDE /* HomeScene.swift in Sources */,
 				18D5583D1DD0116300EF4437 /* AppData.swift in Sources */,
 				18D5583B1DD00C1900EF4437 /* DAO.swift in Sources */,
-				F6EEFCAD1DE4735C00DAD4A8 /* LevelSceneExtension.swift in Sources */,
 				18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */,
 				18B08B0A1DCBA7E1008930DA /* Decifrando.xcdatamodeld in Sources */,
 				18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */,

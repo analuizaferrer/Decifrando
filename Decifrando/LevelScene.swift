@@ -21,11 +21,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     var letterPreviousPosition: CGPoint!
     var backLabel: SKLabelNode!
     var nextLabel: SKLabelNode!
-    var recordVoice: SKLabelNode!
-    var playVoice:SKLabelNode!
-    var soundRecorder: AVAudioRecorder!
-    var soundPlayer: AVAudioPlayer!
-    var fileName = "audioFile.m4a"
     var imageNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
@@ -92,8 +87,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        self.setupRecorder()
-        
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         physicsWorld.contactDelegate = self
         
@@ -106,24 +99,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         imageNode.size = CGSize(width: size.width/3, height: size.width/3)
         imageNode.zPosition = 1
         self.addChild(imageNode)
-        
-        self.recordVoice = SKLabelNode(text: "Gravar voz")
-        self.recordVoice.fontName = "Riffic"
-        self.recordVoice.fontColor = UIColor.black
-        self.recordVoice.name = "Record"
-        self.recordVoice.position = CGPoint(x: size.width-350, y: size.height-70)
-        self.recordVoice.isHidden = true
-        self.recordVoice.zPosition = 1
-        self.background.addChild(recordVoice)
-        
-        self.playVoice = SKLabelNode(text: "Tocar voz")
-        self.playVoice.fontName = "Riffic"
-        self.playVoice.fontColor = UIColor.black
-        self.playVoice.name = "Play"
-        self.playVoice.position = CGPoint(x: size.width-120, y: size.height-70)
-        self.playVoice.isHidden = true
-        self.playVoice.zPosition = 1
-        self.background.addChild(playVoice)
         
         self.nextLabel = SKLabelNode(fontNamed: "Riffic")
         self.nextLabel.text = "Próxima palavra"
@@ -153,8 +128,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         selectNodeForTouch(touchLocation: positionInScene)
         
-        
-        
     }
     
     func selectNodeForTouch(touchLocation: CGPoint) {
@@ -166,7 +139,8 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         if touchedNode is Letter {
             
-            if !(selectedNode?.isEqual(touchedNode))! && selectedNode != nil{
+            if !(selectedNode?.isEqual(touchedNode))! && selectedNode != nil {
+                
                 selectedNode?.removeAllActions()
                 selectedNode?.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
                 
@@ -183,33 +157,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.returnToCategoryScene()
             
-        } else if touchedNode.name == "Record" {
-            
-            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
-            self.soundRecorder.record()
-            touchedNode.name = "Stop"
-            self.recordVoice.text = "Parar de gravar"
-            
-        } else if touchedNode.name == "Stop" {
-            
-            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
-            self.soundRecorder.stop()
-            touchedNode.name = "Record"
-            self.recordVoice.text = "Gravar voz"
-            self.playVoice.isHidden = false
-            
-        } else if touchedNode.name == "Play" {
-            
-            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
-            self.preparePlayer()
-            soundPlayer.play()
-            touchedNode.name = "Pause"
-            
-        } else if touchedNode.name == "Pause" {
-            
-            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
-            soundPlayer.stop()
-            touchedNode.name = "Play"
         }
     }
     
@@ -297,7 +244,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
-        
     }
     
     func highlightBox() {
@@ -341,7 +287,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         AppData.sharedInstance.levelsList[AppData.sharedInstance.selectedLevelIndex].completed = true
         DAO().updateLevelCompleted(category: AppData.sharedInstance.levelsList[0].category)
         
-        //self.recordVoice.isHidden = false
         
         if AppData.sharedInstance.selectedLevelIndex < AppData.sharedInstance.levelsList.count - 1 {
             

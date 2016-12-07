@@ -138,8 +138,6 @@ class CategoryScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         lastPos = touches.first!.location(in: self)
-        
-        //print("POSITION: \(touches.first!.location(in: background))")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -216,22 +214,21 @@ class CategoryScene: SKScene {
                 
                 levelLabel = SKSpriteNode(imageNamed: "lvl\(n)Red")
                 
-                var i = 1
-                while i <= n {
-                    print("entrou aqui")
-                    let path = SKSpriteNode(imageNamed: "\(i)to\(i+1)")
-                    path.anchorPoint = CGPoint.zero
-                    path.zPosition = 1
-                    path.position = pathPositions[i-1]
-                    background.addChild(path)
-                    i += 1
-                }
-                
             } else if nextLevel == -1 {
                     
                 levelLabel = SKSpriteNode(imageNamed: String(n))
                     
                 nextLevel = n
+                
+                if n > 1 && n < AppData.sharedInstance.levelsList.count {
+                    
+                    let path = SKSpriteNode(imageNamed: "\(n-1)to\(n)")
+                    path.anchorPoint = CGPoint.zero
+                    path.zPosition = 1
+                    path.position = pathPositions[n-2]
+                    background.addChild(path)
+                }
+
                     
             } else {
                  
@@ -239,7 +236,7 @@ class CategoryScene: SKScene {
             }
             
             levelLabel.position = labelPositions[n-1]
-            levelLabel.zPosition = 1
+            levelLabel.zPosition = 2
             levelLabel.size = CGSize(width: 200, height: 200)
             levelLabel.name = "Level \(n)"
             levelLabels.append(levelLabel)
