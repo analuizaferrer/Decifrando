@@ -289,21 +289,24 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        let victory = SKSpriteNode(imageNamed: "win")
-        victory.zPosition = 4
-        victory.position = CGPoint(x: size.width/2, y: size.height/2)
-        background.addChild(victory)
-        
-        
-        let backToMenu = SKLabelNode(fontNamed: "Riffic")
-        backToMenu.text = "Voltar para o menu"
-        backToMenu.name = "Back to menu"
-        backToMenu.fontColor = SKColor.black
-        backToMenu.fontSize = 40
-        backToMenu.zPosition = 5
-        backToMenu.position = CGPoint(x: size.width/2, y: size.height/2-100)
-        background.addChild(backToMenu)
-        
+        if AppData.sharedInstance.selectedLevelIndex == AppData.sharedInstance.levelsList.count - 1 {
+            
+            let victory = SKSpriteNode(imageNamed: "win")
+            victory.zPosition = 4
+            victory.position = CGPoint(x: size.width/2, y: size.height/2)
+            background.addChild(victory)
+            
+            
+            let backToMenu = SKLabelNode(fontNamed: "Riffic")
+            backToMenu.text = "Voltar para o menu"
+            backToMenu.name = "Back to menu"
+            backToMenu.fontColor = SKColor.black
+            backToMenu.fontSize = 40
+            backToMenu.zPosition = 5
+            backToMenu.position = CGPoint(x: size.width/2, y: size.height/2-100)
+            background.addChild(backToMenu)
+            
+        }
         
         return true
     }
