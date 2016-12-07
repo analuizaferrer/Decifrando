@@ -6,7 +6,7 @@
 //
 //
 
-import UIKit
+import Foundation
 import SpriteKit
 
 class HomeScene: SKScene {
@@ -18,18 +18,17 @@ class HomeScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+<<<<<<< HEAD
         print(view.frame.size)
         
+=======
+>>>>>>> 7b0ee560813f4d0dc42ef953aa145ac20bee3ee1
         background = SKSpriteNode(imageNamed:"background")
         background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         background.zPosition = 0
         self.background.name = "background"
-        //    var background = SKSpriteNode(imageNamed: "bgimage")
-
-        
         self.background.anchorPoint = CGPoint.zero
         self.addChild(background)
-        
         
         self.createHomeLabels()
         
