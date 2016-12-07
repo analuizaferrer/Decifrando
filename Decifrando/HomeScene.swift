@@ -13,7 +13,7 @@ class HomeScene: SKScene {
 
     var background: SKSpriteNode!
     var start: SKLabelNode!
-    var help: SKLabelNode!
+    var thankYou: SKLabelNode!
     var settings: SKLabelNode!
     
     override func didMove(to view: SKView) {
@@ -40,14 +40,14 @@ class HomeScene: SKScene {
             self.start.zPosition = 1
         background.addChild(start)
          
-//        help = SKLabelNode(fontNamed: "Riffic")
-//        self.help.fontSize = 75
-//        self.help.fontColor = SKColor.white
-//        self.help.text = "ajuda"
-//        self.help.name = "Help"
-//        self.help.position = CGPoint(x: size.width/2, y: size.height/2 - 350)
-//        self.help.zPosition = 1
-//        background.addChild(help)
+        thankYou = SKLabelNode(fontNamed: "Riffic")
+        self.thankYou.fontSize = 75
+        self.thankYou.fontColor = SKColor.white
+        self.thankYou.text = "agradecimentos"
+        self.thankYou.name = "Thank You"
+        self.thankYou.position = CGPoint(x: size.width/2, y: size.height/2 - 350)
+        self.thankYou.zPosition = 1
+        background.addChild(thankYou)
         
 //        settings = SKLabelNode(fontNamed: "Riffic")
 //        self.settings.fontSize = 30
@@ -77,9 +77,13 @@ class HomeScene: SKScene {
             let scene = MenuScene(size: size)
             self.view?.presentScene(scene, transition:reveal)
            
-        } else if node.name == "Help" {
+        } else if node.name == "Thank You" {
             
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             
+            let reveal = SKTransition.fade(withDuration: 1.0)
+            let scene = ThankYouScene(size: size)
+            self.view?.presentScene(scene, transition:reveal)
             
         } else if node.name == "Settings" {
             

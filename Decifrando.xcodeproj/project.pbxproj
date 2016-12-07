@@ -13,6 +13,7 @@
 		183745161DCBB40500BD49C1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745151DCBB40500BD49C1 /* Box.swift */; };
 		183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745171DCBC5EA00BD49C1 /* Letter.swift */; };
 		1837451A1DCCCE6500BD49C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183745191DCCCE6500BD49C1 /* Extensions.swift */; };
+		185A9BC51DF84ED700FDC02E /* ThankYouScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A9BC41DF84ED700FDC02E /* ThankYouScene.swift */; };
 		18AC69A51DD1017E00EAB7E1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC69A41DD1017E00EAB7E1 /* Level.swift */; };
 		18B08B021DCBA7E1008930DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B011DCBA7E1008930DA /* AppDelegate.swift */; };
 		18B08B041DCBA7E1008930DA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B08B031DCBA7E1008930DA /* GameViewController.swift */; };
@@ -89,6 +90,7 @@
 		183745151DCBB40500BD49C1 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		183745171DCBC5EA00BD49C1 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		183745191DCCCE6500BD49C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		185A9BC41DF84ED700FDC02E /* ThankYouScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouScene.swift; sourceTree = "<group>"; };
 		18AC69A41DD1017E00EAB7E1 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		18B08AFE1DCBA7E1008930DA /* Decifrando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decifrando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B08B011DCBA7E1008930DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				18B08B011DCBA7E1008930DA /* AppDelegate.swift */,
 				18B08B031DCBA7E1008930DA /* GameViewController.swift */,
 				F64CD6C61DDCB8F300704CDE /* HomeScene.swift */,
+				185A9BC41DF84ED700FDC02E /* ThankYouScene.swift */,
 				F62D6E191DD142D800172280 /* MenuScene.swift */,
 				183745131DCBB39C00BD49C1 /* CategoryScene.swift */,
 				183745111DCBB09B00BD49C1 /* LevelScene.swift */,
@@ -523,6 +526,7 @@
 				F62D6E1A1DD142D800172280 /* MenuScene.swift in Sources */,
 				183745121DCBB09B00BD49C1 /* LevelScene.swift in Sources */,
 				183745181DCBC5EA00BD49C1 /* Letter.swift in Sources */,
+				185A9BC51DF84ED700FDC02E /* ThankYouScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
