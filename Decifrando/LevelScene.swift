@@ -54,6 +54,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             let offsetFraction = (CGFloat(i) + 1.0)/(CGFloat(boxArray.count) + 1.0)
             
             box.position = CGPoint(x: size.width * offsetFraction, y: size.height/3)
+            box.zPosition = 2
             addChild(box)
             
             i = i + 1
@@ -82,7 +83,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             let offsetFraction = (CGFloat(j) + 1.0)/(CGFloat(lettersArray.count) + 1.0)
             
             letter.position = CGPoint(x: size.width * offsetFraction, y: size.height/8)
-            letter.zPosition = 20
+            letter.zPosition = 3
             background.addChild(letter)
             j = j + 1
             
@@ -160,6 +161,10 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
             self.returnToCategoryScene()
             
+        } else if touchedNode.name == "Back to menu" {
+            
+            run(SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false))
+            self.returnToMenuScene()
         }
     }
     
@@ -224,7 +229,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         for box in boxArray {
             
-            
             let xMin = box.position.x - box.size.width/2
             let xMax = box.position.x + box.size.width/2
             let yMin = box.position.y - box.anchorPoint.y*box.size.height - 50
@@ -232,7 +236,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             
             if (selectedNode?.position.x)! > xMin && (selectedNode?.position.x)! < xMax && (selectedNode?.position.y)! > yMin && (selectedNode?.position.y)! < yMax {
                 
-                if selectedNode?.text?.characters.first == box.boxLetter {
+                if selectedNode?.text?.characters.first == box.boxLetter && !box.isFull {
                     
                     selectedNode?.position.x = box.position.x
                     selectedNode?.position.y = box.position.y - (selectedNode?.fontSize)!/4
@@ -254,7 +258,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     func highlightBox() {
         
         for box in boxArray {
-            
             
             let xMin = box.position.x - box.size.width/2
             let xMax = box.position.x + box.size.width/2
@@ -282,6 +285,25 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             if !box.isFull {
                 return false
             }
+        }
+        
+        if AppData.sharedInstance.selectedLevelIndex == AppData.sharedInstance.levelsList.count - 1 {
+            
+            let victory = SKSpriteNode(imageNamed: "win")
+            victory.zPosition = 4
+            victory.position = CGPoint(x: size.width/2, y: size.height/2)
+            background.addChild(victory)
+            
+            
+            let backToMenu = SKLabelNode(fontNamed: "Riffic")
+            backToMenu.text = "Voltar para o menu"
+            backToMenu.name = "Back to menu"
+            backToMenu.fontColor = SKColor.black
+            backToMenu.fontSize = 40
+            backToMenu.zPosition = 5
+            backToMenu.position = CGPoint(x: size.width/2, y: size.height/2-100)
+            background.addChild(backToMenu)
+            
         }
         
         return true
@@ -352,6 +374,13 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         let scene = CategoryScene(size: size)
         self.view?.presentScene(scene, transition:reveal)
         
+    }
+    
+    func returnToMenuScene() {
+        
+        let reveal = SKTransition.fade(withDuration: 1.0)
+        let scene = MenuScene(size: size)
+        self.view?.presentScene(scene, transition:reveal)
     }
 }
 
