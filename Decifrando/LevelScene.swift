@@ -229,7 +229,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         for box in boxArray {
             
-            
             let xMin = box.position.x - box.size.width/2
             let xMax = box.position.x + box.size.width/2
             let yMin = box.position.y - box.anchorPoint.y*box.size.height - 50
@@ -237,7 +236,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             
             if (selectedNode?.position.x)! > xMin && (selectedNode?.position.x)! < xMax && (selectedNode?.position.y)! > yMin && (selectedNode?.position.y)! < yMax {
                 
-                if selectedNode?.text?.characters.first == box.boxLetter {
+                if selectedNode?.text?.characters.first == box.boxLetter && !box.isFull {
                     
                     selectedNode?.position.x = box.position.x
                     selectedNode?.position.y = box.position.y - (selectedNode?.fontSize)!/4
@@ -259,7 +258,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     func highlightBox() {
         
         for box in boxArray {
-            
             
             let xMin = box.position.x - box.size.width/2
             let xMax = box.position.x + box.size.width/2
