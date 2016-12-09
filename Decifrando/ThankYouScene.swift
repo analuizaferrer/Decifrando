@@ -106,7 +106,7 @@ class ThankYouScene: SKScene {
             y = y + 50
             
             let link = SKLabelNode(fontNamed: "Riffic")
-            link.fontSize = 40
+            link.fontSize = 30
             link.fontColor = SKColor.black
             link.text = creditLinks[i]
             link.position = CGPoint(x: 50/2, y: size.height - (y))
