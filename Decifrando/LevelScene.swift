@@ -228,7 +228,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     func letterIsInsideBox() {
         
         for box in boxArray {
-            
+        
             let xMin = box.position.x - box.size.width/2
             let xMax = box.position.x + box.size.width/2
             let yMin = box.position.y - box.anchorPoint.y*box.size.height - 50
