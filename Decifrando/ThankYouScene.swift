@@ -12,17 +12,25 @@ import SpriteKit
 class ThankYouScene: SKScene {
     
     var background: SKSpriteNode!
+    var transparentBg: SKSpriteNode!
     var backButton: SKSpriteNode!
-    var thankYou: SKLabelNode!
     
     var lastPos : CGPoint!
     
     override func didMove(to view: SKView) {
         
-        let s = getAspectFitSize(toX: 50, toY: 50)
+        //let s = getAspectFitSize(toX: 50, toY: 50)
+        
         background = SKSpriteNode(imageNamed: "backgroundLetras")
+        background.zPosition = 0
+        background.size = self.size
+        background.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         self.addChild(background)
-        background.position = CGPoint(x: size.width/2,y: s.height/2)
+        
+        transparentBg = SKSpriteNode(color: UIColor.clear, size: CGSize(width: self.size.width, height: 2300))
+        transparentBg.zPosition = 1
+        self.addChild(transparentBg)
+        transparentBg.position = CGPoint(x: size.width/2,y: 0)
 
         
         self.createThankYouLabels()
@@ -40,29 +48,75 @@ class ThankYouScene: SKScene {
         
         self.addChild(backButton)
         
-        thankYou = SKLabelNode(fontNamed: "Riffic")
-        self.thankYou.fontSize = 75
-        self.thankYou.fontColor = SKColor.white
-        self.thankYou.text = "Créditos e Agradecimentos"
-        self.thankYou.position = CGPoint(x: 50/2, y: size.height - 200)
-        self.thankYou.zPosition = 1
-        background.addChild(thankYou)
+        var y: CGFloat = 125
         
-        let thankYouMessages = ["Alena Miklos", "Amanda Manso", "Our Lady of Mercy School", "BEPiD", "Thais Lima", "Nelson Donato", "Jessé Cerqueira", "Thiago De Angelis", "coruja - http://audiosoundclips.com/audio-sound-clips-effects-animal/", "gato - https://www.freesound.org/people/tuberatanka/sounds/110011/", "cavalo - https://www.freesound.org/people/foxen10/sounds/149024/", "papagaio - http://www.sound-effects-hunter.com/parrot-sounds/", "baleia - https://www.freesound.org/people/Tritus/sounds/186899/"]
+        let thankYouLabel = SKLabelNode(fontNamed: "Riffic")
+        thankYouLabel.fontSize = 75
+        thankYouLabel.fontColor = SKColor.black
+        thankYouLabel.text = "Agradecimentos"
+        thankYouLabel.position = CGPoint(x: 50/2, y: size.height - y)
+        thankYouLabel.zPosition = 1
+        transparentBg.addChild(thankYouLabel)
         
-        var n = 2
+        y = y + 125
+        
+        let thankYouMessages = ["Alena Miklos", "Amanda Manso", "BEPiD Rio", "Jessé Cerqueira", "Nelson Donato", "Our Lady of Mercy School", "Thais Lima", "Thiago De Angelis"]
         
         for message in thankYouMessages {
             
             let label = SKLabelNode(fontNamed: "Riffic")
             label.fontSize = 50
-            label.fontColor = SKColor.white
+            label.fontColor = SKColor.black
             label.text = message
-            label.position = CGPoint(x: 50/2, y: Int(size.height) - n*Int(background.size.height)/(thankYouMessages.count+2))
+            label.position = CGPoint(x: 50/2, y: size.height - (y))
             label.zPosition = 10
-            background.addChild(label)
+            transparentBg.addChild(label)
             
-            n = n+1
+            y = y + 100
+            
+        }
+        
+        y = y + 200
+        
+        let creditsLabel = SKLabelNode(fontNamed: "Riffic")
+        creditsLabel.fontSize = 75
+        creditsLabel.fontColor = SKColor.black
+        creditsLabel.text = "Créditos"
+        creditsLabel.position = CGPoint(x: 50/2, y: size.height - y)
+        creditsLabel.zPosition = 1
+        transparentBg.addChild(creditsLabel)
+        
+        y = y + 125
+        
+        let creditsMessages = ["som do gato:", "som do cavalo:", "som da coruja:", "som da baleia:", "som do papagaio:"]
+        let creditLinks = ["https://www.freesound.org/people/tuberatanka/sounds/110011/", "https://www.freesound.org/people/foxen10/sounds/149024/", "http://audiosoundclips.com/audio-sound-clips-effects-animal/", "https://www.freesound.org/people/Tritus/sounds/186899/", "http://www.sound-effects-hunter.com/parrot-sounds/"]
+        
+        var i = 0
+        
+        for message in creditsMessages {
+            
+            let label = SKLabelNode(fontNamed: "Riffic")
+            label.fontSize = 50
+            label.fontColor = SKColor.black
+            label.text = message
+            label.position = CGPoint(x: 50/2, y: size.height - (y))
+            label.zPosition = 10
+            transparentBg.addChild(label)
+            
+            y = y + 50
+            
+            let link = SKLabelNode(fontNamed: "Riffic")
+            link.fontSize = 40
+            link.fontColor = SKColor.black
+            link.text = creditLinks[i]
+            link.position = CGPoint(x: 50/2, y: size.height - (y))
+            link.zPosition = 10
+            transparentBg.addChild(link)
+            
+            i = i + 1
+            
+            y = y + 100
+
             
         }
         
@@ -78,8 +132,8 @@ class ThankYouScene: SKScene {
         
         let p = touches.first!.location(in: self)
         let dist = CGPoint(x: p.x-lastPos.x,y: p.y-lastPos.y)
-        let bp = background.position
-        background.position.y = max(min(background.size.height/2,bp.y+dist.y),size.height-background.size.height/2)
+        let bp = transparentBg.position
+        transparentBg.position.y = max(min(transparentBg.size.height/2,bp.y+dist.y),size.height-transparentBg.size.height/2)
         lastPos = p
     }
     
