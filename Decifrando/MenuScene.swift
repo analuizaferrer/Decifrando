@@ -76,7 +76,7 @@ class MenuScene: SKScene {
 //        background = SKSpriteNode(imageNamed:"background")
 //        background.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         //1024 768
-        colors = SKSpriteNode(imageNamed: "boxLocked")
+        colors = SKSpriteNode(imageNamed: "colors")
         self.colors.size = s
         self.colors.name = "colors"
         //self.colors.anchorPoint = CGPoint.zero
@@ -85,7 +85,7 @@ class MenuScene: SKScene {
 
         background.addChild(colors)
         
-        fruits = SKSpriteNode(imageNamed: "boxLocked")
+        fruits = SKSpriteNode(imageNamed: "fruits")
         self.fruits.size = s
         self.fruits.name = "fruits"
         //self.fruits.anchorPoint = CGPoint.zero
@@ -94,7 +94,7 @@ class MenuScene: SKScene {
 
         background.addChild(fruits)
         
-        vehicles = SKSpriteNode(imageNamed: "boxLocked")
+        vehicles = SKSpriteNode(imageNamed: "vehicles")
         self.vehicles.size = s
         self.vehicles.name = "vehicles"
         //self.vehicles.anchorPoint = CGPoint.zero
