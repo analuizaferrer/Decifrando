@@ -48,11 +48,11 @@ class ThankYouScene: SKScene {
         
         self.addChild(backButton)
         
-        var y: CGFloat = 200
+        var y: CGFloat = 125
         
         let thankYouLabel = SKLabelNode(fontNamed: "Riffic")
         thankYouLabel.fontSize = 75
-        thankYouLabel.fontColor = SKColor.white
+        thankYouLabel.fontColor = SKColor.black
         thankYouLabel.text = "Agradecimentos"
         thankYouLabel.position = CGPoint(x: 50/2, y: size.height - y)
         thankYouLabel.zPosition = 1
@@ -66,7 +66,7 @@ class ThankYouScene: SKScene {
             
             let label = SKLabelNode(fontNamed: "Riffic")
             label.fontSize = 50
-            label.fontColor = SKColor.white
+            label.fontColor = SKColor.black
             label.text = message
             label.position = CGPoint(x: 50/2, y: size.height - (y))
             label.zPosition = 10
@@ -80,7 +80,7 @@ class ThankYouScene: SKScene {
         
         let creditsLabel = SKLabelNode(fontNamed: "Riffic")
         creditsLabel.fontSize = 75
-        creditsLabel.fontColor = SKColor.white
+        creditsLabel.fontColor = SKColor.black
         creditsLabel.text = "Créditos"
         creditsLabel.position = CGPoint(x: 50/2, y: size.height - y)
         creditsLabel.zPosition = 1
@@ -97,7 +97,7 @@ class ThankYouScene: SKScene {
             
             let label = SKLabelNode(fontNamed: "Riffic")
             label.fontSize = 50
-            label.fontColor = SKColor.white
+            label.fontColor = SKColor.black
             label.text = message
             label.position = CGPoint(x: 50/2, y: size.height - (y))
             label.zPosition = 10
@@ -106,8 +106,8 @@ class ThankYouScene: SKScene {
             y = y + 50
             
             let link = SKLabelNode(fontNamed: "Riffic")
-            link.fontSize = 40
-            link.fontColor = SKColor.white
+            link.fontSize = 30
+            link.fontColor = SKColor.black
             link.text = creditLinks[i]
             link.position = CGPoint(x: 50/2, y: size.height - (y))
             link.zPosition = 10
